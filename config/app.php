@@ -173,6 +173,14 @@ return [
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
         \InfyOm\Generator\InfyOmGeneratorServiceProvider::class,
         InfyOm\AdminLTETemplates\AdminLTETemplatesServiceProvider::class,
+        Infinety\FileManager\FileManagerServiceProvider::class,
+        Laratrust\LaratrustServiceProvider::class,
+        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
+        Nwidart\Modules\LaravelModulesServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
+        Seguce92\DomPDF\ServiceProvider::class,
+        
         /*
          * Application Service Providers...
          */
@@ -230,7 +238,14 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
-        'Flash' => Laracasts\Flash\Flash::class
+        'Flash' => Laracasts\Flash\Flash::class,
+        'Laratrust' => Laratrust\LaratrustFacade::class,
+        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
+        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
+        'Module' => Nwidart\Modules\Facades\Module::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'PDF' => Seguce92\DomPDF\Facade::class,
     ],
 
 ];

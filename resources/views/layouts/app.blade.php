@@ -14,6 +14,11 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
+    <!-- include summernote css -->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.css" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" rel="stylesheet">
+
     @yield('css')
 </head>
 
@@ -143,8 +148,31 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>
+
+    <!-- summernote -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+
     <!-- AdminLTE App -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.3/js/app.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('.rte').summernote();
+
+            $('.filemanager').fancybox({
+                type : 'iframe'
+            });
+        });
+
+        // filemanager auto run when close fancybox after select file and insert image thumbnail
+        var OnMessage = function(data){
+            $('#' + data.appendId + '-thumb').html('<img src="' + data.thumb + '" style="width:100%">');
+            $('input[name="' + data.appendId + '"]').val(data.thumb);
+            $.fancybox.close();
+        };
+    </script>
 
     @yield('scripts')
 </body>

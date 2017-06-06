@@ -19,3 +19,43 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::resource('menus', 'MenuController');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Route::resource('posts', 'PostController');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Route::resource('pages', 'PageController');
+
+Route::resource('articles', 'ArticleController');
+
+Route::resource('article2s', 'Article2Controller');
