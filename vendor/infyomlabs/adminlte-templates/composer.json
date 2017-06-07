@@ -1,0 +1,30 @@
+{
+    "name": "webcore/adminlte-templates",
+    "description": "AdminLTE templates for WebCORE Dynamic CMS",
+    "keywords": [
+        "webcore",
+        "dynamic",
+        "cms",
+        "laravel",
+        "generator",
+        "adminlte",
+        "templates",
+        "bootstrap"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dandi Setiyawan",
+            "email": "dandi@redbuzz.co.id"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "illuminate/support": "~5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "InfyOm\\AdminLTETemplates\\": "src/"
+        }
+    }
+}

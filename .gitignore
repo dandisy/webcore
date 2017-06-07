@@ -1,8 +1,11 @@
 /node_modules
 /public/storage
-/vendor
+!/vendor
 /.idea
 Homestead.json
 Homestead.yaml
 .env
 _ide_helper.php
+
+/vendor/*
+!/vendor/infyomlabs/
