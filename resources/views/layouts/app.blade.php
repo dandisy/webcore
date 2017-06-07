@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>InfyOm Generator</title>
+    <title>WebCORE Dynamic CMS</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -20,6 +20,13 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" rel="stylesheet">
 
     @yield('css')
+
+    <style>
+        .sidebar {
+            overflow-y: auto;
+            height: 92vh;
+        }
+    </style>
 </head>
 
 <body class="skin-blue sidebar-mini">
@@ -30,7 +37,7 @@
 
             <!-- Logo -->
             <a href="#" class="logo">
-                <b>InfyOm</b>
+                <b>WebCORE</b>
             </a>
 
             <!-- Header Navbar -->
@@ -93,7 +100,7 @@
 
         <!-- Main Footer -->
         <footer class="main-footer" style="max-height: 100px;text-align: center">
-            <strong>Copyright © 2016 <a href="#">Company</a>.</strong> All rights reserved.
+            <strong>Copyright © 2017 <a href="#">WebCORE</a>.</strong> All rights reserved.
         </footer>
 
     </div>
@@ -113,7 +120,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{!! url('/') !!}">
-                    InfyOm Generator
+                    WebCORE
                 </a>
             </div>
 

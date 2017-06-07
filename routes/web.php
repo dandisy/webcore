@@ -21,3 +21,21 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::resource('menus', 'MenuController');
+
+Route::resource('roles', 'RoleController');
+
+Route::resource('permissions', 'PermissionController');
+
+Route::resource('users', 'UserController');
+
+Route::resource('posts', 'PostController');
+
+Route::resource('settings', 'SettingController');
+
+Route::resource('pages', 'PageController');
+
+
+
+
+
+Route::resource('profiles', 'ProfileController');

@@ -18,3 +18,21 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:api');
 
 Route::resource('menus', 'MenuAPIController');
+
+Route::resource('roles', 'RoleAPIController');
+
+Route::resource('permissions', 'PermissionAPIController');
+
+Route::resource('users', 'UserAPIController');
+
+Route::resource('posts', 'PostAPIController');
+
+Route::resource('settings', 'SettingAPIController');
+
+Route::resource('pages', 'PageAPIController');
+
+
+
+
+
+Route::resource('profiles', 'ProfileAPIController');
