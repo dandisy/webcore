@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>WebCORE Dynamic CMS</title>
+    <title>WebCORE Platform</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -14,22 +14,33 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
-    <!-- include summernote css -->
+    <!-- include Summernote -->
     <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.css" rel="stylesheet">
 
+    <!-- include Fancybox -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" rel="stylesheet">
 
-    @yield('css')
-
     <style>
+        /*.main-header {
+            position: fixed;
+            width: 100%;
+        }
+        .main-sidebar {
+            position: fixed;
+        }
+        .content-wrapper {
+            margin-top: 50px;
+        }*/
         .sidebar {
             overflow-y: auto;
-            height: 92vh;
+            height: 92.4vh;
         }
     </style>
+
+    @yield('css')
 </head>
 
-<body class="skin-blue sidebar-mini">
+<body class="skin-red sidebar-mini fixed">
 @if (!Auth::guest())
     <div class="wrapper">
         <!-- Main Header -->
@@ -54,7 +65,7 @@
                             <!-- Menu Toggle Button -->
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <!-- The user image in the navbar-->
-                                <img src="http://infyom.com/images/logo/blue_logo_150x150.jpg"
+                                <img src="vendor/adminlte/dist/img/user2-160x160.jpg"
                                      class="user-image" alt="User Image"/>
                                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
                                 <span class="hidden-xs">{!! Auth::user()->name !!}</span>
@@ -62,7 +73,7 @@
                             <ul class="dropdown-menu">
                                 <!-- The user image in the menu -->
                                 <li class="user-header">
-                                    <img src="http://infyom.com/images/logo/blue_logo_150x150.jpg"
+                                    <img src="vendor/adminlte/dist/img/user2-160x160.jpg"
                                          class="img-circle" alt="User Image"/>
                                     <p>
                                         {!! Auth::user()->name !!}
@@ -156,9 +167,10 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>
 
-    <!-- summernote -->
+    <!-- Summernote -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.js"></script>
 
+    <!-- Fancybox -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
 
     <!-- AdminLTE App -->
@@ -173,12 +185,42 @@
             });
         });
 
-        // filemanager auto run when close fancybox after select file and insert image thumbnail
+        // filemanager auto run when close fancybox, after select file and then insert image thumbnail
         var OnMessage = function(data){
             $('#' + data.appendId + '-thumb').html('<img src="' + data.thumb + '" style="width:100%">');
             $('input[name="' + data.appendId + '"]').val(data.thumb);
             $.fancybox.close();
         };
+
+        $('#myModalPermissions').on('show.bs.modal', function (e) {
+            var content = '';
+
+            $.ajax({
+                type: 'get',
+                url: '{{ url("api/permissions") }}'
+            }).done(function (res) {
+                $.each(res.data, function (index, value) {
+                    content += '<div class="checkbox col-sm-6"><label><input type="checkbox" name="permission" value="' + value.id + '">' + ' ' + value.display_name + '</label></div>';
+                });
+
+                $('#permission-container').html(content);
+            });
+        });
+
+        $('#myModalRole').on('show.bs.modal', function (e) {
+            var content = '';
+
+            $.ajax({
+                type: 'get',
+                url: '{{ url("api/roles") }}'
+            }).done(function (res) {
+                $.each(res.data, function (index, value) {
+                    content += '<div class="checkbox col-sm-6"><label><input type="radio" name="role" value="' + value.id + '">' + ' ' + value.display_name + '</label></div>';
+                });
+
+                $('#role-container').html(content);
+            });
+        });
     </script>
 
     @yield('scripts')

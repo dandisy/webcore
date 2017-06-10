@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Setting
  * @package App\Models
- * @version June 7, 2017, 3:43 am UTC
+ * @version June 8, 2017, 10:05 pm UTC
  */
 class Setting extends Model
 {
@@ -21,12 +21,9 @@ class Setting extends Model
 
 
     public $fillable = [
-        'icon',
-        'title',
-        'tagline',
-        'keyword',
-        'timezone',
-        'privacy'
+        'key',
+        'value',
+        'description'
     ];
 
     /**
@@ -35,12 +32,9 @@ class Setting extends Model
      * @var array
      */
     protected $casts = [
-        'icon' => 'string',
-        'title' => 'string',
-        'tagline' => 'string',
-        'keyword' => 'string',
-        'timezone' => 'string',
-        'privacy' => 'string'
+        'key' => 'string',
+        'value' => 'string',
+        'description' => 'string'
     ];
 
     /**
@@ -49,11 +43,8 @@ class Setting extends Model
      * @var array
      */
     public static $rules = [
-        'title' => 'required',
-        'tagline' => 'required',
-        'keyword' => 'required',
-        'timezone' => 'required',
-        'privacy' => 'required'
+        'key' => 'required',
+        'value' => 'required'
     ];
 
     

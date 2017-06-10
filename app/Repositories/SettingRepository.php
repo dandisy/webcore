@@ -11,11 +11,9 @@ class SettingRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
-        'title',
-        'tagline',
-        'keyword',
-        'timezone',
-        'privacy'
+        'key',
+        'value',
+        'description'
     ];
 
     /**

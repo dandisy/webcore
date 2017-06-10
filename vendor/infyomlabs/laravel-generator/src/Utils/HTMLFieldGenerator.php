@@ -31,6 +31,10 @@ class HTMLFieldGenerator
                 $fieldTemplate = get_template('scaffold.fields.'.$field->htmlType, $templateType);
                 break;
             case 'select':
+
+            // added by dandi
+            case 'select-multi':
+
             case 'enum':
                 $fieldTemplate = get_template('scaffold.fields.select', $templateType);
                 $radioLabels = GeneratorFieldsInputUtil::prepareKeyValueArrFromLabelValueStr($field->htmlValues);

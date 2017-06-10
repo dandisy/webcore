@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\PermissionDataTable;
+use App\Http\Requests;
 use App\Http\Requests\CreatePermissionRequest;
 use App\Http\Requests\UpdatePermissionRequest;
 use App\Repositories\PermissionRepository;
-use App\Http\Controllers\AppBaseController;
-use Illuminate\Http\Request;
 use Flash;
-use Prettus\Repository\Criteria\RequestCriteria;
+use App\Http\Controllers\AppBaseController;
 use Response;
 
 class PermissionController extends AppBaseController
@@ -24,16 +24,12 @@ class PermissionController extends AppBaseController
     /**
      * Display a listing of the Permission.
      *
-     * @param Request $request
+     * @param PermissionDataTable $permissionDataTable
      * @return Response
      */
-    public function index(Request $request)
+    public function index(PermissionDataTable $permissionDataTable)
     {
-        $this->permissionRepository->pushCriteria(new RequestCriteria($request));
-        $permissions = $this->permissionRepository->all();
-
-        return view('permissions.index')
-            ->with('permissions', $permissions);
+        return $permissionDataTable->render('permissions.index');
     }
 
     /**

@@ -37,6 +37,17 @@
         "dbType": "text",
         "htmlType": "textarea-rte",
         "validations": "required",
+        "searchable": "",
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true
+    },
+    {
+        "name": "tag",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "",
         "searchable": true,
         "fillable": true,
         "primary": false,
@@ -55,10 +66,10 @@
         "inIndex": true
     },
     {
-        "name": "tag",
+        "name": "components",
         "dbType": "string",
-        "htmlType": "text",
-        "validations": null,
+        "htmlType": "select-multi,component1:1,component2:2,component3:3",
+        "validations": "",
         "searchable": true,
         "fillable": true,
         "primary": false,

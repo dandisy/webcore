@@ -19,15 +19,18 @@ Route::get('/user', function (Request $request) {
 
 Route::resource('menus', 'MenuAPIController');
 
+Route::resource('users', 'UserAPIController');
+
+Route::resource('profiles', 'ProfileAPIController');
+
 Route::resource('roles', 'RoleAPIController');
 
 Route::resource('permissions', 'PermissionAPIController');
 
-Route::resource('users', 'UserAPIController');
+Route::resource('settings', 'SettingAPIController');
+
 
 Route::resource('posts', 'PostAPIController');
-
-Route::resource('settings', 'SettingAPIController');
 
 Route::resource('pages', 'PageAPIController');
 
@@ -35,4 +38,24 @@ Route::resource('pages', 'PageAPIController');
 
 
 
-Route::resource('profiles', 'ProfileAPIController');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

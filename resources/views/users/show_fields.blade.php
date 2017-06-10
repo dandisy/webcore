@@ -16,52 +16,10 @@
     <p>{!! $user->email !!}</p>
 </div>
 
-<!-- New Password Field -->
+<!-- Password Field -->
 <div class="form-group">
-    {!! Form::label('new_password', 'New Password:') !!}
-    <p>{!! $user->new_password !!}</p>
-</div>
-
-<!-- Confirm Password Field -->
-<div class="form-group">
-    {!! Form::label('confirm_password', 'Confirm Password:') !!}
-    <p>{!! $user->confirm_password !!}</p>
-</div>
-
-<!-- Image Field -->
-<div class="form-group">
-    {!! Form::label('image', 'Image:') !!}
-    <p>{!! $user->image !!}</p>
-</div>
-
-<!-- Type Field -->
-<div class="form-group">
-    {!! Form::label('type', 'Type:') !!}
-    <p>{!! $user->type !!}</p>
-</div>
-
-<!-- Id Card Type Field -->
-<div class="form-group">
-    {!! Form::label('id_card_type', 'Id Card Type:') !!}
-    <p>{!! $user->id_card_type !!}</p>
-</div>
-
-<!-- Address Field -->
-<div class="form-group">
-    {!! Form::label('address', 'Address:') !!}
-    <p>{!! $user->address !!}</p>
-</div>
-
-<!-- Phone Field -->
-<div class="form-group">
-    {!! Form::label('phone', 'Phone:') !!}
-    <p>{!! $user->phone !!}</p>
-</div>
-
-<!-- Fax Field -->
-<div class="form-group">
-    {!! Form::label('fax', 'Fax:') !!}
-    <p>{!! $user->fax !!}</p>
+    {!! Form::label('password', 'Password:') !!}
+    <p>{!! $user->password !!}</p>
 </div>
 
 <!-- Created At Field -->

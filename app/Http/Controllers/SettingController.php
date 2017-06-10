@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\SettingDataTable;
+use App\Http\Requests;
 use App\Http\Requests\CreateSettingRequest;
 use App\Http\Requests\UpdateSettingRequest;
 use App\Repositories\SettingRepository;
-use App\Http\Controllers\AppBaseController;
-use Illuminate\Http\Request;
 use Flash;
-use Prettus\Repository\Criteria\RequestCriteria;
+use App\Http\Controllers\AppBaseController;
 use Response;
 
 class SettingController extends AppBaseController
@@ -24,16 +24,12 @@ class SettingController extends AppBaseController
     /**
      * Display a listing of the Setting.
      *
-     * @param Request $request
+     * @param SettingDataTable $settingDataTable
      * @return Response
      */
-    public function index(Request $request)
+    public function index(SettingDataTable $settingDataTable)
     {
-        $this->settingRepository->pushCriteria(new RequestCriteria($request));
-        $settings = $this->settingRepository->all();
-
-        return view('settings.index')
-            ->with('settings', $settings);
+        return $settingDataTable->render('settings.index');
     }
 
     /**

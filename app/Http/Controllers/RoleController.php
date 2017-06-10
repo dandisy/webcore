@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\RoleDataTable;
+use App\Http\Requests;
 use App\Http\Requests\CreateRoleRequest;
 use App\Http\Requests\UpdateRoleRequest;
 use App\Repositories\RoleRepository;
-use App\Http\Controllers\AppBaseController;
-use Illuminate\Http\Request;
 use Flash;
-use Prettus\Repository\Criteria\RequestCriteria;
+use App\Http\Controllers\AppBaseController;
 use Response;
 
 class RoleController extends AppBaseController
@@ -24,16 +24,12 @@ class RoleController extends AppBaseController
     /**
      * Display a listing of the Role.
      *
-     * @param Request $request
+     * @param RoleDataTable $roleDataTable
      * @return Response
      */
-    public function index(Request $request)
+    public function index(RoleDataTable $roleDataTable)
     {
-        $this->roleRepository->pushCriteria(new RequestCriteria($request));
-        $roles = $this->roleRepository->all();
-
-        return view('roles.index')
-            ->with('roles', $roles);
+        return $roleDataTable->render('roles.index');
     }
 
     /**

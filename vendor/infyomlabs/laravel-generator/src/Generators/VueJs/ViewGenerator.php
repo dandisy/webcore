@@ -113,8 +113,11 @@ class ViewGenerator extends BaseGenerator
                 case 'number':
                     $fieldTemplate = get_template('vuejs.fields.'.$field->htmlType, $this->templateType);
                     break;
-
                 case 'select':
+
+                // added by dandi
+                case 'select-multi':
+
                 case 'enum':
                     $fieldTemplate = get_template('vuejs.fields.select', $this->templateType);
                     $inputsArr = explode(',', $field['htmlTypeInputs']);

@@ -56,7 +56,7 @@ class $MODEL_NAME$DataTable extends DataTable
                          'buttons' => [
                              'csv',
                              'excel',
-                             'pdf',
+                             /*'pdf',*/
                          ],
                     ],
                     'colvis'

@@ -4,40 +4,22 @@
     <p>{!! $setting->id !!}</p>
 </div>
 
-<!-- Icon Field -->
+<!-- Key Field -->
 <div class="form-group">
-    {!! Form::label('icon', 'Icon:') !!}
-    <p>{!! $setting->icon !!}</p>
+    {!! Form::label('key', 'Key:') !!}
+    <p>{!! $setting->key !!}</p>
 </div>
 
-<!-- Title Field -->
+<!-- Value Field -->
 <div class="form-group">
-    {!! Form::label('title', 'Title:') !!}
-    <p>{!! $setting->title !!}</p>
+    {!! Form::label('value', 'Value:') !!}
+    <p>{!! $setting->value !!}</p>
 </div>
 
-<!-- Tagline Field -->
+<!-- Description Field -->
 <div class="form-group">
-    {!! Form::label('tagline', 'Tagline:') !!}
-    <p>{!! $setting->tagline !!}</p>
-</div>
-
-<!-- Keyword Field -->
-<div class="form-group">
-    {!! Form::label('keyword', 'Keyword:') !!}
-    <p>{!! $setting->keyword !!}</p>
-</div>
-
-<!-- Timezone Field -->
-<div class="form-group">
-    {!! Form::label('timezone', 'Timezone:') !!}
-    <p>{!! $setting->timezone !!}</p>
-</div>
-
-<!-- Privacy Field -->
-<div class="form-group">
-    {!! Form::label('privacy', 'Privacy:') !!}
-    <p>{!! $setting->privacy !!}</p>
+    {!! Form::label('description', 'Description:') !!}
+    <p>{!! $setting->description !!}</p>
 </div>
 
 <!-- Created At Field -->

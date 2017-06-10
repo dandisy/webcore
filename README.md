@@ -1,27 +1,129 @@
-# Laravel PHP Framework
+## 1. webCore Platform
+### The Concept
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+    Admin Page - UI Component - Front Page
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+1. Admin Page (CMS)
+    
+    Scope of CMS :    
+    preparing user input, and then for input data manually or by data source
+    
+2. UI Component (just a part of page)
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+    Scope of UI Component :    
+    provide reusable part of UI (complete laravel module) to glue in template of page,
+    and defining tracking configuration user interaction for personalization
+         
+    Scope of Page :    
+    to format a layout and styling its generally by incorporating a template
+    
+3. Front Page
 
-## Official Documentation
+    Scope of Front Page :    
+    provide User Experience with content personalization using Persona & Pattern
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
 
-## Contributing
+### Todo
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+1. user, role and permission
+2. page and template
+3. component
+4. personalization
 
-## Security Vulnerabilities
+5. artisan generate import excel
+6. artisan generate select2 with data from related model
+7. ui menu, like wordpress menu
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+//------------------------------------------------#
 
-## License
+## 2. Laravel Generator
+###Perspective :
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+    HUMAN
+    Interface       -   Middle Tools (Definition)   -   Executor
+    Commands\*      -   Common\* and Utils\*        -   Generators\* 
+    
+    COMPUTER
+    Interface       -   Middle Tools (Definition)   -   Executor
+    Generators\*    -   Common\* and Utils\*        -   Commands\*    
+    
+### Guidance
+
+    *   Edit : to add HTML type definition
+        Utils\HTMLFieldGenerator and ViewGenerator Generators\VueJs
+        
+### Note
+
+* Generators\* : 
+
+    - generate file with passing dynamic variables from CommandData to template
+    - rollback
+
+    use Utils\FileUtil, Common\CommandData    
+    use Utils\HTMLFieldGenerator in Generators\Scaffold\ViewGenerator
+    
+    base Generators\BaseGenerator
+
+* Common\commonData : 
+    
+    - get model spec from console, json, or table 
+    - set commandObj
+    - get config
+    - get and set option
+    - set dynamic variable
+
+    use Utils\GeneratorFieldsInputUtil, Utils\TableFieldsGenerator
+
+* Common\GeneratorConfig : 
+    
+    - load and add dynamic variables.
+    - get or load config
+    - set option
+
+* Common\GeneratorField : 
+
+    - parse parts of fields spec (db type, html input, option)
+
+* Utils\GeneratorFieldsInputUtil : 
+
+    - get fields spec from command line input
+    - prepare array
+    
+    use Common\GeneratorField
+
+* Utils\SchemaUtil : 
+
+    - create model fields schema
+
+* Utils\HTMLFieldGenerator : 
+
+    - generate html field with parameter $templateType
+    
+    use Common\GeneratorField
+
+* Utils\TableFieldsGenerator : 
+
+    - get fields spec from table
+    - detect relation from table
+    
+    use Common\GeneratorField, Common\GeneratorFieldRelation
+
+* Commands\* : 
+
+    - init commonData
+    - set model name from console to commonData
+    - execute generator function including get argument model, and options skip, save from console
+    
+    use Common\CommandData, Utils\FileUtil, Generator\* 
+    
+    base Commands\BaseCommand
+
+
+### Todo:
+
+- create function in Generators\BaseGenerator  or Commands\RollbackGeneratorCommand
+with create utils class in Utils\
+for delete table and migration data on db
+
+#
+by dandi@redbuzz.co.id

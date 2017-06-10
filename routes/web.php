@@ -18,24 +18,32 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/home', 'HomeController@index');
 
-Route::resource('menus', 'MenuController');
+    Route::resource('menus', 'MenuController');
 
-Route::resource('roles', 'RoleController');
+    Route::group(['middleware' => ['role:superadministrator|administrator']], function () {
+        Route::resource('users', 'UserController');
 
-Route::resource('permissions', 'PermissionController');
+        Route::resource('profiles', 'ProfileController');
 
-Route::resource('users', 'UserController');
+        Route::resource('settings', 'SettingController');
+    });
 
-Route::resource('posts', 'PostController');
+    Route::group(['middleware' => ['role:superadministrator']], function () {
+        Route::resource('roles', 'RoleController');
 
-Route::resource('settings', 'SettingController');
+        Route::resource('permissions', 'PermissionController');
+    });
+    
 
-Route::resource('pages', 'PageController');
+    Route::resource('posts', 'PostController');
+
+    Route::resource('pages', 'PageController');
+});
+
+Route::get('importTests', 'TestController@import');
 
 
 
-
-
-Route::resource('profiles', 'ProfileController');

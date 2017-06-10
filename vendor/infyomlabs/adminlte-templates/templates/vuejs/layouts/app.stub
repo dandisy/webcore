@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>InfyOm Generator</title>
+    <title>WebCORE Platform</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -12,8 +12,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.3/css/AdminLTE.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.3/css/skins/_all-skins.min.css">
 
+    <!-- added by dandi -->
+    <!-- include Summernote -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.css" rel="stylesheet">
+
+    <!-- include Fancybox -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" rel="stylesheet">
+    <!-- /added by dandi -->
+
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <style>
+        .main-header {
+            position: fixed;
+            width: 100%;
+        }
+        .sidebar {
+            overflow-y: auto;
+            height: 92.4vh;
+        }
+        .main-sidebar {
+            position: fixed;
+        }
+        .content-wrapper {
+            margin-top: 50px;
+        }
+    </style>
 
     @stack('vue-styles')
 </head>
@@ -27,7 +52,7 @@
 
             <!-- Logo -->
             <a href="#" class="logo">
-                <b>InfyOm</b>
+                <b>WebCORE</b>
             </a>
 
             <!-- Header Navbar -->
@@ -160,7 +185,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    InfyOm Generator
+                    WebCORE Platform
                 </a>
             </div>
 
@@ -202,12 +227,39 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/icheck.min.js"></script>
 
+    <!-- added by dandi -->
+    <!-- Summernote -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.js"></script>
+
+    <!-- Fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+    <!-- /added by dandi -->
+
     <!-- AdminLTE App -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.3/js/app.min.js"></script>
 
     <!-- Datatables -->
     <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
+
+    <!-- added by dandi -->
+    <script>
+        $(document).ready(function() {
+            $('.rte').summernote();
+
+            $('.filemanager').fancybox({
+                type : 'iframe'
+            });
+        });
+
+        // filemanager auto run when close fancybox, after select file and then insert image thumbnail
+        var OnMessage = function(data){
+            $('#' + data.appendId + '-thumb').html('<img src="' + data.thumb + '" style="width:100%">');
+            $('input[name="' + data.appendId + '"]').val(data.thumb);
+            $.fancybox.close();
+        };
+    </script>
+    <!-- /added by dandi -->
 
     @yield('scripts')
     @stack('vue-scripts')

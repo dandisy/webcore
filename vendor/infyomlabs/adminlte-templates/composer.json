@@ -1,10 +1,7 @@
 {
-    "name": "webcore/adminlte-templates",
+    "name": "infyomlabs/adminlte-templates",
     "description": "AdminLTE templates for WebCORE Dynamic CMS",
     "keywords": [
-        "webcore",
-        "dynamic",
-        "cms",
         "laravel",
         "generator",
         "adminlte",
@@ -14,8 +11,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Dandi Setiyawan",
-            "email": "dandi@redbuzz.co.id"
+            "name": "Mitul Golakiya",
+            "email": "me@mitul.me"
         }
     ],
     "require": {
