@@ -29,33 +29,6 @@ Route::resource('permissions', 'PermissionAPIController');
 
 Route::resource('settings', 'SettingAPIController');
 
-
 Route::resource('posts', 'PostAPIController');
 
 Route::resource('pages', 'PageAPIController');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -42,8 +42,3 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('pages', 'PageController');
 });
-
-Route::get('importTests', 'TestController@import');
-
-
-
