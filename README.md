@@ -27,12 +27,10 @@
 Copy and paste in terminal, just hit Enter key
 
     git clone https://github.com/dandisy/webCore.git
-    
-    cp -r vendor/infyomlabs infyomlabs
 
     composer install
     
-    mv infyomlabs vendor/infyomlabs
+    mv infyomlabs vendor
 
     cp .env.example .env
 
