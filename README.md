@@ -20,7 +20,7 @@
 3. Front Page
 
     Scope of Front Page :    
-    provide User Experience with content personalization using Persona & Pattern
+    provide User Experience with content personalization using Persona and Pattern
 
 ### Installation
 
