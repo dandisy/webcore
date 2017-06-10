@@ -26,12 +26,13 @@
 ### Todo
 
 1. user, role and permission
-2. page and template
-3. component
-4. personalization
+2. artisan generate html input (select) with data from related model
+3. page and template (front page)
+4. component (admin and front page)
 
-5. artisan generate select2 with data from related model
-7. ui menu, like wordpress menu
+5. ui menu, like wordpress menu
+
+6. personalization
 
 //------------------------------------------------#
 
@@ -120,9 +121,8 @@
 
 ### Todo:
 
-- create function in Generators\BaseGenerator  or Commands\RollbackGeneratorCommand
-with create utils class in Utils\
-for delete table and migration data on db
+- create function in Generators\BaseGenerator with create utils class in Utils\ for delete table and 
+migration data on database
 
 #
 by dandi@redbuzz.co.id
