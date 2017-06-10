@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Page
  * @package App\Models
- * @version June 7, 2017, 4:01 am UTC
+ * @version June 10, 2017, 3:44 pm UTC
  */
 class Page extends Model
 {
@@ -24,8 +24,9 @@ class Page extends Model
         'title',
         'slug',
         'content',
+        'tag',
         'status',
-        'tag'
+        'components'
     ];
 
     /**
@@ -37,8 +38,9 @@ class Page extends Model
         'title' => 'string',
         'slug' => 'string',
         'content' => 'string',
+        'tag' => 'string',
         'status' => 'string',
-        'tag' => 'string'
+        'components' => 'string'
     ];
 
     /**

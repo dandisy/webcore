@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Profile
  * @package App\Models
- * @version June 7, 2017, 5:34 am UTC
+ * @version June 10, 2017, 3:39 pm UTC
  */
 class Profile extends Model
 {
@@ -25,6 +25,8 @@ class Profile extends Model
         'type',
         'id_card_type',
         'id_card_number',
+        'other_id_card',
+        'other_id_card_number',
         'job_position',
         'address',
         'phone',
@@ -42,6 +44,8 @@ class Profile extends Model
         'type' => 'string',
         'id_card_type' => 'string',
         'id_card_number' => 'string',
+        'other_id_card' => 'string',
+        'other_id_card_number' => 'string',
         'job_position' => 'string',
         'address' => 'string',
         'phone' => 'string',

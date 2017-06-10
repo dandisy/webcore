@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\ProfileDataTable;
+use App\Http\Requests;
 use App\Http\Requests\CreateProfileRequest;
 use App\Http\Requests\UpdateProfileRequest;
 use App\Repositories\ProfileRepository;
-use App\Http\Controllers\AppBaseController;
-use Illuminate\Http\Request;
 use Flash;
-use Prettus\Repository\Criteria\RequestCriteria;
+use App\Http\Controllers\AppBaseController;
 use Response;
 
 class ProfileController extends AppBaseController
@@ -24,16 +24,12 @@ class ProfileController extends AppBaseController
     /**
      * Display a listing of the Profile.
      *
-     * @param Request $request
+     * @param ProfileDataTable $profileDataTable
      * @return Response
      */
-    public function index(Request $request)
+    public function index(ProfileDataTable $profileDataTable)
     {
-        $this->profileRepository->pushCriteria(new RequestCriteria($request));
-        $profiles = $this->profileRepository->all();
-
-        return view('profiles.index')
-            ->with('profiles', $profiles);
+        return $profileDataTable->render('profiles.index');
     }
 
     /**

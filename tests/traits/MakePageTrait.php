@@ -45,8 +45,9 @@ trait MakePageTrait
             'title' => $fake->word,
             'slug' => $fake->word,
             'content' => $fake->text,
-            'status' => $fake->word,
             'tag' => $fake->word,
+            'status' => $fake->word,
+            'components' => $fake->word,
             'created_at' => $fake->word,
             'updated_at' => $fake->word
         ], $pageFields);

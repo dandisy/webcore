@@ -21,7 +21,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" rel="stylesheet">
 
     <style>
-        /*.main-header {
+        .main-header {
             position: fixed;
             width: 100%;
         }
@@ -30,17 +30,17 @@
         }
         .content-wrapper {
             margin-top: 50px;
-        }*/
+        }
         .sidebar {
             overflow-y: auto;
-            height: 92.4vh;
+            height: 92.4vh !important;
         }
     </style>
 
     @yield('css')
 </head>
 
-<body class="skin-red sidebar-mini fixed">
+<body class="skin-red sidebar-mini">
 @if (!Auth::guest())
     <div class="wrapper">
         <!-- Main Header -->
@@ -65,7 +65,7 @@
                             <!-- Menu Toggle Button -->
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <!-- The user image in the navbar-->
-                                <img src="vendor/adminlte/dist/img/user2-160x160.jpg"
+                                <img src="{{ url('vendor/adminlte/dist/img/user2-160x160.jpg') }}"
                                      class="user-image" alt="User Image"/>
                                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
                                 <span class="hidden-xs">{!! Auth::user()->name !!}</span>
@@ -73,7 +73,7 @@
                             <ul class="dropdown-menu">
                                 <!-- The user image in the menu -->
                                 <li class="user-header">
-                                    <img src="vendor/adminlte/dist/img/user2-160x160.jpg"
+                                    <img src="{{ url('vendor/adminlte/dist/img/user2-160x160.jpg') }}"
                                          class="img-circle" alt="User Image"/>
                                     <p>
                                         {!! Auth::user()->name !!}
@@ -183,6 +183,8 @@
             $('.filemanager').fancybox({
                 type : 'iframe'
             });
+            
+            $(".select2").select2();
         });
 
         // filemanager auto run when close fancybox, after select file and then insert image thumbnail

@@ -6,15 +6,15 @@ use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class Post
+ * Class Component
  * @package App\Models
- * @version June 7, 2017, 3:39 am UTC
+ * @version June 10, 2017, 3:46 pm UTC
  */
-class Post extends Model
+class Component extends Model
 {
     use SoftDeletes;
 
-    public $table = 'posts';
+    public $table = 'components';
     
 
     protected $dates = ['deleted_at'];
@@ -22,12 +22,8 @@ class Post extends Model
 
     public $fillable = [
         'title',
-        'slug',
-        'content',
-        'tag',
-        'status',
-        'category',
-        'Cover'
+        'description',
+        'module'
     ];
 
     /**
@@ -37,12 +33,8 @@ class Post extends Model
      */
     protected $casts = [
         'title' => 'string',
-        'slug' => 'string',
-        'content' => 'string',
-        'tag' => 'string',
-        'status' => 'string',
-        'category' => 'string',
-        'Cover' => 'string'
+        'description' => 'string',
+        'module' => 'string'
     ];
 
     /**
@@ -52,10 +44,7 @@ class Post extends Model
      */
     public static $rules = [
         'title' => 'required',
-        'slug' => 'required',
-        'content' => 'required',
-        'status' => 'required',
-        'category' => 'required'
+        'module' => 'required'
     ];
 
     

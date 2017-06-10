@@ -46,6 +46,8 @@ trait MakeProfileTrait
             'type' => $fake->word,
             'id_card_type' => $fake->word,
             'id_card_number' => $fake->word,
+            'other_id_card' => $fake->word,
+            'other_id_card_number' => $fake->word,
             'job_position' => $fake->word,
             'address' => $fake->text,
             'phone' => $fake->word,

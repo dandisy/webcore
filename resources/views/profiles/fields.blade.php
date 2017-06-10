@@ -2,7 +2,7 @@
 <div class="form-group col-sm-6">
     {!! Form::label('image', 'Image:') !!}
     <div id="image-thumb"></div>
-    {!! Form::text('image', null, ['readonly' => 'readonly']) !!}
+    {!! Form::text('image', null, ['class' => 'form-control', 'readonly' => 'readonly']) !!}
     <div class="text-right" style="margin-top: 5px">
         <a href="{!! url('assets/dialog?filter=all&appendId=image') !!}" class="btn btn-primary filemanager fancybox.iframe" data-fancybox-type="iframe">Choose File</a>
     </div>
@@ -12,7 +12,7 @@
 <!-- Type Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('type', 'Type:') !!}
-    {!! Form::select('type', ['1' => 'individu', '2' => 'organisation', '3' => 'corporation'], null, ['class' => 'form-control']) !!}
+    {!! Form::select('type', ['1' => 'individu', '2' => 'organisation', '3' => 'corporation'], null, ['class' => 'form-control select2']) !!}
 </div>
 
 <!-- Id Card Type Field -->
@@ -25,6 +25,18 @@
 <div class="form-group col-sm-6">
     {!! Form::label('id_card_number', 'Id Card Number:') !!}
     {!! Form::text('id_card_number', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Other Id Card Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('other_id_card', 'Other Id Card:') !!}
+    {!! Form::text('other_id_card', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Other Id Card Number Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('other_id_card_number', 'Other Id Card Number:') !!}
+    {!! Form::text('other_id_card_number', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Job Position Field -->

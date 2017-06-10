@@ -13,9 +13,9 @@ class PageRepository extends BaseRepository
     protected $fieldSearchable = [
         'title',
         'slug',
-        'content',
+        'tag',
         'status',
-        'tag'
+        'components'
     ];
 
     /**

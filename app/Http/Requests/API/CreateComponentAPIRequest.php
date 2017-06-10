@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\API;
 
-use Illuminate\Foundation\Http\FormRequest;
-use App\Models\Post;
+use App\Models\Component;
+use InfyOm\Generator\Request\APIRequest;
 
-class CreatePostRequest extends FormRequest
+class CreateComponentAPIRequest extends APIRequest
 {
-
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -25,6 +24,6 @@ class CreatePostRequest extends FormRequest
      */
     public function rules()
     {
-        return Post::$rules;
+        return Component::$rules;
     }
 }

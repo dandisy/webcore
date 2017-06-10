@@ -28,6 +28,18 @@
     <p>{!! $profile->id_card_number !!}</p>
 </div>
 
+<!-- Other Id Card Field -->
+<div class="form-group">
+    {!! Form::label('other_id_card', 'Other Id Card:') !!}
+    <p>{!! $profile->other_id_card !!}</p>
+</div>
+
+<!-- Other Id Card Number Field -->
+<div class="form-group">
+    {!! Form::label('other_id_card_number', 'Other Id Card Number:') !!}
+    <p>{!! $profile->other_id_card_number !!}</p>
+</div>
+
 <!-- Job Position Field -->
 <div class="form-group">
     {!! Form::label('job_position', 'Job Position:') !!}

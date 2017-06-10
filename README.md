@@ -22,11 +22,37 @@
     Scope of Front Page :    
     provide User Experience with content personalization using Persona & Pattern
 
+### Installation
+
+Copy and paste in terminal, just hit Enter key
+
+    git clone https://github.com/dandisy/webCore.git
+
+    composer install
+
+    cp .env.example .env
+
+Configure your server using your favorite editor, example copy and paste this in terminal, 
+hit Enter key, then edit .env contents
+
+    sudo nano .env
+
+Again copy and paste in terminal, and hit Enter key
+
+    php artisan key:generate
+
+    php artisan migrate --seed
+
+then get it all on browser,
 
 ### Todo
 
 1. user, role and permission
 2. artisan generate html input (select) with data from related model
+    - define field option, 
+    - add get option in Common\GeneratorField, 
+    - add htmlvalue in Utils\HTMLFieldGenerator - and passing to template,
+    - insert get repository in controller create and edit generator
 3. page and template (front page)
 4. component (admin and front page)
 

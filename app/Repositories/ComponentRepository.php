@@ -2,22 +2,17 @@
 
 namespace App\Repositories;
 
-use App\Models\Post;
+use App\Models\Component;
 use InfyOm\Generator\Common\BaseRepository;
 
-class PostRepository extends BaseRepository
+class ComponentRepository extends BaseRepository
 {
     /**
      * @var array
      */
     protected $fieldSearchable = [
         'title',
-        'slug',
-        'content',
-        'tag',
-        'status',
-        'category',
-        'Cover'
+        'module'
     ];
 
     /**
@@ -25,6 +20,6 @@ class PostRepository extends BaseRepository
      **/
     public function model()
     {
-        return Post::class;
+        return Component::class;
     }
 }
