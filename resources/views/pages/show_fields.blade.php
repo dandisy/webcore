@@ -22,16 +22,22 @@
     <p>{!! $page->content !!}</p>
 </div>
 
+<!-- Tag Field -->
+<div class="form-group">
+    {!! Form::label('tag', 'Tag:') !!}
+    <p>{!! $page->tag !!}</p>
+</div>
+
 <!-- Status Field -->
 <div class="form-group">
     {!! Form::label('status', 'Status:') !!}
     <p>{!! $page->status !!}</p>
 </div>
 
-<!-- Tag Field -->
+<!-- Components Field -->
 <div class="form-group">
-    {!! Form::label('tag', 'Tag:') !!}
-    <p>{!! $page->tag !!}</p>
+    {!! Form::label('components', 'Components:') !!}
+    <p>{!! $page->components !!}</p>
 </div>
 
 <!-- Created At Field -->

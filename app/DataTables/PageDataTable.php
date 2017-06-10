@@ -2,11 +2,11 @@
 
 namespace App\DataTables;
 
-use App\Models\CashIn;
+use App\Models\Page;
 use Form;
 use Yajra\Datatables\Services\DataTable;
 
-class CashInDataTable extends DataTable
+class PageDataTable extends DataTable
 {
 
     /**
@@ -16,7 +16,7 @@ class CashInDataTable extends DataTable
     {
         return $this->datatables
             ->eloquent($this->query())
-            ->addColumn('action', 'cash_ins.datatables_actions')
+            ->addColumn('action', 'pages.datatables_actions')
             ->make(true);
     }
 
@@ -27,9 +27,9 @@ class CashInDataTable extends DataTable
      */
     public function query()
     {
-        $cashIns = CashIn::query();
+        $pages = Page::query();
 
-        return $this->applyScopes($cashIns);
+        return $this->applyScopes($pages);
     }
 
     /**
@@ -72,10 +72,12 @@ class CashInDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'sumber_dana' => ['name' => 'sumber_dana', 'data' => 'sumber_dana'],
-            'jumlah' => ['name' => 'jumlah', 'data' => 'jumlah'],
-            'tanggal' => ['name' => 'tanggal', 'data' => 'tanggal'],
-            'keterangan' => ['name' => 'keterangan', 'data' => 'keterangan']
+            'title' => ['name' => 'title', 'data' => 'title'],
+            'slug' => ['name' => 'slug', 'data' => 'slug'],
+            'content' => ['name' => 'content', 'data' => 'content'],
+            'tag' => ['name' => 'tag', 'data' => 'tag'],
+            'status' => ['name' => 'status', 'data' => 'status'],
+            'components' => ['name' => 'components', 'data' => 'components']
         ];
     }
 
@@ -86,6 +88,6 @@ class CashInDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'cashIns';
+        return 'pages';
     }
 }

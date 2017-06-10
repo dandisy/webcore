@@ -3,15 +3,15 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Post
+            Component
         </h1>
     </section>
     <div class="content">
         <div class="box box-primary">
             <div class="box-body">
                 <div class="row" style="padding-left: 20px">
-                    @include('posts.show_fields')
-                    <a href="{!! route('posts.index') !!}" class="btn btn-default">Back</a>
+                    @include('components.show_fields')
+                    <a href="{!! route('components.index') !!}" class="btn btn-default">Back</a>
                 </div>
             </div>
         </div>

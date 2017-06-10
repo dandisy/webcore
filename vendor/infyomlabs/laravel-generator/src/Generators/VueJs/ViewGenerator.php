@@ -116,7 +116,7 @@ class ViewGenerator extends BaseGenerator
                 case 'select':
 
                 // added by dandi
-                case 'select-multi':
+                case 'select-multiple':
 
                 case 'enum':
                     $fieldTemplate = get_template('vuejs.fields.select', $this->templateType);

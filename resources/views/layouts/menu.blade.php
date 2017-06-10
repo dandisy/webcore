@@ -10,8 +10,8 @@
     <a href="{!! route('pages.index') !!}"><i class="fa fa-sticky-note"></i><span>Pages</span></a>
 </li>
 
-<li class="{{ Request::is('posts*') ? 'active' : '' }}">
-    <a href="{!! route('posts.index') !!}"><i class="fa fa-pencil-square"></i><span>Posts</span></a>
+<li class="{{ Request::is('components*') ? 'active' : '' }}">
+    <a href="{!! route('components.index') !!}"><i class="fa fa-puzzle-piece"></i><span>Components</span></a>
 </li>
 
 <li class="header">ARRANGE</li>
@@ -28,6 +28,10 @@
 
 <li class="{{ Request::is('users*') ? 'active' : '' }}">
     <a href="{!! route('users.index') !!}"><i class="fa fa-users"></i><span>Users</span></a>
+</li>
+
+<li class="{{ Request::is('profiles*') ? 'active' : '' }}">
+    <a href="{!! route('profiles.index') !!}"><i class="fa fa-newspaper-o"></i><span>Profiles</span></a>
 </li>
 
 <li class="{{ Request::is('roles*') ? 'active' : '' }}">

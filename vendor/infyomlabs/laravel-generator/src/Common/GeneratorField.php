@@ -47,6 +47,7 @@ class GeneratorField
 
         $inputsArr = explode(',', $htmlInput);
 
+        // for remove first element of array, which is the htmltype. commenting by dandi
         $this->htmlType = array_shift($inputsArr);
 
         if (count($inputsArr) > 0) {

@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\PageDataTable;
+use App\Http\Requests;
 use App\Http\Requests\CreatePageRequest;
 use App\Http\Requests\UpdatePageRequest;
 use App\Repositories\PageRepository;
-use App\Http\Controllers\AppBaseController;
-use Illuminate\Http\Request;
 use Flash;
-use Prettus\Repository\Criteria\RequestCriteria;
+use App\Http\Controllers\AppBaseController;
 use Response;
 
 class PageController extends AppBaseController
@@ -24,16 +24,12 @@ class PageController extends AppBaseController
     /**
      * Display a listing of the Page.
      *
-     * @param Request $request
+     * @param PageDataTable $pageDataTable
      * @return Response
      */
-    public function index(Request $request)
+    public function index(PageDataTable $pageDataTable)
     {
-        $this->pageRepository->pushCriteria(new RequestCriteria($request));
-        $pages = $this->pageRepository->all();
-
-        return view('pages.index')
-            ->with('pages', $pages);
+        return $pageDataTable->render('pages.index');
     }
 
     /**

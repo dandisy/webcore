@@ -157,7 +157,7 @@ class $MODEL_NAME$Controller extends AppBaseController
     {
         Excel::load($request->file('file'), function($reader) {
             $reader->each(function ($item) {
-                $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repository->create($item);
+                $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repository->create($item->toArray());
             });
         });
 

@@ -33,7 +33,16 @@ class HTMLFieldGenerator
             case 'select':
 
             // added by dandi
-            case 'select-multi':
+            case 'select-multiple':
+                $fieldTemplate = get_template('scaffold.fields.'.$field->htmlType, $templateType);
+                $optionLabels = GeneratorFieldsInputUtil::prepareKeyValueArrFromLabelValueStr($field->htmlValues);
+
+                $fieldTemplate = str_replace(
+                    '$INPUT_ARR$',
+                    GeneratorFieldsInputUtil::prepareKeyValueArrayStr($optionLabels),
+                    $fieldTemplate
+                );
+                break;
 
             case 'enum':
                 $fieldTemplate = get_template('scaffold.fields.select', $templateType);

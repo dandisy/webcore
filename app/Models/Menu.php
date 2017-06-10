@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Menu
  * @package App\Models
- * @version June 5, 2017, 10:02 am UTC
+ * @version June 10, 2017, 3:32 pm UTC
  */
 class Menu extends Model
 {

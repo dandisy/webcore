@@ -16,16 +16,16 @@
     {!! Form::textarea('content', null, ['class' => 'form-control rte']) !!}
 </div>
 
-<!-- Status Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('status', 'Status:') !!}
-    {!! Form::select('status', ['1' => 'pending', '2' => 'publish'], null, ['class' => 'form-control']) !!}
-</div>
-
 <!-- Tag Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('tag', 'Tag:') !!}
     {!! Form::text('tag', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Status Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('status', 'Status:') !!}
+    {!! Form::select('status', ['1' => 'pending', '2' => 'publish'], null, ['class' => 'form-control select2']) !!}
 </div>
 
 <!-- Submit Field -->

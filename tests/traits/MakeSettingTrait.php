@@ -42,12 +42,9 @@ trait MakeSettingTrait
         $fake = Faker::create();
 
         return array_merge([
-            'icon' => $fake->word,
-            'title' => $fake->word,
-            'tagline' => $fake->word,
-            'keyword' => $fake->word,
-            'timezone' => $fake->word,
-            'privacy' => $fake->word,
+            'key' => $fake->word,
+            'value' => $fake->word,
+            'description' => $fake->text,
             'created_at' => $fake->word,
             'updated_at' => $fake->word
         ], $settingFields);

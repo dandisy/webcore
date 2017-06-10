@@ -14,6 +14,8 @@ class ProfileRepository extends BaseRepository
         'type',
         'id_card_type',
         'id_card_number',
+        'other_id_card',
+        'other_id_card_number',
         'job_position',
         'address',
         'phone',

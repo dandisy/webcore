@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\MenuDataTable;
+use App\Http\Requests;
 use App\Http\Requests\CreateMenuRequest;
 use App\Http\Requests\UpdateMenuRequest;
 use App\Repositories\MenuRepository;
-use App\Http\Controllers\AppBaseController;
-use Illuminate\Http\Request;
 use Flash;
-use Prettus\Repository\Criteria\RequestCriteria;
+use App\Http\Controllers\AppBaseController;
 use Response;
 
 class MenuController extends AppBaseController
@@ -24,16 +24,12 @@ class MenuController extends AppBaseController
     /**
      * Display a listing of the Menu.
      *
-     * @param Request $request
+     * @param MenuDataTable $menuDataTable
      * @return Response
      */
-    public function index(Request $request)
+    public function index(MenuDataTable $menuDataTable)
     {
-        $this->menuRepository->pushCriteria(new RequestCriteria($request));
-        $menus = $this->menuRepository->all();
-
-        return view('menus.index')
-            ->with('menus', $menus);
+        return $menuDataTable->render('menus.index');
     }
 
     /**
