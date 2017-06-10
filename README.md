@@ -30,8 +30,7 @@
 3. component
 4. personalization
 
-5. artisan generate import excel
-6. artisan generate select2 with data from related model
+5. artisan generate select2 with data from related model
 7. ui menu, like wordpress menu
 
 //------------------------------------------------#
