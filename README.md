@@ -29,13 +29,15 @@ Copy and paste in terminal, just hit Enter key
     git clone https://github.com/dandisy/webCore.git
 
     composer install
+
+    rm -r vendor/infyomlabs
     
     mv infyomlabs vendor
 
     cp .env.example .env
 
-Configure your server using your favorite editor, example copy and paste this in terminal, 
-hit Enter key, then edit .env contents
+Make sure your server, create "core" database, edit .env using your favorite editor, 
+for example using nano editor copy and paste this in terminal, and hit Enter key
 
     sudo nano .env
 
