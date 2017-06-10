@@ -9,6 +9,7 @@ use $NAMESPACE_APP$\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
+use Maatwebsite\Excel\Facades\Excel;
 use Response;
 
 class $MODEL_NAME$Controller extends AppBaseController

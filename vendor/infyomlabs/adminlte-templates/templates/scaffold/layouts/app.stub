@@ -189,6 +189,8 @@
             $('.filemanager').fancybox({
                 type : 'iframe'
             });
+
+            $(".select2").select2();
         });
 
         // filemanager auto run when close fancybox, after select file and then insert image thumbnail
