@@ -15,7 +15,7 @@
     and defining tracking configuration user interaction for personalization
          
     Scope of Page :    
-    to format a layout and styling its generally by incorporating a template
+    layout and styling UI Component generally to be a Page by incorporating a template
     
 3. Front Page
 
@@ -24,7 +24,7 @@
 
 ### Installation
 
-Copy and paste in terminal, just hit Enter key
+Copy and paste in terminal line by line, just hit Enter key
 
     git clone https://github.com/dandisy/webCore.git
 
@@ -41,13 +41,13 @@ for example using nano editor copy and paste this in terminal, and hit Enter key
 
     sudo nano .env
 
-Again copy and paste in terminal, and hit Enter key
+Again copy and paste in terminal line by line, and hit Enter key
 
     php artisan key:generate
 
     php artisan migrate --seed
 
-then get it all on browser,
+then get it all on your favorite browser,
 
 ### Todo
 
@@ -79,12 +79,12 @@ then get it all on browser,
     
 ### Guidance
 
-    *   Edit : to add HTML type definition
+    *   To add HTML type definition, edit this :
         Utils\HTMLFieldGenerator and ViewGenerator Generators\VueJs
         
 ### Note
 
-* Generators\* : 
+* Generators\\* : 
 
     - generate file with passing dynamic variables from CommandData to template
     - rollback
@@ -138,7 +138,7 @@ then get it all on browser,
     
     use Common\GeneratorField, Common\GeneratorFieldRelation
 
-* Commands\* : 
+* Commands\\* : 
 
     - init commonData
     - set model name from console to commonData
