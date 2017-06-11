@@ -32,7 +32,7 @@ Copy and paste in terminal line by line, just hit Enter key
 
     rm -r vendor/infyomlabs
     
-    mv infyomlabs vendor
+    cp -r infyomlabs vendor
 
     cp .env.example .env
 
