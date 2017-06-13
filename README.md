@@ -154,5 +154,22 @@ then get it all on your favorite browser,
 - create function in Generators\BaseGenerator with create utils class in Utils\ for delete table and 
 migration data on database
 
+//------------------------------------------------#
+
+### References
+
+    * infyomlabs/laravel-generator
+    * santigarcor/laratrust
+    * tymon/jwt-auth
+    * infinety-es/filemanager
+    * barryvdh/laravel-debugbar
+    * nwidart/laravel-modules
+    * seguce92/laravel-dompdf
+    * maatwebsite/excel
+    * teepluss/laravel-theme
+    * arrilot/laravel-widgets
+    * khill/lavacharts
+    * reportico-web/laravel-reportico
+
 #
 by dandi@redbuzz.co.id

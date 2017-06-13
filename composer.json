@@ -21,7 +21,11 @@
         "barryvdh/laravel-debugbar": "^2.3",
         "nwidart/laravel-modules": "^1.21",
         "seguce92/laravel-dompdf": "^1.4",
-        "maatwebsite/excel": "~2.1.0"
+        "maatwebsite/excel": "~2.1.0",
+        "teepluss/theme": "^2.0",
+        "lavary/laravel-menu": "^1.6",
+        "arrilot/laravel-widgets": "^3.7",
+        "khill/lavacharts": "3.0.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
