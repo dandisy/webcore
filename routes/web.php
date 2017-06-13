@@ -26,8 +26,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::group(['middleware' => ['role:superadministrator|administrator']], function () {
         Route::resource('users', 'UserController');
 
-        Route::resource('profiles', 'ProfileController');
-
         Route::resource('settings', 'SettingController');
     });
 

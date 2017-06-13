@@ -21,8 +21,6 @@ Route::resource('menus', 'MenuAPIController');
 
 Route::resource('users', 'UserAPIController');
 
-Route::resource('profiles', 'ProfileAPIController');
-
 Route::resource('roles', 'RoleAPIController');
 
 Route::resource('permissions', 'PermissionAPIController');
