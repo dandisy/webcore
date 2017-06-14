@@ -26,10 +26,13 @@
     <a href="{!! url('assets') !!}"><i class="fa fa-folder-open"></i><span>Assets</span></a>
 </li>
 
+@role(['superadministrator','administrator'])
 <li class="{{ Request::is('users*') ? 'active' : '' }}">
     <a href="{!! route('users.index') !!}"><i class="fa fa-users"></i><span>Users</span></a>
 </li>
+@endrole
 
+@role('superadministrator')
 <li class="{{ Request::is('roles*') ? 'active' : '' }}">
     <a href="{!! route('roles.index') !!}"><i class="fa fa-road"></i><span>Roles</span></a>
 </li>
@@ -37,9 +40,12 @@
 <li class="{{ Request::is('permissions*') ? 'active' : '' }}">
     <a href="{!! route('permissions.index') !!}"><i class="fa fa-ticket"></i><span>Permissions</span></a>
 </li>
+@endrole
 
+@role(['superadministrator','administrator'])
 <li class="header">CONFIGURE</li>
 
 <li class="{{ Request::is('settings*') ? 'active' : '' }}">
     <a href="{!! route('settings.index') !!}"><i class="fa fa-cog"></i><span>Settings</span></a>
 </li>
+@endrole
