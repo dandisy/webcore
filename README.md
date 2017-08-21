@@ -51,18 +51,18 @@ then get it all on your favorite browser,
 
 ### Todo
 
-1. user, role and permission
-2. artisan generate html input (select) with data from related model
+1. GUI for manage Admin Menu
+2. GUI for define form
+3. GUI fot create widget component
+3. artisan generate html input (select) with data from related model
     - define field option, 
     - add get option in Common\GeneratorField, 
     - add htmlvalue in Utils\HTMLFieldGenerator - and passing to template,
     - insert get repository in controller create and edit generator
-3. page and template (front page)
-4. component (admin and front page)
 
-5. ui menu, like wordpress menu
+4. ui menu, like wordpress menu
 
-6. personalization
+5. personalization
 
 //------------------------------------------------#
 

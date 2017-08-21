@@ -1,1 +1,0 @@
-<header>Header Glamor</header>

@@ -33,9 +33,9 @@
     <a href="{!! route('roles.index') !!}"><i class="fa fa-road"></i><span>Roles</span></a>
 </li>
 
-<li class="{{ Request::is('permissions*') ? 'active' : '' }}">
+{{--<li class="{{ Request::is('permissions*') ? 'active' : '' }}">
     <a href="{!! route('permissions.index') !!}"><i class="fa fa-ticket"></i><span>Permissions</span></a>
-</li>
+</li>--}}
 @endrole
 
 @role(['superadministrator','administrator'])

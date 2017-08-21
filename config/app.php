@@ -181,6 +181,8 @@ return [
         Seguce92\DomPDF\ServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Khill\Lavacharts\Laravel\LavachartsServiceProvider::class,
+        Nestable\NestableServiceProvider::class,
+        Arrilot\Widgets\ServiceProvider::class,
         
         /*
          * Application Service Providers...
@@ -248,6 +250,9 @@ return [
         'PDF' => Seguce92\DomPDF\Facade::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'Chart' => Khill\Lavacharts\Laravel\LavachartsFacade::class,
+        'Nestable' => Nestable\Facades\NestableService::class,
+        'Widget' => Arrilot\Widgets\Facade::class,
+        'AsyncWidget' => Arrilot\Widgets\AsyncFacade::class,
     ],
 
 ];
