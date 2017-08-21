@@ -156,7 +156,7 @@ migration data on database
 
 //------------------------------------------------#
 
-### References
+### Dependency
 
     * infyomlabs/laravel-generator
     * santigarcor/laratrust
@@ -178,7 +178,7 @@ migration data on database
 
 //------------------------------------------------#
 
-### Dependency
+### List of Packages
 
     * infyomlabs/laravel-generator
         - laracasts/flash
