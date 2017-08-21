@@ -14,8 +14,7 @@ class PageRepository extends BaseRepository
         'title',
         'slug',
         'tag',
-        'status',
-        'components'
+        'status'
     ];
 
     /**

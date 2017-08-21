@@ -169,8 +169,6 @@ migration data on database
     * maatwebsite/excel
     * arrilot/laravel-widgets
     * khill/lavacharts
-    
-    new
     * spatie/laravel-activitylog
 
     For theme use :
@@ -231,8 +229,8 @@ migration data on database
             - phpseclib/phpseclib
         - nesbot/carbon
             - symfony/translation
-
-    * arrilot/laravel-widgets -> OPTIONAL
+    * arrilot/laravel-widgets
+    
     * lavary/laravel-menu -> OPTIONAL
 
 #

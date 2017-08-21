@@ -20,7 +20,6 @@ class CreatePagesTable extends Migration
             $table->text('content');
             $table->string('tag');
             $table->string('status');
-            $table->string('components');
             $table->timestamps();
             $table->softDeletes();
         });

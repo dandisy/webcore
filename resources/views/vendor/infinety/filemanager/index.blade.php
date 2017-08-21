@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('admin.layouts.default')
 
 @section('styles')
     <meta name="csrf-token" content="{{ csrf_token() }}">

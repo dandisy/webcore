@@ -17,12 +17,12 @@
         "doctrine/dbal": "~2.3",
         "santigarcor/laratrust": "3.2.*",
         "tymon/jwt-auth": "0.5.*",
+        "atayahmet/laravel-nestable": "^0.8.0",
         "infinety-es/filemanager": "^2.2",
         "barryvdh/laravel-debugbar": "^2.3",
         "nwidart/laravel-modules": "^1.21",
         "seguce92/laravel-dompdf": "^1.4",
         "maatwebsite/excel": "~2.1.0",
-        "atayahmet/laravel-nestable": "^0.8.0",
         "arrilot/laravel-widgets": "^3.7",
         "khill/lavacharts": "3.0.*",
         "spatie/laravel-activitylog": "^1.15"

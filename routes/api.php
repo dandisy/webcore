@@ -28,7 +28,3 @@ Route::resource('permissions', 'PermissionAPIController');
 Route::resource('settings', 'SettingAPIController');
 
 Route::resource('pages', 'PageAPIController');
-
-Route::resource('components', 'ComponentAPIController');
-
-Route::resource('tests', 'TestAPIController');

@@ -66,17 +66,6 @@
         "inIndex": true
     },
     {
-        "name": "components",
-        "dbType": "string",
-        "htmlType": "select-multi,component1:1,component2:2,component3:3",
-        "validations": "",
-        "searchable": true,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": true
-    },
-    {
         "name": "created_at",
         "dbType": "timestamp",
         "htmlType": null,

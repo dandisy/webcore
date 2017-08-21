@@ -74,10 +74,7 @@ class PageDataTable extends DataTable
         return [
             'title' => ['name' => 'title', 'data' => 'title'],
             'slug' => ['name' => 'slug', 'data' => 'slug'],
-            'content' => ['name' => 'content', 'data' => 'content'],
-            'tag' => ['name' => 'tag', 'data' => 'tag'],
-            'status' => ['name' => 'status', 'data' => 'status'],
-            'components' => ['name' => 'components', 'data' => 'components']
+            'status' => ['name' => 'status', 'data' => 'status']
         ];
     }
 

@@ -10,10 +10,6 @@
     <a href="{!! route('pages.index') !!}"><i class="fa fa-sticky-note"></i><span>Pages</span></a>
 </li>
 
-<li class="{{ Request::is('components*') ? 'active' : '' }}">
-    <a href="{!! route('components.index') !!}"><i class="fa fa-puzzle-piece"></i><span>Components</span></a>
-</li>
-
 <li class="header">ARRANGE</li>
 
 <li class="{{ Request::is('menus*') ? 'active' : '' }}">
@@ -48,7 +44,5 @@
 <li class="{{ Request::is('settings*') ? 'active' : '' }}">
     <a href="{!! route('settings.index') !!}"><i class="fa fa-cog"></i><span>Settings</span></a>
 </li>
-@endrole<li class="{{ Request::is('tests*') ? 'active' : '' }}">
-    <a href="{!! route('tests.index') !!}"><i class="fa fa-edit"></i><span>Tests</span></a>
-</li>
+@endrole
 
