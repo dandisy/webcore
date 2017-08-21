@@ -74,9 +74,8 @@ class MenuDataTable extends DataTable
         return [
             'label' => ['name' => 'label', 'data' => 'label'],
             'link' => ['name' => 'link', 'data' => 'link'],
-            'group' => ['name' => 'group', 'data' => 'group'],
             'parent' => ['name' => 'parent', 'data' => 'parent'],
-            'order' => ['name' => 'order', 'data' => 'order']
+            'group' => ['name' => 'group', 'data' => 'group']
         ];
     }
 

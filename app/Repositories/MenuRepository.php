@@ -13,9 +13,8 @@ class MenuRepository extends BaseRepository
     protected $fieldSearchable = [
         'label',
         'link',
-        'group',
         'parent',
-        'order'
+        'group'
     ];
 
     /**

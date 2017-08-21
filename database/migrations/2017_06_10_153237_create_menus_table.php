@@ -17,9 +17,8 @@ class CreateMenusTable extends Migration
             $table->increments('id');
             $table->string('label');
             $table->string('link');
-            $table->string('group');
             $table->string('parent');
-            $table->string('order');
+            $table->string('group');
             $table->timestamps();
             $table->softDeletes();
         });

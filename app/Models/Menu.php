@@ -23,9 +23,8 @@ class Menu extends Model
     public $fillable = [
         'label',
         'link',
-        'group',
         'parent',
-        'order'
+        'group'
     ];
 
     /**
@@ -36,9 +35,8 @@ class Menu extends Model
     protected $casts = [
         'label' => 'string',
         'link' => 'string',
-        'group' => 'string',
         'parent' => 'string',
-        'order' => 'string'
+        'group' => 'string'
     ];
 
     /**
@@ -49,9 +47,8 @@ class Menu extends Model
     public static $rules = [
         'label' => 'required',
         'link' => 'required',
-        'group' => 'required',
         'parent' => 'required',
-        'order' => 'required'
+        'group' => 'required'
     ];
 
     
