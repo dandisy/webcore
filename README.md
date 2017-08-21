@@ -161,15 +161,79 @@ migration data on database
     * infyomlabs/laravel-generator
     * santigarcor/laratrust
     * tymon/jwt-auth
+    * atayahmet/laravel-nestable
     * infinety-es/filemanager
     * barryvdh/laravel-debugbar
     * nwidart/laravel-modules
     * seguce92/laravel-dompdf
     * maatwebsite/excel
-    * teepluss/laravel-theme
     * arrilot/laravel-widgets
     * khill/lavacharts
-    * reportico-web/laravel-reportico
+    
+    new
+    * spatie/laravel-activitylog
+
+    For theme use :
+    facuz/laravel-themes based on thinhbuzz/laravel-theme
+    or yaapis/Theme
+    instead teepluss/laravel-theme
+
+//------------------------------------------------#
+
+### Dependency
+
+    * infyomlabs/laravel-generator
+        - laracasts/flash
+        - prettus/l5-repository
+            - prettus/laravel-validation
+    * barryvdh/laravel-ide-helper
+        - barryvdh/reflection-docblock
+        - symfony/class-loader
+    * jlapp/swaggervel
+        - zircote/swagger-php
+            - doctrine/annotations
+            - symfony/finder
+    * yajra/laravel-datatables-oracle
+        - league/fractal
+        - laravelcollective/html
+        - maatwebsite/excel
+            - phpoffice/phpexcel
+            - tijsverkoyen/css-to-inline-styles
+                - symfony/css-selector
+            - nesbot/carbon
+                - symfony/translation
+        - dompdf/dompdf
+            - phenx/php-font-lib
+            - phenx/php-svg-lib
+    * barryvdh/laravel-debugbar
+        - maximebf/debugbar
+            - symfony/var-dumper
+            - psr/log
+        - symfony/finder
+    * santigarcor/laratrust
+        - kkszymanowski/traitor
+            - nikic/php-parser
+    * teepluss/laravel-theme
+        - twig/twig
+    * atayahmet/laravel-nestable
+    * nwidart/laravel-modules
+    * infinety-es/filemanager
+        - chumper/zipper
+    * seguce92/laravel-dompdf
+        - dompdf/dompdf
+            - phenx/php-font-lib
+            - phenx/php-svg-lib
+    * khill/lavacharts
+        - nesbot/carbon
+            - symfony/translation
+    * tymon/jwt-auth
+        - namshi/jose
+            - phpseclib/phpseclib
+        - nesbot/carbon
+            - symfony/translation
+
+    * arrilot/laravel-widgets -> OPTIONAL
+    * lavary/laravel-menu -> OPTIONAL
 
 #
 by dandi@redbuzz.co.id

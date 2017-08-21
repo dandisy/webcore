@@ -32,7 +32,6 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
 
             // Costumes middleware
-            \App\Http\Middleware\MenuManager::class,
         ],
 
         'api' => [

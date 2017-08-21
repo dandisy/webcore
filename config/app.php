@@ -180,9 +180,6 @@ return [
         Nwidart\Modules\LaravelModulesServiceProvider::class,
         Seguce92\DomPDF\ServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
-        Teepluss\Theme\ThemeServiceProvider::class,
-        Lavary\Menu\ServiceProvider::class,
-        Arrilot\Widgets\ServiceProvider::class,
         Khill\Lavacharts\Laravel\LavachartsServiceProvider::class,
         
         /*
@@ -250,10 +247,6 @@ return [
         'Module' => Nwidart\Modules\Facades\Module::class,
         'PDF' => Seguce92\DomPDF\Facade::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
-        'Theme' => Teepluss\Theme\Facades\Theme::class,
-        'Menu' => Lavary\Menu\Facade::class,
-        'Widget' => Arrilot\Widgets\Facade::class,
-        'AsyncWidget' => Arrilot\Widgets\AsyncFacade::class,
         'Chart' => Khill\Lavacharts\Laravel\LavachartsFacade::class,
     ],
 

@@ -6,15 +6,15 @@ use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class Page
+ * Class Test
  * @package App\Models
- * @version June 10, 2017, 3:44 pm UTC
+ * @version August 21, 2017, 9:15 am UTC
  */
-class Page extends Model
+class Test extends Model
 {
     use SoftDeletes;
 
-    public $table = 'pages';
+    public $table = 'tests';
     
 
     protected $dates = ['deleted_at'];
@@ -22,11 +22,7 @@ class Page extends Model
 
     public $fillable = [
         'title',
-        'slug',
-        'content',
-        'tag',
-        'status',
-        'created_by'
+        'description'
     ];
 
     /**
@@ -36,11 +32,7 @@ class Page extends Model
      */
     protected $casts = [
         'title' => 'string',
-        'slug' => 'string',
-        'content' => 'string',
-        'tag' => 'string',
-        'status' => 'string',
-        'created_by' => 'integer'
+        'description' => 'string'
     ];
 
     /**
@@ -49,10 +41,7 @@ class Page extends Model
      * @var array
      */
     public static $rules = [
-        'title' => 'required',
-        'slug' => 'required',
-        'content' => 'required',
-        'status' => 'required'
+        
     ];
 
     

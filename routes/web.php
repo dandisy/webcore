@@ -39,3 +39,6 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('components', 'ComponentController');
 });
+
+Route::resource('tests', 'TestController');
+Route::post('importTest', 'TestController@import');
