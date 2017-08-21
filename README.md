@@ -53,7 +53,7 @@ then get it all on your favorite browser,
 
 1. GUI for manage Admin Menu
 2. GUI for define form
-3. GUI fot create widget component
+3. GUI for create widget component
 3. artisan generate html input (select) with data from related model
     - define field option, 
     - add get option in Common\GeneratorField, 
