@@ -34,6 +34,10 @@ Copy and paste in terminal line by line, just hit Enter key
     
     cp -r infyomlabs vendor
 
+    rm -r vendor/infinety-es
+    
+    cp -r infinety-es vendor
+
     cp .env.example .env
 
 Make sure your server, create "core" database, edit .env using your favorite editor, 
