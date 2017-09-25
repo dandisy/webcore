@@ -21,12 +21,12 @@ Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', 'HomeController@index');
 
-    Route::resource('menus', 'MenuController');
+    //Route::resource('menus', 'MenuController');
 
     Route::group(['middleware' => ['role:superadministrator|administrator']], function () {
         Route::resource('users', 'UserController');
 
-        Route::resource('settings', 'SettingController');
+        //Route::resource('settings', 'SettingController');
     });
 
     Route::group(['middleware' => ['role:superadministrator']], function () {
@@ -35,5 +35,5 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('permissions', 'PermissionController');
     });
 
-    Route::resource('pages', 'PageController');
+    //Route::resource('pages', 'PageController');
 });

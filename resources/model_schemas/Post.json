@@ -57,7 +57,7 @@
     {
         "name": "status",
         "dbType": "string",
-        "htmlType": "select,pending:1,publish:2",
+        "htmlType": "select,Pending:pending,Publish:publish",
         "validations": "required",
         "searchable": true,
         "fillable": true,
@@ -67,8 +67,8 @@
     },
     {
         "name": "category",
-        "dbType": "string",
-        "htmlType": "text",
+        "dbType": "integer",
+        "htmlType": "select,Uncategorized:0,Category1:1,Category2:2",
         "validations": "required",
         "searchable": true,
         "fillable": true,

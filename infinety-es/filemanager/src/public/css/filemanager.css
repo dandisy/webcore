@@ -1,0 +1,406 @@
+/**
+ * File Manager Style
+ *
+ *
+ * This style has been designed by Eric Lagarda
+ *
+ * @project   FileManager package for Laravel 5
+ * @version   0.0.2
+ * @package   xhtml-css
+ * @author    Eric Lagarda
+ * @copyright 2016 by Eric Lagarda
+ * @license   GPL v3
+ *
+*/
+
+/* PNotify buttons */
+.ui-pnotify-closer,.ui-pnotify-sticker{float:right;margin-left:.2em}
+/* End PNotify buttons */
+
+/* Custom Nav */
+.customnav .navbar-default {
+    background: none;
+    border: none;
+    margin-bottom: 0;
+}
+.customnav .navbar-default .navbar-brand {
+    color: #ffffff !important;
+    opacity: 1;
+}
+.customnav .navbar-default .navbar-brand:hover,
+.customnav .navbar-default .navbar-brand:focus {
+    color: #ffffff !important;
+}
+.customnav .navbar-default .navbar-text {
+    color: #ffffff !important;
+}
+.customnav .navbar-default .navbar-nav > li > a {
+    color: #ffffff !important;
+    opacity: 1;
+    padding: 10px 15px;
+}
+
+.customnav .navbar-default .navbar-nav > li > button {
+    padding: 10px 15px;
+}
+
+
+.customnav .navbar-default .navbar-nav > li > a:hover,
+.customnav .navbar-default .navbar-nav > li > a:focus {
+    color: #423F3F !important;
+}
+.customnav .navbar-default .navbar-nav > li > .dropdown-menu {
+    background-color: #39bee8;
+}
+.customnav .navbar-default .navbar-nav > li > .dropdown-menu > li > a {
+    color: #ffffff !important;
+    opacity: 1;
+}
+.customnav .navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
+.customnav .navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
+    color: #ffffff !important;
+    background-color: #39bee8;
+}
+.customnav .navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {
+    background-color: #39bee8;
+}
+.customnav .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+.customnav .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+.customnav .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffffff !important;
+    background-color: #39bee8;
+    opacity: 1;
+}
+.customnav .navbar-default .navbar-nav > .active > a,
+.customnav .navbar-default .navbar-nav > .active > a:hover,
+.customnav .navbar-default .navbar-nav > .active > a:focus {
+    color: #ffffff !important;
+    background-color: #39bee8;
+    opacity: 1;
+}
+.customnav .navbar-default .navbar-nav > .open > a,
+.customnav .navbar-default .navbar-nav > .open > a:hover,
+.customnav .navbar-default .navbar-nav > .open > a:focus {
+    color: #ffffff !important;
+    background-color: #39bee8;
+    opacity: 1;
+}
+.customnav .navbar-default .navbar-toggle {
+    border-color: #39bee8;
+}
+.customnav .navbar-default .navbar-toggle:hover,
+.customnav .navbar-default .navbar-toggle:focus {
+    background-color: #39bee8;
+}
+.customnav .navbar-default .navbar-toggle .icon-bar {
+    background-color: #ffffff;
+}
+.customnav .navbar-default .navbar-collapse,
+.customnav .navbar-default .navbar-form {
+    border-color: #ffffff;
+}
+.customnav .navbar-default .navbar-link {
+    color: #ffffff !important;
+}
+.customnav .navbar-default .navbar-link:hover {
+    color: #ffffff !important;
+}
+/* Set view type active */
+li.active .btn{
+    background-color: #48b0f7;
+    border-color: #48b0f7;
+    color: #FFF;
+}
+
+
+.navbar-input-group {
+    font-size: 0px; /*removes whitespace between button and input*/
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-input-group input {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.navbar-input-group .btn {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-left: 0px;
+}
+/* End Custom Nav */
+
+
+
+
+.form-search ::-webkit-input-placeholder::before { font-family: fontAwesome; content:'\f002  '; color: #69f }
+.form-search ::-moz-placeholder::before { font-family: fontAwesome; content:'\f002  '; color: #69f } /* firefox 19+ */
+.form-search :-ms-input-placeholder::before { font-family: fontAwesome; content:'\f002  '; color: #69f } /* ie */
+.form-search input:-o-placeholder::before { font-family: fontAwesome; content:'\f002  '; color: #69f } /*opera*/
+
+input.search-input::-webkit-input-placeholder {
+    font-family: FontAwesome, "Open Sans", Verdana, sans-serif;
+    content:'\f002';
+}
+input.search-input::-moz-placeholder {
+    font-family: FontAwesome, "Open Sans", Verdana, sans-serif;
+    content:'\f002';
+}
+input.search-input::-ms-input-placeholder {
+    font-family: FontAwesome, "Open Sans", Verdana, sans-serif;
+    content:'\f002';
+}
+
+.input-group-search{
+    padding: 0;
+    border: none;
+}
+
+.input-group-search .btn{
+    width: 100%;
+    margin: 0;
+    padding: 7px 20px;
+    height: 43px;
+}
+
+.search-input{
+    padding: 10px 15px;
+    height: 43px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+
+@media (max-width: 767px) {
+
+    .customnav .navbar-default .navbar-nav > li > a {
+        padding: 25px;
+    }
+    .customnav .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #ffffff !important;
+        opacity: 1;
+    }
+    .customnav .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+    .customnav .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #ffffff !important;
+        opacity: 1;
+    }
+    .customnav .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+    .customnav .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+    .customnav .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+        color: #ffffff !important;
+        background-color: #39bee8;
+        opacity: 1;
+    }
+}
+
+/* Sidebar */
+
+#sidebar {
+    height: 100%;
+    padding-right: 0;
+    padding-top: 20px;
+    border-right: 1px solid #f2f2f2;
+}
+#sidebar h5{
+    opacity: 0.4;
+}
+#sidebar .nav {
+    width: 95%;
+}
+#sidebar li {
+    border:0 #f2f2f2 solid;
+    border-left: 3px solid #FFF;
+    font-size: 16px;
+    padding: 5px;
+    cursor:pointer;
+    transition: all 0.6s ease;
+}
+
+#sidebar li i{
+    padding-right: 10px;
+}
+
+
+#sidebar li.active{
+    border-left: 3px solid #000;
+    background: none;
+    color: #626262;
+}
+
+#sidebar li:hover{
+    padding-left: 15px;
+}
+
+/* collapsed sidebar styles */
+@media screen and (max-width: 767px) {
+    .row-offcanvas {
+        position: relative;
+        -webkit-transition: all 0.25s ease-out;
+        -moz-transition: all 0.25s ease-out;
+        transition: all 0.25s ease-out;
+    }
+    .row-offcanvas-right
+    .sidebar-offcanvas {
+        right: -41.6%;
+    }
+
+    .row-offcanvas-left
+    .sidebar-offcanvas {
+        left: -41.6%;
+    }
+    .row-offcanvas-right.active {
+        right: 41.6%;
+    }
+    .row-offcanvas-left.active {
+        left: 41.6%;
+    }
+    .sidebar-offcanvas {
+        position: absolute;
+        top: 0;
+        width: 41.6%;
+    }
+    #sidebar {
+        padding-top:0;
+    }
+}
+
+#files_container{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    min-height:420px;
+}
+
+
+.filemanager-item {
+    height:80px;
+    background: #F2F2F2;
+    border: 1px solid #E6E6E6;
+    margin: 0 0px 10px 0;
+    cursor: pointer;
+    padding: 0;
+}
+
+.filemanager-item:before {
+    content: '';
+    margin-left: -0.25em;
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+
+.centered {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left:0;
+}
+
+.filemanager-item .icon {
+    /*height:100%;*/
+}
+.filemanager-item .icon i{
+    font-size:48px;
+    color: #48B0F7;
+}
+
+.filemanager-item .icon img{
+    height:48px;
+    width: 48px;
+}
+
+.filemanager-item .name-file{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.filemanager-item:hover{
+    background: #48B0F7;
+    color:#FFF;
+}
+.filemanager-item:hover .icon i{
+    color: #F2F2F2;
+}
+
+.filemanager-item.active{
+    background: #48B0F7;
+    color:#FFF;
+}
+.filemanager-item.active .icon i{
+    color: #F2F2F2;
+}
+
+.error-file{
+    background: #FE9E9E;
+}
+
+.error-file:hover{
+    background: #FE9E9E;
+}
+
+.no-data{
+    padding: 20px;
+    text-align: center;
+}
+
+.no-data h3{
+    color: #ACACAC;
+}
+
+.loading{
+    height: 350px;
+    position: relative;
+}
+
+.loading img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -40px;
+    margin-top: -40px;
+}
+
+
+/*
+* Upload
+*/
+
+.upload-div{
+    position: relative;
+    text-align: center;
+    border: 3px dashed #48B0F7;
+    height:100%;
+    width:100%;
+    z-index: 1;
+}
+
+
+#previewInfo .close {
+    position: absolute;
+    top: -17px;
+    right: 10px;
+}
+
+
+.extension-info{
+    background-color: #48b0f7;
+    color: white;
+}
+
+/* Dialogs */
+.default-dialog .panel-default {
+    border: none;
+    box-shadow: none;
+}
+
+
+/** Custom styles for default pages */
+
+.default-views .navbar-nav > li {
+    margin:0 2px;
+}
+
+.default-views  .full-width {
+    width: 100%;
+}

@@ -57,12 +57,23 @@
     {
         "name": "status",
         "dbType": "string",
-        "htmlType": "select,pending:1,publish:2",
+        "htmlType": "select,Pending:pending,Publish:publish",
         "validations": "required",
         "searchable": true,
         "fillable": true,
         "primary": false,
         "inForm": true,
+        "inIndex": true
+    },
+    {
+        "name": "created_by",
+        "dbType": "integer",
+        "htmlType": "text",
+        "validations": "",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": false,
         "inIndex": true
     },
     {

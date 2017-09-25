@@ -1,24 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>WebCORE Platform</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/css/select2.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.3/css/AdminLTE.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.3/css/skins/_all-skins.min.css">
+    <title>WebCORE Platform</title>
+
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins//font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/select2/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/dist/css/AdminLTE.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/dist/css/skins/_all-skins.min.css') }}">
 
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
+    <!-- Date Picker -->
+    <link href="{{ asset('vendor/adminlte/plugins/datepicker/datepicker3.css') }}" rel="stylesheet">
+
+    <!-- Tags Input -->
+    <link href="{{ asset('vendor/adminlte/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css') }}" rel="stylesheet">
+
     <!-- include Summernote -->
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.css" rel="stylesheet">
+    <link href="{{ asset('vendor/adminlte/plugins/summernote/summernote.css') }}" rel="stylesheet">
+
+    <!-- Date Time Picker -->
+    <link href="{{ asset('vendor/adminlte/plugins/datetimepicker/css/bootstrap-datetimepicker.css') }}" rel="stylesheet">
 
     <!-- include Fancybox -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="{{ asset('vendor/adminlte/plugins/fancybox/jquery.fancybox.min.css') }}" rel="stylesheet">
+
+    <!-- include Fileuploader -->
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/fileuploader/jquery.fileuploader.css') }}">
 
     <style>
         .main-header {
@@ -35,12 +49,15 @@
             overflow-y: auto;
             height: 92.4vh !important;
         }
+        .file-item {
+            margin-top: 15px;
+        }
     </style>
 
     @yield('css')
 </head>
 
-<body class="skin-red sidebar-mini">
+<body class="skin-blue sidebar-mini">
 @if (!Auth::guest())
     <div class="wrapper">
         <!-- Main Header -->
@@ -65,7 +82,7 @@
                             <!-- Menu Toggle Button -->
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <!-- The user image in the navbar-->
-                                <img src="{{ url('vendor/adminlte/dist/img/user2-160x160.jpg') }}"
+                                <img src="{{ asset('vendor/adminlte/dist/img/user2-160x160.jpg') }}"
                                      class="user-image" alt="User Image"/>
                                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
                                 <span class="hidden-xs">{!! Auth::user()->name !!}</span>
@@ -73,7 +90,7 @@
                             <ul class="dropdown-menu">
                                 <!-- The user image in the menu -->
                                 <li class="user-header">
-                                    <img src="{{ url('vendor/adminlte/dist/img/user2-160x160.jpg') }}"
+                                    <img src="{{ asset('vendor/adminlte/dist/img/user2-160x160.jpg') }}"
                                          class="img-circle" alt="User Image"/>
                                     <p>
                                         {!! Auth::user()->name !!}
@@ -103,7 +120,7 @@
         </header>
 
         <!-- Left side column. contains the logo and sidebar -->
-        @include('layouts.sidebar')
+        @include('admin.layouts.sidebar')
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             @yield('content')
@@ -131,7 +148,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{!! url('/') !!}">
-                    WebCORE
+                    Admin
                 </a>
             </div>
 
@@ -160,36 +177,140 @@
             </div>
         </div>
     </div>
-    @endif
+@endif
 
-    <!-- jQuery 2.1.4 -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>
+    <!-- Javascript -->
+    <!-- jQuery 2.2.3 -->
+    <script src="{{ asset('vendor/adminlte/plugins/jQuery/jquery-2.2.3.min.js') }}"></script>
+
+    <!-- Bootstrap -->
+    <script src="{{ asset('vendor/adminlte/plugins//bootstrap/js/bootstrap.min.js') }}"></script>
+
+    <!-- Date Picker App -->
+    <script src="{{ asset('vendor/adminlte/plugins/datepicker/bootstrap-datepicker.js') }}"></script>
+
+    <!-- Date Time Picker -->
+    <script src="{{ url('vendor/adminlte/plugins/datetimepicker/js/bootstrap-datetimepicker.min.js') }}"></script>
+
+    <!-- Tags Input -->
+    <script src="{{ url('vendor/adminlte/plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js') }}"></script>
+
+    <!-- Select2 -->
+    <script src="{{ asset('vendor/adminlte/plugins/select2/select2.min.js') }}"></script>
 
     <!-- Summernote -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.js"></script>
+    <script src="{{ asset('vendor/adminlte/plugins/summernote/summernote.min.js') }}"></script>
 
     <!-- Fancybox -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+    <script src="{{ asset('vendor/adminlte/plugins/fancybox/jquery.fancybox.min.js') }}"></script>
+
+    <!-- Fileuploader -->
+    <script src="{{ asset('vendor/adminlte/plugins/fileuploader/jquery.fileuploader.min.js') }}"></script>
+
+    <!-- Input Mask -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.2.6/jquery.inputmask.bundle.min.js"></script>
 
     <!-- AdminLTE App -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.3/js/app.min.js"></script>
+    <script src="{{ asset('vendor/adminlte/dist/js/app.min.js') }}"></script>
 
     <script>
         $(document).ready(function() {
-            $('.rte').summernote();
+            $('.rte').summernote({
+                height: 250,
+                minHeight: 100,
+                maxHeight: 300
+            });
 
             $('.filemanager').fancybox({
                 type : 'iframe'
             });
-            
+
             $(".select2").select2();
+
+            $(".date").datepicker({
+                format:	'yyyy-mm-dd'
+            });
+
+            $(".datetime").datetimepicker({
+                format:	'YYYY-MM-DDTHH:mm:ss.XZ'
+            });
+
+            $(".currency").inputmask({ alias : "currency", prefix: "", digits: 0 });
+
+            $('#filer_input').fileuploader({
+                enableApi: true,
+                maxSize: 10,
+                extensions: ["jpg", "png", "jpeg"],
+                captions: {
+                    feedback: 'Upload foto',
+                    button: '+ Foto Album'
+                },
+                showThumbs: true,
+                addMore: true,
+                allowDuplicates: false,
+                onRemove: function (data, el) {
+                    albumDeleted.push(data.data.album);
+                }
+            });
+
+            $(document).on('click', '.file-item .fa-trash', function() {
+                $(this).parents('.file-item').remove();
+                $('#album-thumb').append('<input type="hidden" name="deleteFiles[]" value="' + $(this).data('identity') + '" />');
+            });
+
+            $(document).on('change', 'input[name="title"]', function() {
+                $('input[name="slug"]').val(stringToSlug($(this).val()));
+            });
+
+            $('.album-manager').on('click', 'button', function(e) {
+                e.preventDefault();
+
+                $('#album-thumb').append('' +
+                '<div class="file-item">' +
+                '<div class="col-md-3 col-sm-3 col-xs-3"><img src="http://img.youtube.com/vi/' + $('#album').val() + '/mqdefault.jpg" style="width:100%"></div>' +
+                '<div class="col-md-8" col-sm-8 col-xs-8" style="overflow-x:auto">' + $('#album').val() + '</div>' +
+                '<div class="col-md-1" col-sm-1 col-xs-1"><span class="fa fa-trash" style="cursor:pointer;color:red"></span></div>' +
+                '<div class="clearfix"></div>' +
+                '<input type="hidden" name="files[]" value="' + $('#album').val() + '" />' +
+                '</div>');
+
+                $('#album').val('');
+            });
+
+            var stringToSlug = function (str) {
+                str = str.replace(/^\s+|\s+$/g, ''); // trim
+                str = str.toLowerCase();
+
+                // remove accents, swap ñ for n, etc
+                var from = "àáäâèéëêìíïîòóöôùúüûñç·/_,:;";
+                var to   = "aaaaeeeeiiiioooouuuunc------";
+
+                for(var i=0, l=from.length ; i<l ; i++) {
+                    str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+                }
+
+                str = str.replace(/[^a-z0-9 -]/g, '') // remove invalid chars
+                    .replace(/\s+/g, '-') // collapse whitespace and replace by -
+                    .replace(/-+/g, '-'); // collapse dashes
+
+                return str;
+            }
         });
 
         // filemanager auto run when close fancybox, after select file and then insert image thumbnail
         var OnMessage = function(data){
-            $('#' + data.appendId + '-thumb').html('<img src="' + data.thumb + '" style="width:100%">');
+            if(data.appendId == 'album') {
+                $('#' + data.appendId + '-thumb').append('' +
+                '<div class="file-item">' +
+                '<div class="col-md-3 col-sm-3 col-xs-3"><img src="' + data.thumb + '" style="width:100%"></div>' +
+                '<div class="col-md-8" col-sm-8 col-xs-8" style="overflow-x:auto">' + data.thumb + '</div>' +
+                '<div class="col-md-1" col-sm-1 col-xs-1"><span class="fa fa-trash" style="cursor:pointer;color:red"></span></div>' +
+                '<div class="clearfix"></div>' +
+                '<input type="hidden" name="files[]" value="' + data.thumb + '" />' +
+                '</div>');
+            } else {
+                $('#' + data.appendId + '-thumb').html('<img src="' + data.thumb + '" style="width:100%">');
+            }
             $('input[name="' + data.appendId + '"]').val(data.thumb);
             $.fancybox.close();
         };

@@ -1,0 +1,23 @@
+<!-- $FIELD_NAME_TITLE$ Field -->
+<div class="form-group album-manager col-sm-12">
+    {!! Form::label('$FIELD_NAME$', '$FIELD_NAME_TITLE$:') !!}
+    <div class="input-group">
+        {!! Form::text('$FIELD_NAME$', null, ['class' => 'form-control', 'readonly' => 'readonly']) !!}
+        <div class="input-group-btn">
+            <a href="{!! url('assets/dialog?filter=all&appendId=$FIELD_NAME$') !!}" class="btn btn-primary filemanager fancybox.iframe" data-fancybox-type="iframe">Add File</a>
+        </div>
+    </div>
+    <div id="$FIELD_NAME$-thumb">
+        @if(@$album)
+            @foreach($album as $item)
+                <div class="file-item">
+                    <div class="col-md-3 col-sm-3 col-xs-3"><img src="{{ $item->file }}" style="width:100%"></div>
+                    <div class="col-md-8" col-sm-8 col-xs-8" style="overflow-x:auto">{{ $item->file }}</div>
+                    <div class="col-md-1" col-sm-1 col-xs-1"><span class="fa fa-trash" style="cursor:pointer;color:red" data-identity="{{ $item->id }}"></span></div>
+                    <div class="clearfix"></div>
+                </div>
+            @endforeach  
+        @endif
+    </div>
+</div>
+<div class="clearfix"></div>

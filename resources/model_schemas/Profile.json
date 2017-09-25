@@ -22,9 +22,9 @@
         "inIndex": false
     },
     {
-        "name": "type",
-        "dbType": "string",
-        "htmlType": "select,individu:1,organisation:2,corporation:3",
+        "name": "description",
+        "dbType": "text",
+        "htmlType": "textarea",
         "validations": "",
         "searchable": true,
         "fillable": true,
@@ -33,18 +33,7 @@
         "inIndex": true
     },
     {
-        "name": "id_card_type",
-        "dbType": "string",
-        "htmlType": "text",
-        "validations": "",
-        "searchable": true,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": true
-    },
-    {
-        "name": "id_card_number",
+        "name": "organisation",
         "dbType": "string",
         "htmlType": "text",
         "validations": "",
@@ -55,18 +44,7 @@
         "inIndex": true
     },
     {
-        "name": "other_id_card",
-        "dbType": "string",
-        "htmlType": "text",
-        "validations": "",
-        "searchable": true,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": true
-    },
-    {
-        "name": "other_id_card_number",
+        "name": "department",
         "dbType": "string",
         "htmlType": "text",
         "validations": "",
@@ -100,17 +78,6 @@
     },
     {
         "name": "phone",
-        "dbType": "string",
-        "htmlType": "text",
-        "validations": "",
-        "searchable": true,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": true
-    },
-    {
-        "name": "fax",
         "dbType": "string",
         "htmlType": "text",
         "validations": "",

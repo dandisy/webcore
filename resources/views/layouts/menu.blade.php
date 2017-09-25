@@ -6,15 +6,15 @@
 
 <li class="header">PUBLISH</li>
 
-<li class="{{ Request::is('pages*') ? 'active' : '' }}">
+{{--<li class="{{ Request::is('pages*') ? 'active' : '' }}">
     <a href="{!! route('pages.index') !!}"><i class="fa fa-sticky-note"></i><span>Pages</span></a>
-</li>
+</li>--}}
 
-<li class="header">ARRANGE</li>
+{{--<li class="header">ARRANGE</li>
 
 <li class="{{ Request::is('menus*') ? 'active' : '' }}">
     <a href="{!! route('menus.index') !!}"><i class="fa fa-bars"></i><span>Menus</span></a>
-</li>
+</li>--}}
 
 <li class="header">MANAGE</li>
 

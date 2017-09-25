@@ -33,6 +33,17 @@
         "inIndex": true
     },
     {
+        "name": "group",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true
+    },
+    {
         "name": "parent",
         "dbType": "string",
         "htmlType": "text",
@@ -44,7 +55,7 @@
         "inIndex": true
     },
     {
-        "name": "group",
+        "name": "order",
         "dbType": "string",
         "htmlType": "text",
         "validations": "required",
