@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => 'local',
+    'default' => 'web',
 
     /*
     |--------------------------------------------------------------------------
@@ -60,6 +60,11 @@ return [
             'secret' => 'your-secret',
             'region' => 'your-region',
             'bucket' => 'your-bucket',
+        ],
+        
+        'web' => [
+            'driver' => 'local',
+            'root' => public_path(),
         ],
 
     ],
