@@ -51,6 +51,10 @@ Again copy and paste in terminal line by line, and hit Enter key
 
     php artisan migrate --seed
 
+Finally
+
+    php artisan storage:link
+
 then get it all on your favorite browser,
 
 ### Todo

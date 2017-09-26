@@ -25,7 +25,8 @@
         "maatwebsite/excel": "~2.1.0",
         "arrilot/laravel-widgets": "^3.7",
         "khill/lavacharts": "3.0.*",
-        "spatie/laravel-activitylog": "^1.15"
+        "spatie/laravel-activitylog": "^1.15",
+        "league/glide-laravel": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
