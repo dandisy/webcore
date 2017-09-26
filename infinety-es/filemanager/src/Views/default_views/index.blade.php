@@ -20,7 +20,7 @@
         @include('filemanager::modals')
     @endif
 
-<div class="container default-views">
+<div class="{{--container --}}default-views" style="padding:15px">
     <div class="panel panel-default customnav">
         <div class="panel-heading">
             <nav class="navbar navbar-default">

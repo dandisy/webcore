@@ -599,15 +599,22 @@ class FileManagerController extends BaseController {
      * @param $folder
      */
     private function setRelativePath($folder){
-        //$home = explode('/', $this->homePath); edit by dandisy
-        $home = explode(DIRECTORY_SEPARATOR, $this->homePath);
+        $home = explode('/', $this->homePath);
+        //$home = explode(DIRECTORY_SEPARATOR, $this->homePath); // by dandisy
         $publicPath = str_replace($this->homePath, '', $folder);
         $append = $this->getAppend();
-        if(last($home) != "public"){
+        /*if(last($home) != "public"){
             $this->publicPath = $append.last($home).$publicPath;
         } else {
             $this->publicPath = $append.$publicPath;
+        }*/
+        // start by dandisy
+        if(last($home) != "public"){
+            $this->publicPath = $append.last($home).$publicPath.'/storage';
+        } else {
+            $this->publicPath = $append.$publicPath.'/storage';
         }
+        // end by dandisy
     }
 
     /**
