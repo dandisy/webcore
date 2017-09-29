@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bdcac130d75ce4401235c1ac2a3f29e0",
-    "content-hash": "ebbb6165a2e50780a977696727622717",
+    "hash": "b3633b61ff99b17ac17cc5b6412378c5",
+    "content-hash": "66f0a33c7818c829acd7ec0b72fb4fa9",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -2586,59 +2586,6 @@
                 "php"
             ],
             "time": "2016-09-16 12:04:44"
-        },
-        {
-            "name": "nwidart/laravel-modules",
-            "version": "1.22.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nWidart/laravel-modules.git",
-                "reference": "103aa81905f9ccc28a5cc771089477c2936b9f00"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nWidart/laravel-modules/zipball/103aa81905f9ccc28a5cc771089477c2936b9f00",
-                "reference": "103aa81905f9ccc28a5cc771089477c2936b9f00",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/framework": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*",
-                "php": ">=5.5"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^1.11",
-                "mockery/mockery": "~0.9",
-                "orchestra/testbench": "^3.1|^3.2|^3.3|^3.4",
-                "phpro/grumphp": "^0.9.1",
-                "phpunit/phpunit": "~5.7"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Nwidart\\Modules\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Widart",
-                    "email": "n.widart@gmail.com",
-                    "homepage": "https://nicolaswidart.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Laravel Module management",
-            "keywords": [
-                "laravel",
-                "module",
-                "modules",
-                "nwidart",
-                "rad"
-            ],
-            "time": "2017-05-22 08:30:39"
         },
         {
             "name": "paragonie/random_compat",

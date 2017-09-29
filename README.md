@@ -76,23 +76,24 @@ then get it all on your favorite browser,
 
     * infyomlabs/laravel-generator
     * santigarcor/laratrust
-    * tymon/jwt-auth
     * atayahmet/laravel-nestable
     * infinety-es/filemanager
     * barryvdh/laravel-debugbar
-    * nwidart/laravel-modules
-    * seguce92/laravel-dompdf
-    * maatwebsite/excel
     * arrilot/laravel-widgets
-    * khill/lavacharts
     * spatie/laravel-activitylog
     * league/glide-laravel
+    
+    * tymon/jwt-auth
+    * seguce92/laravel-dompdf
+    * maatwebsite/excel
+    * khill/lavacharts
 
     For theme use :
     facuz/laravel-themes based on thinhbuzz/laravel-theme
     or yaapis/Theme
     instead teepluss/laravel-theme
     
+    * nwidart/laravel-modules -> OPTIONAL
     * lavary/laravel-menu -> OPTIONAL
 
 //------------------------------------------------#
