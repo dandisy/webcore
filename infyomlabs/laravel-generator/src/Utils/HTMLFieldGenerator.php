@@ -18,10 +18,15 @@ class HTMLFieldGenerator
             case 'textarea-rte':
             
             case 'date':
+            
+            // added by dandi
+            case 'datetime':
+
             case 'file':
 
             // added by dandi
             case 'file-manager':
+            case 'album-manager':
 
             case 'email':
             case 'password':

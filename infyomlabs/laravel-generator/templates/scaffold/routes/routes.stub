@@ -1,2 +1,2 @@
 Route::resource('$MODEL_NAME_PLURAL_CAMEL$', '$PATH_PREFIX$$MODEL_NAME$Controller');
-Route::post('import$MODEL_NAME$', '$PATH_PREFIX$$MODEL_NAME$Controller@import');
+// Route::post('import$MODEL_NAME$', '$PATH_PREFIX$$MODEL_NAME$Controller@import');
