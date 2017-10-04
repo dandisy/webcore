@@ -29,14 +29,10 @@ Copy and paste in terminal line by line, just hit Enter key
     git clone https://github.com/dandisy/webCore.git
 
     composer install
-
-    rm -r vendor/infyomlabs
     
-    cp -r infyomlabs vendor
-
-    rm -r vendor/infinety-es
+    cp -rf infyomlabs vendor
     
-    cp -r infinety-es vendor
+    cp -rf infinety-es vendor
 
     cp .env.example .env
 
