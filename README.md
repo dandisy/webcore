@@ -53,20 +53,6 @@ Finally
 
 then get it all on your favorite browser,
 
-### Todo
-
-1. GUI for manage Admin Menu Item / Folder Item
-2. GUI for manage Content Field, Data Table, Multi Language and History
-3. GUI for manage Component Widget
-
-4. console command to generate html input (select) with data from related model
-    - define field option, 
-    - add get option in Common\GeneratorField, 
-    - add htmlvalue in Utils\HTMLFieldGenerator - and passing to template,
-    - insert get repository in controller create and edit generator
-
-5. personalization
-
 ### Dependency
 
     * infyomlabs/laravel-generator
