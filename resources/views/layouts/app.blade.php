@@ -5,31 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
-    <title>WebCORE Platform</title>
+    <title>Webcore Platform</title>
 
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins//font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/font-awesome/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/select2/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/dist/css/AdminLTE.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/dist/css/skins/_all-skins.min.css') }}">
 
     <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/ionicons/ionicons.min.css') }}">
 
     <!-- Date Picker -->
-    <link href="{{ asset('vendor/adminlte/plugins/datepicker/datepicker3.css') }}" rel="stylesheet">
-
-    <!-- Tags Input -->
-    <link href="{{ asset('vendor/adminlte/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css') }}" rel="stylesheet">
-
-    <!-- include Summernote -->
-    <link href="{{ asset('vendor/adminlte/plugins/summernote/summernote.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/datepicker/datepicker3.css') }}">
 
     <!-- Date Time Picker -->
-    <link href="{{ asset('vendor/adminlte/plugins/datetimepicker/css/bootstrap-datetimepicker.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/datetimepicker/css/bootstrap-datetimepicker.css') }}">
+
+    <!-- Tags Input -->
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css') }}">
+
+    <!-- include Summernote -->
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/summernote/summernote.css') }}">
 
     <!-- include Fancybox -->
-    <link href="{{ asset('vendor/adminlte/plugins/fancybox/jquery.fancybox.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/fancybox/jquery.fancybox.min.css') }}">
 
     <!-- include Fileuploader -->
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/fileuploader/jquery.fileuploader.css') }}">
@@ -57,7 +57,7 @@
     @yield('css')
 </head>
 
-<body class="skin-blue sidebar-mini">
+<body class="skin-red sidebar-mini">
 @if (!Auth::guest())
     <div class="wrapper">
         <!-- Main Header -->
@@ -65,7 +65,7 @@
 
             <!-- Logo -->
             <a href="#" class="logo">
-                <b>WebCORE</b>
+                <b>Webcore</b>
             </a>
 
             <!-- Header Navbar -->
@@ -120,7 +120,7 @@
         </header>
 
         <!-- Left side column. contains the logo and sidebar -->
-        @include('admin.layouts.sidebar')
+        @include('layouts.sidebar')
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             @yield('content')
@@ -128,7 +128,7 @@
 
         <!-- Main Footer -->
         <footer class="main-footer" style="max-height: 100px;text-align: center">
-            <strong>Copyright © 2017 <a href="#">WebCORE</a>.</strong> All rights reserved.
+            <strong>Copyright © 2017 <a href="#">Webcore</a>.</strong> All rights reserved.
         </footer>
 
     </div>
@@ -186,14 +186,17 @@
     <!-- Bootstrap -->
     <script src="{{ asset('vendor/adminlte/plugins//bootstrap/js/bootstrap.min.js') }}"></script>
 
+    <!-- Moment -->
+    <script src="{{ asset('vendor/adminlte/plugins/moment/moment.min.js') }}"></script>
+
     <!-- Date Picker App -->
     <script src="{{ asset('vendor/adminlte/plugins/datepicker/bootstrap-datepicker.js') }}"></script>
 
     <!-- Date Time Picker -->
-    <script src="{{ url('vendor/adminlte/plugins/datetimepicker/js/bootstrap-datetimepicker.min.js') }}"></script>
+    <script src="{{ asset('vendor/adminlte/plugins/datetimepicker/js/bootstrap-datetimepicker.min.js') }}"></script>
 
     <!-- Tags Input -->
-    <script src="{{ url('vendor/adminlte/plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js') }}"></script>
+    <script src="{{ asset('vendor/adminlte/plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js') }}"></script>
 
     <!-- Select2 -->
     <script src="{{ asset('vendor/adminlte/plugins/select2/select2.min.js') }}"></script>
@@ -208,7 +211,7 @@
     <script src="{{ asset('vendor/adminlte/plugins/fileuploader/jquery.fileuploader.min.js') }}"></script>
 
     <!-- Input Mask -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.2.6/jquery.inputmask.bundle.min.js"></script>
+    <script src="{{ asset('vendor/adminlte/plugins/inputmask/jquery.inputmask.bundle.min.js') }}"></script>
 
     <!-- AdminLTE App -->
     <script src="{{ asset('vendor/adminlte/dist/js/app.min.js') }}"></script>

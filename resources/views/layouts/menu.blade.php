@@ -41,8 +41,9 @@
 @role(['superadministrator','administrator'])
 <li class="header">CONFIGURE</li>
 
-<li class="{{ Request::is('settings*') ? 'active' : '' }}">
+{{--<li class="{{ Request::is('settings*') ? 'active' : '' }}">
     <a href="{!! route('settings.index') !!}"><i class="fa fa-cog"></i><span>Settings</span></a>
-</li>
+</li>--}}
 @endrole
+
 

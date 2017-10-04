@@ -24,14 +24,5 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
-
-        /*$theme = \Theme::uses('glamor')->layout('default');
-
-        $view = array(
-            'name' => 'Teepluss'
-        );
-
-        // home.index will look up the path 'resources/views/home/index.php'
-        return $theme->of('home.index', $view)->render();*/
     }
 }

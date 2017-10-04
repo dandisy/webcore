@@ -3,65 +3,59 @@
 namespace App\DataTables;
 
 use App\User;
-use Form;
-use Yajra\Datatables\Services\DataTable;
+use Yajra\DataTables\Services\DataTable;
+use Yajra\DataTables\EloquentDataTable;
 
 class UserDataTable extends DataTable
 {
-
     /**
-     * @return \Illuminate\Http\JsonResponse
+     * Build DataTable class.
+     *
+     * @param mixed $query Results from query() method.
+     * @return \Yajra\DataTables\DataTableAbstract
      */
-    public function ajax()
+    public function dataTable($query)
     {
-        return $this->datatables
-            ->eloquent($this->query())
+        $dataTable = new EloquentDataTable($query);
+
+        return $dataTable
             ->addColumn('role', 'users.datatables_roles')
             ->addColumn('action', 'users.datatables_actions')
-            ->make(true);
+            ->rawColumns(['role', 'action']);
     }
-
+    
     /**
-     * Get the query object to be processed by datatables.
-     *
-     * @return \Illuminate\Database\Query\Builder|\Illuminate\Database\Eloquent\Builder
-     */
-    public function query()
+        * Get query source of dataTable.
+        *
+        * @param \App\Models\Post $model
+        * @return \Illuminate\Database\Eloquent\Builder
+        */
+    public function query(User $model)
     {
-        $users = User::query();
-
-        return $this->applyScopes($users);
+        return $model->newQuery();
     }
-
+    
     /**
-     * Optional method if you want to use html builder.
-     *
-     * @return \Yajra\Datatables\Html\Builder
-     */
+        * Optional method if you want to use html builder.
+        *
+        * @return \Yajra\DataTables\Html\Builder
+        */
     public function html()
     {
         return $this->builder()
             ->columns($this->getColumns())
-            ->addAction(['width' => '10%'])
-            ->ajax('')
+            ->minifiedAjax()
+            ->addAction(['width' => '80px'])
             ->parameters([
-                'dom' => 'Bfrtip',
-                'scrollX' => false,
+                'dom'     => 'Bfrtip',
+                'order'   => [[0, 'desc']],
                 'buttons' => [
+                    'create',
+                    'export',
                     'print',
                     'reset',
                     'reload',
-                    [
-                         'extend'  => 'collection',
-                         'text'    => '<i class="fa fa-download"></i> Export',
-                         'buttons' => [
-                             'csv',
-                             'excel',
-                             /*'pdf',*/
-                         ],
-                    ],
-                    'colvis'
-                ]
+                ],
             ]);
     }
 
@@ -73,9 +67,9 @@ class UserDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'name' => ['name' => 'name', 'data' => 'name'],
-            'email' => ['name' => 'email', 'data' => 'email'],
-            'role' => ['name' => 'role']
+            'name',
+            'email',
+            'role'
         ];
     }
 
@@ -86,6 +80,6 @@ class UserDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'users';
+        return 'users_' . time();
     }
 }

@@ -9,7 +9,6 @@ use $NAMESPACE_APP$\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Maatwebsite\Excel\Facades\Excel;
 use Response;
 
 class $MODEL_NAME$Controller extends AppBaseController
@@ -150,19 +149,6 @@ class $MODEL_NAME$Controller extends AppBaseController
         $this->$MODEL_NAME_CAMEL$Repository->delete($id);
 
         Flash::success('$MODEL_NAME_HUMAN$ deleted successfully.');
-
-        return redirect(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
-    }
-
-    public function import(Request $request)
-    {
-        Excel::load($request->file('file'), function($reader) {
-            $reader->each(function ($item) {
-                $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repository->create($item->toArray());
-            });
-        });
-
-        Flash::success('$MODEL_NAME_HUMAN$ saved successfully.');
 
         return redirect(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
     }

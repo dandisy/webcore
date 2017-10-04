@@ -6,6 +6,10 @@
         var params = dt.ajax.params();
         params.action = action;
 
+        if (url.indexOf('?') > -1) {
+            return url + '&' + $.param(params);
+        }
+        
         return url + '?' + $.param(params);
     };
 

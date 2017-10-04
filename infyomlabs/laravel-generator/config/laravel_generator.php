@@ -144,7 +144,7 @@ return [
 
         'tests'         => true,
 
-        'datatables'    => true,
+        'datatables'    => false,
 
         'menu'          => [
 
@@ -171,5 +171,13 @@ return [
 
         'deleted_at'    => 'deleted_at',
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Save model files to `App/Models` when use `--prefix`. see #208
+    |--------------------------------------------------------------------------
+    |
+    */
+    'ignore_model_prefix' => false,
 
 ];

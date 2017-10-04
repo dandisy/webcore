@@ -5,10 +5,10 @@
         <section class="content-header">
             <h1 class="pull-left">$MODEL_NAME_PLURAL$</h1>
             <h1 class="pull-right">
-               <a class="btn btn-primary pull-right" href="#" style="margin-top: -10px;margin-bottom: 5px" @click="modal('POST')">Add New</a>
-                <button type="button" class="btn btn-info pull-right" style="margin-top: -10px;margin-bottom: 5px;margin-right: 5px" data-toggle="modal" data-target="#myModal">
+                <a class="btn btn-primary pull-right" href="#" style="margin-top: -10px;margin-bottom: 5px" @click="modal('POST')">Add New</a>
+                {{--<button type="button" class="btn btn-info pull-right" style="margin-top: -10px;margin-bottom: 5px;margin-right: 5px" data-toggle="modal" data-target="#myModal">
                     Import XLS
-                </button>
+                </button>--}}
             </h1>
         </section>
         <div class="content" style="padding-top: 30px;">

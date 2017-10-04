@@ -143,7 +143,7 @@ class CommandData
             $validations = ($validations == false) ? '' : $validations;
 
             if ($this->getOption('relations')) {
-                $relation = $this->commandObj->ask('Enter relationship (Leave Black to skip):', '');
+                $relation = $this->commandObj->ask('Enter relationship (Leave Black to skip):', false);
             } else {
                 $relation = '';
             }
@@ -224,13 +224,18 @@ class CommandData
                     }
                 }
             } else {
-                //                $fileContents = $this->getOption('jsonFromGUI');
-//                $jsonData = json_decode($fileContents, true);
-//                $this->inputFields = array_merge($this->inputFields, GeneratorFieldsInputUtil::validateFieldsFile($jsonData['fields']));
-//                $this->config->overrideOptionsFromJsonFile($jsonData);
-//                if (isset($jsonData['migrate'])) {
-//                    $this->config->forceMigrate = $jsonData['migrate'];
-//                }
+                $fileContents = $this->getOption('jsonFromGUI');
+                $jsonData = json_decode($fileContents, true);
+                foreach ($jsonData['fields'] as $field) {
+                    if (isset($field['type']) && $field['relation']) {
+                        $this->relations[] = GeneratorFieldRelation::parseRelation($field['relation']);
+                    } else {
+                        $this->fields[] = GeneratorField::parseFieldFromFile($field);
+                        if (isset($field['relation'])) {
+                            $this->relations[] = GeneratorFieldRelation::parseRelation($field['relation']);
+                        }
+                    }
+                }
             }
         } catch (Exception $e) {
             $this->commandError($e->getMessage());

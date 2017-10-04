@@ -52,7 +52,7 @@ return array(
     |--------------------------------------------------------------------------
     |
     */
-    'exceptFolders' => array( 'vendor', 'thumbs', 'css', 'js'),
+    'exceptFolders' => array( 'vendor', 'thumbs', 'filemanager_assets'),
 
 
     /*

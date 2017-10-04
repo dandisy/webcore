@@ -3,21 +3,23 @@
 namespace App\DataTables;
 
 use App\Permission;
-use Form;
-use Yajra\Datatables\Services\DataTable;
+use Yajra\DataTables\Services\DataTable;
+use Yajra\DataTables\EloquentDataTable;
 
 class PermissionDataTable extends DataTable
 {
-
     /**
-     * @return \Illuminate\Http\JsonResponse
+     * Build DataTable class.
+     *
+     * @param mixed $query Results from query() method.
+     * @return \Yajra\DataTables\DataTableAbstract
      */
-    public function ajax()
+    public function dataTable($query)
     {
-        return $this->datatables
-            ->eloquent($this->query())
-            ->addColumn('action', 'permissions.datatables_actions')
-            ->make(true);
+        $dataTable = new EloquentDataTable($query);
+
+        return $dataTable
+            ->addColumn('action', 'permissions.datatables_actions');
     }
 
     /**

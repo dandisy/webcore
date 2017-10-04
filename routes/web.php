@@ -1,30 +1,31 @@
 <?php
 
-use League\Glide\ServerFactory;
-use League\Glide\Responses\LaravelResponseFactory;
-use Illuminate\Contracts\Filesystem\Filesystem;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| This file is where you may define all of the routes that are handled
-| by your application. Just tell Laravel the URIs it should respond
-| to using a Closure or controller method. Build something great!
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
 |
 */
 
 Route::get('/', function () {
-    return redirect('home');
+    return view('welcome');
 });
 
 
 Auth::routes();
 
+// Route::get('/home', 'HomeController@index')->name('home');
+
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', 'HomeController@index');
 
+    Route::get('menus', function() {
+        return view('menus.index');
+    });
     //Route::resource('menus', 'MenuController');
 
     Route::group(['middleware' => ['role:superadministrator|administrator']], function () {
@@ -54,3 +55,4 @@ Route::get('/img/{path}', function(Filesystem $filesystem, $path) {
     return $server->getImageResponse($path, request()->all());
 
 })->where('path', '.*');
+

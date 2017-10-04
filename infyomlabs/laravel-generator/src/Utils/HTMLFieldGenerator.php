@@ -16,9 +16,9 @@ class HTMLFieldGenerator
 
             // added by dandi
             case 'textarea-rte':
-            
+
             case 'date':
-            
+
             // added by dandi
             case 'datetime':
 

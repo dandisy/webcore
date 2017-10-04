@@ -101,7 +101,7 @@ class ViewGenerator extends BaseGenerator
 
                 // added by dandi
                 case 'textarea-rte':
-                
+
                 case 'date':
                 case 'file':
 
@@ -113,6 +113,7 @@ class ViewGenerator extends BaseGenerator
                 case 'number':
                     $fieldTemplate = get_template('vuejs.fields.'.$field->htmlType, $this->templateType);
                     break;
+
                 case 'select':
 
                 // added by dandi
