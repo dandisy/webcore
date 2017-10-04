@@ -1,4 +1,4 @@
-## 1. webCore Platform
+## 1. Webcore
 ### The Concept
 
     Admin Page - UI Component - Front Page
