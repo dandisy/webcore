@@ -132,8 +132,8 @@ then get it all on your favorite browser,
 * Commands\\* : 
     
     use Common\CommandData, 
-    use Utils\FileUtil
-    use Generator\* 
+    use Utils\FileUtil,
+    use Generator\\* 
     
     base Commands\BaseCommand
 
@@ -166,15 +166,15 @@ then get it all on your favorite browser,
 
 * Common\CommandData : 
 
-    use Utils\GeneratorFieldsInputUtil
+    use Utils\GeneratorFieldsInputUtil,
     use Utils\TableFieldsGenerator
     
     - get and set commandData from config, file, and console
 
 * Generators\\* : 
 
-    use Utils\FileUtil
-    use Common\CommandData    
+    use Utils\FileUtil,
+    use Common\CommandData,
     use Utils\HTMLFieldGenerator in Generators\Scaffold\ViewGenerator
     
     base Generators\BaseGenerator
