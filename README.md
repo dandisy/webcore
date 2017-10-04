@@ -26,7 +26,7 @@
 
 Copy and paste in terminal line by line, just hit Enter key
 
-    git clone https://github.com/dandisy/webCore.git
+    git clone https://github.com/dandisy/webcore.git
 
     composer install
     
