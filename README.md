@@ -53,6 +53,12 @@ Finally
 
 then get it all on your favorite browser,
 
+optional if you want activated oauth 
+
+    npm run dev
+
+then you can access oauth admin panel in http://localhost/webcore/public/oauth-admin
+
 ### Dependency
 
     * infyomlabs/laravel-generator
@@ -67,7 +73,7 @@ then get it all on your favorite browser,
     
     * spatie/laravel-activitylog
     * tymon/jwt-auth
-    * seguce92/laravel-dompdf
+    * barryvdh/laravel-dompdf or seguce92/laravel-dompdf
     * maatwebsite/excel
     * khill/lavacharts
 
@@ -84,6 +90,9 @@ then get it all on your favorite browser,
 
     * toxic-lemurs/menu-builder -> ALTERNATIVE
     * mkdesignn/menubuilder -> ALTERNATIVE
+
+    if you ativated larave passport use
+    * spatie/laravel-cors
 
 //------------------------------------------------#
 
@@ -184,6 +193,23 @@ then get it all on your favorite browser,
     - Select2
     - HTML Text Editor
     - File Uploder
+
+4. Pre Configured Oauth using Laravel Passport (with resources example)
+
+    - to login use http://localhost/webcore/public/oauth/token
+
+            with params :
+
+                - client_id
+                - client_secret
+                - grant_type
+                - username
+                - password
+                - scope
+
+    - to get resources example http://localhost/webcore/public/api/product
+
+            with header Authorization = Bearer token
 
 
 #

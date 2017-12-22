@@ -21,6 +21,10 @@ Auth::routes();
 // Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
+    Route::get('oauth-admin', function() {
+        return view('oauth.index');
+    });
+
     Route::get('/home', 'HomeController@index');
 
     Route::get('menus', function() {
