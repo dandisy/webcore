@@ -53,7 +53,7 @@ Finally
 
 then get it all on your favorite browser,
 
-optional if you want activated oauth 
+OPTIONAL if you want to activated oauth 
 
     npm run dev
 
@@ -91,7 +91,7 @@ then you can access oauth admin panel in http://localhost/webcore/public/oauth-a
     * toxic-lemurs/menu-builder -> ALTERNATIVE
     * mkdesignn/menubuilder -> ALTERNATIVE
 
-    if you ativated larave passport use
+    if you activated laravel passport use
     * spatie/laravel-cors
 
 //------------------------------------------------#
