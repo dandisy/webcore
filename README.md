@@ -61,6 +61,45 @@ then you can access oauth admin panel
 to manage your oauth client 
 in http://localhost/webcore/public/oauth-admin
 
+### Features
+
+1. Admin Template
+
+    ![AdminLTE](https://camo.githubusercontent.com/e3bbc646d6ff473da2dd6cede2c968846a6982a6/68747470733a2f2f61646d696e6c74652e696f2f41646d696e4c5445322e706e67)
+
+2. File Manager
+
+    ![File Manager](https://cloud.githubusercontent.com/assets/74367/15646143/77016990-265c-11e6-9ecc-d82ae2c74f71.png)
+
+3. Image Manipulation
+
+    to manipulation image use http://localhost/webcore/public/img/{path}?{param=value}
+    see Glide documentation in http://glide.thephpleague.com
+
+4. Additional Form Builder
+
+    - Date Time Picker
+    - Select2
+    - HTML Text Editor
+    - File Uploder
+
+5. Pre Configured Oauth using Laravel Passport (with resources example)
+
+    - to login use http://localhost/webcore/public/oauth/token
+
+            with params :
+
+                - client_id
+                - client_secret
+                - grant_type
+                - username
+                - password
+                - scope
+
+    - to get resources example http://localhost/webcore/public/api/product
+
+            with header Authorization = Bearer token
+
 ### Dependency
 
     * infyomlabs/laravel-generator
@@ -93,7 +132,7 @@ in http://localhost/webcore/public/oauth-admin
     * toxic-lemurs/menu-builder -> ALTERNATIVE
     * mkdesignn/menubuilder -> ALTERNATIVE
 
-    if you activated laravel passport use
+    If you activated laravel passport use
     * spatie/laravel-cors
 
 //------------------------------------------------#
@@ -178,40 +217,6 @@ in http://localhost/webcore/public/oauth-admin
 
     - define generator functionality with data and template parameters to be used
     - define rollback
-
-### FEATURES
-
-1. Admin Template
-
-    ![AdminLTE](https://camo.githubusercontent.com/e3bbc646d6ff473da2dd6cede2c968846a6982a6/68747470733a2f2f61646d696e6c74652e696f2f41646d696e4c5445322e706e67)
-
-2. File Manager
-
-    ![File Manager](https://cloud.githubusercontent.com/assets/74367/15646143/77016990-265c-11e6-9ecc-d82ae2c74f71.png)
-
-3. Additional Form Builder
-
-    - Date Time Picker
-    - Select2
-    - HTML Text Editor
-    - File Uploder
-
-4. Pre Configured Oauth using Laravel Passport (with resources example)
-
-    - to login use http://localhost/webcore/public/oauth/token
-
-            with params :
-
-                - client_id
-                - client_secret
-                - grant_type
-                - username
-                - password
-                - scope
-
-    - to get resources example http://localhost/webcore/public/api/product
-
-            with header Authorization = Bearer token
 
 
 #
