@@ -57,7 +57,9 @@ OPTIONAL if you want to activated oauth
 
     npm run dev
 
-then you can access oauth admin panel in http://localhost/webcore/public/oauth-admin
+then you can access oauth admin panel 
+to manage your oauth client 
+in http://localhost/webcore/public/oauth-admin
 
 ### Dependency
 
