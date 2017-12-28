@@ -39,7 +39,8 @@
             "database/factories"
         ],
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "Webcore\\Timezones\\": "packages/webcore/timezones/src"
         }
     },
     "autoload-dev": {

@@ -1,0 +1,12 @@
+{
+    "name": "webcore/timezones",
+    "description": "Demo package to show time",
+    "authors": [
+        {
+            "name": "dandi",
+            "email": "dandi@redbuzz.co.id"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
