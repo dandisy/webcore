@@ -62,6 +62,11 @@ return [
             'region' => env('AWS_REGION'),
             'bucket' => env('AWS_BUCKET'),
         ],
+        
+        'web' => [
+            'driver' => 'local',
+            'root' => public_path(),
+        ],
 
     ],
 
