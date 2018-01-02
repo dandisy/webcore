@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 use App\Role;
-use InfyOm\Generator\Common\BaseRepository;
+use Webcore\Generator\Common\BaseRepository;
 
 class RoleRepository extends BaseRepository
 {

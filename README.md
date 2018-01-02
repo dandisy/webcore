@@ -65,13 +65,17 @@ in http://localhost/webcore/public/oauth-admin
 
 run these command in your terminal
 
-    composer require dandisy/webcore-page
+    composer require dandisy/webcore-page:dev-master
 
 and see https://github.com/dandisy/webcore-page for dependency configuration
 
-    composer require dandisy/webcore-menu
+    composer require dandisy/webcore-menu:dev-master
 
-and see https://github.com/dandisy/webcore-menu for dependency configuration
+    php artisan vendor:publish --provider="Harimayco\Menu\MenuServiceProvider"
+
+    php artisan vendor:publish --provider="Webcore\Menu\MenuServiceProvider" --tag=models
+
+see https://github.com/dandisy/webcore-menu for dependency configuration
 
     php artisan generate:api_scaffold Page --fieldsFile=Page.json --datatables=true --prefix=admin
 

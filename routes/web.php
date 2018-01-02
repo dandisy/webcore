@@ -48,9 +48,9 @@ Route::group(['middleware' => 'auth'], function () {
 Route::group(['middleware' => 'auth'], function () {
     Route::get('dashboard', 'HomeController@index');
 
-    // Route::get('menu-manager', function () {
-    //     return view('menu::index');
-    // });
+    Route::get('menu-manager', function () {
+        return view('menu::index');
+    });
 
     Route::group(['middleware' => ['role:superadministrator|administrator']], function () {
         Route::resource('users', 'UserController');
@@ -75,7 +75,3 @@ Route::get('/img/{path}', function(Filesystem $filesystem, $path) {
     return $server->getImageResponse($path, request()->all());
 
 })->where('path', '.*');
-
-// Route::get('/{uri}/{all?}', 'Widgets\PageController@index')
-//     ->where('uri', '(?!img)(?!assets)(?!admin)(?!register$)(?!login$)(?!logout$)([A-Za-z0-9\-]+)')
-//     ->where('all', '.*');

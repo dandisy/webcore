@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "99f14bf25cb249fe354d4d8e7f11e852",
+    "content-hash": "0528fd992b7357768e6b3a4d9f768cbf",
     "packages": [
         {
             "name": "arrilot/laravel-widgets",
@@ -66,6 +66,73 @@
                 "widgets"
             ],
             "time": "2017-11-23T21:18:07+00:00"
+        },
+        {
+            "name": "atayahmet/laravel-nestable",
+            "version": "v0.8.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/atayahmet/laravel-nestable.git",
+                "reference": "0cde88bf449caf0124a6d719024312b10665a7ff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/atayahmet/laravel-nestable/zipball/0cde88bf449caf0124a6d719024312b10665a7ff",
+                "reference": "0cde88bf449caf0124a6d719024312b10665a7ff",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "5.2.*|5.3.*|5.4.*|5.5.*",
+                "illuminate/support": "5.2.*|5.3.*|5.4.*|5.5.*",
+                "php": ">=5.5.5"
+            },
+            "require-dev": {
+                "orchestra/database": "~3.1",
+                "orchestra/testbench": "~3.0",
+                "phpunit/phpunit": "^4.0|^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Nestable\\NestableServiceProvider"
+                    ],
+                    "aliases": {
+                        "Nestable": "Nestable\\Facades\\NestableService"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Nestable\\": "src/",
+                    "Nestable\\Tests\\": "tests/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ahmet ATAY",
+                    "email": "ahmet.atay@hotmail.com",
+                    "homepage": "http://www.atayahmet.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel 5 nested categories library",
+            "homepage": "https://github.com/atayahmet/nestable",
+            "keywords": [
+                "category",
+                "laravel",
+                "nestable",
+                "nested",
+                "nestedset"
+            ],
+            "time": "2017-12-20T23:16:16+00:00"
         },
         {
             "name": "chumper/zipper",
@@ -233,12 +300,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dandisy/laravel-generator.git",
-                "reference": "d56e9077d65abc25f70f14439139773e5d541f00"
+                "reference": "edbf35557584795a26a026b79d98a43dabde6364"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dandisy/laravel-generator/zipball/d56e9077d65abc25f70f14439139773e5d541f00",
-                "reference": "d56e9077d65abc25f70f14439139773e5d541f00",
+                "url": "https://api.github.com/repos/dandisy/laravel-generator/zipball/edbf35557584795a26a026b79d98a43dabde6364",
+                "reference": "edbf35557584795a26a026b79d98a43dabde6364",
                 "shasum": ""
             },
             "require": {
@@ -292,7 +359,7 @@
                 "view",
                 "webcore"
             ],
-            "time": "2018-01-02T20:47:22+00:00"
+            "time": "2018-01-02T21:38:33+00:00"
         },
         {
             "name": "dandisy/swagger-generator",
@@ -331,6 +398,87 @@
                 "webcore"
             ],
             "time": "2018-01-02T13:29:32+00:00"
+        },
+        {
+            "name": "dandisy/webcore-menu",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dandisy/webcore-menu.git",
+                "reference": "ef516fa713746d6dd58687f66a0d3437c158131d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dandisy/webcore-menu/zipball/ef516fa713746d6dd58687f66a0d3437c158131d",
+                "reference": "ef516fa713746d6dd58687f66a0d3437c158131d",
+                "shasum": ""
+            },
+            "require": {
+                "atayahmet/laravel-nestable": "^0.8.1",
+                "harimayco/laravel-menu": "^1.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Webcore\\Menu\\MenuServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Webcore\\Menu\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "dandi",
+                    "email": "dandi@redbuzz.co.id"
+                }
+            ],
+            "description": "Menu management for webcore platform",
+            "time": "2018-01-02T22:00:23+00:00"
+        },
+        {
+            "name": "dandisy/webcore-page",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dandisy/webcore-page.git",
+                "reference": "0e13ab1f9d13bbe9ea604a082622e12568c1aa04"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dandisy/webcore-page/zipball/0e13ab1f9d13bbe9ea604a082622e12568c1aa04",
+                "reference": "0e13ab1f9d13bbe9ea604a082622e12568c1aa04",
+                "shasum": ""
+            },
+            "require": {
+                "arrilot/laravel-widgets": "^3.7"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Webcore\\Page\\PageServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Webcore\\Page\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "dandi",
+                    "email": "dandi@redbuzz.co.id"
+                }
+            ],
+            "description": "Page system for webcore platform",
+            "time": "2018-01-02T22:01:48+00:00"
         },
         {
             "name": "defuse/php-encryption",
@@ -1426,6 +1574,62 @@
                 "url"
             ],
             "time": "2017-03-20T17:10:46+00:00"
+        },
+        {
+            "name": "harimayco/laravel-menu",
+            "version": "1.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/harimayco/wmenu-builder.git",
+                "reference": "291f51bb004ce7a8f70feac8ed2a0a83c5a290ec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/harimayco/wmenu-builder/zipball/291f51bb004ce7a8f70feac8ed2a0a83c5a290ec",
+                "reference": "291f51bb004ce7a8f70feac8ed2a0a83c5a290ec",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.*",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Harimayco\\Menu\\MenuServiceProvider"
+                    ],
+                    "aliases": {
+                        "Menu": "Harimayco\\Menu\\Facades\\Menu"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Harimayco\\Menu\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Rendy Harimayco",
+                    "email": "rendyharimayco@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Cristian Garcia",
+                    "email": "informacion@cristiangarcia.co",
+                    "role": "Original Developer"
+                }
+            ],
+            "description": "drag and drop menu generator like wordpress for laravel 5",
+            "keywords": [
+                "builder",
+                "laravel",
+                "menu",
+                "wordpress"
+            ],
+            "time": "2017-10-31T02:13:16+00:00"
         },
         {
             "name": "intervention/image",
@@ -7018,10 +7222,12 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "dandisy/filemanager": 20,
         "dandisy/adminlte-templates": 20,
+        "dandisy/filemanager": 20,
         "dandisy/laravel-generator": 20,
         "dandisy/swagger-generator": 20,
+        "dandisy/webcore-menu": 20,
+        "dandisy/webcore-page": 20,
         "jlapp/swaggervel": 20
     },
     "prefer-stable": false,

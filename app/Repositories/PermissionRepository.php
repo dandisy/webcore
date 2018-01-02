@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 use App\Permission;
-use InfyOm\Generator\Common\BaseRepository;
+use Webcore\Generator\Common\BaseRepository;
 
 class PermissionRepository extends BaseRepository
 {

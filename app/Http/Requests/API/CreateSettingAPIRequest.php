@@ -3,7 +3,7 @@
 namespace App\Http\Requests\API;
 
 use App\Models\Setting;
-use InfyOm\Generator\Request\APIRequest;
+use Webcore\Generator\Request\APIRequest;
 
 class CreateSettingAPIRequest extends APIRequest
 {

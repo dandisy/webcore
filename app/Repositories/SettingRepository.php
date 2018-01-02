@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Setting;
-use InfyOm\Generator\Common\BaseRepository;
+use Webcore\Generator\Common\BaseRepository;
 
 class SettingRepository extends BaseRepository
 {

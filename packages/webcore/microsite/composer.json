@@ -8,5 +8,17 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Webcore\\Microsite\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Webcore\\Microsite\\MicrositeServiceProvider"
+            ]
+        }
+    }
 }

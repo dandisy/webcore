@@ -5,13 +5,13 @@
     <a href="{!! url('dashboard') !!}"><i class="fa fa-area-chart"></i><span>Stats</span></a>
 </li>
 
-{{--<li class="header">CONTENTS</li>
+<li class="header">CONTENTS</li>
 
 <li class="{{ Request::is('pages*') ? 'active' : '' }}">
     <a href="{!! route('admin.pages.index') !!}"><i class="fa fa-edit"></i><span>Pages</span></a>
 </li>
 
-<li class="header">COMPONENTS</li>
+{{--<li class="header">COMPONENTS</li>
 
 <li class="{{ Request::is('posts*') ? 'active' : '' }}">
     <a href="{!! route('admin.posts.index') !!}"><i class="fa fa-edit"></i><span>Posts</span></a>
@@ -29,9 +29,9 @@
 
 <li class="header">MANAGEMENT</li>
 
-{{--<li class="{{ Request::is('menu-manager*') ? 'active' : '' }}">
+<li class="{{ Request::is('menu-manager*') ? 'active' : '' }}">
     <a href="{!! url('menu-manager') !!}"><i class="fa fa-bars"></i><span>Menus</span></a>
-</li>--}}
+</li>
 
 <li class="{{ Request::is('assets*') ? 'active' : '' }}">
     <a href="{!! url('assets') !!}"><i class="fa fa-folder-open"></i><span>Assets</span></a>

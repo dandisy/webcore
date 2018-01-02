@@ -3,7 +3,7 @@
 namespace App\Http\Requests\API;
 
 use App\Models\Role;
-use InfyOm\Generator\Request\APIRequest;
+use Webcore\Generator\Request\APIRequest;
 
 class CreateRoleAPIRequest extends APIRequest
 {
