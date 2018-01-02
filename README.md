@@ -36,7 +36,7 @@ Copy and paste in terminal line by line, just hit Enter key
 
     cp .env.example .env
 
-Make sure your server, create "core" database, edit .env using your favorite editor, 
+Make sure your server, create "webcore" database, edit .env using your favorite editor, 
 for example using nano editor copy and paste this in terminal, and hit Enter key
 
     sudo nano .env
