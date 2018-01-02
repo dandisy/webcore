@@ -67,6 +67,8 @@ in http://localhost/webcore/public/oauth-admin
 
 * As Web CMS :
 
+run these command in your terminal
+
     composer require dandisy/webcore-page
 
 and see https://github.com/dandisy/webcore-page for dependency configuration
@@ -80,10 +82,12 @@ and see https://github.com/dandisy/webcore-menu for dependency configuration
     php artisan generate:api_scaffold Post --fieldsFile=Post.json --datatables=true --prefix=admin
 
     php artisan generate:api_scaffold Banner --fieldsFile=Banner.json --datatables=true --prefix=admin
-    
+
     php artisan generate:api_scaffold Presentation --fieldsFile=Presentation.json --datatables=true --prefix=admin
 
 * As Admin App (no public site in frontend)
+
+run these command in your terminal (change YourModal to the name of your model to be generate )
 
     php artisan generate:api_scaffold YourModel --fieldsFile=YourModel.json --datatables=true
 
