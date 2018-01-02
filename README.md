@@ -29,10 +29,6 @@ Copy and paste in terminal line by line, just hit Enter key
     git clone https://github.com/dandisy/webcore.git
 
     composer install
-    
-    cp -rf infyomlabs vendor
-    
-    cp -rf infinety-es vendor
 
     cp .env.example .env
 
@@ -147,21 +143,23 @@ run these command in your terminal (change YourModal to the name of your model t
 
 ### Dependency
 
-    * infyomlabs/laravel-generator
-    
+    * dandisy/laravel-generator based on infyomlabs/laravel-generator
+
+    * dandisy/filemanager based on infinety-es/filemanager
+
     * arrilot/laravel-widgets
-    * atayahmet/laravel-nestable
     * barryvdh/laravel-debugbar
-    * infinety-es/filemanager
     * league/glide-laravel
     * santigarcor/laratrust
+
     * harimayco/laravel-menu
+    * atayahmet/laravel-nestable
     
-    * spatie/laravel-activitylog
     * tymon/jwt-auth
     * barryvdh/laravel-dompdf or seguce92/laravel-dompdf
     * maatwebsite/excel
     * khill/lavacharts
+    * spatie/laravel-activitylog
 
     For theme use :
     facuz/laravel-themes based on thinhbuzz/laravel-theme

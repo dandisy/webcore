@@ -60,7 +60,7 @@ return array(
     |--------------------------------------------------------------------------
     |
     */
-    'exceptFolders' => array( 'vendor', 'thumbs', 'filemanager_assets'),
+    'exceptFolders' => array( 'vendor', 'thumbs', 'filemanager_assets', 'microsite'),
 
 
     /*

@@ -173,6 +173,7 @@ return [
 
          // package example
          Webcore\Timezones\TimezonesServiceProvider::class,
+         Webcore\Microsite\MicrositeServiceProvider::class,
 
         /*
          * Application Service Providers...
