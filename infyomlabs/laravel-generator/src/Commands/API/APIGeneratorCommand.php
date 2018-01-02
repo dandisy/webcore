@@ -12,7 +12,7 @@ class APIGeneratorCommand extends BaseCommand
      *
      * @var string
      */
-    protected $name = 'webcore:api';
+    protected $name = 'generate:api';
 
     /**
      * The console command description.

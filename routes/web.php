@@ -1,5 +1,12 @@
 <?php
 
+use App\Models\Page;
+//use App\Models\MenuItem;
+use Illuminate\Http\Request;
+use League\Glide\ServerFactory;
+use League\Glide\Responses\LaravelResponseFactory;
+use Illuminate\Contracts\Filesystem\Filesystem;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,39 +19,48 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return redirect('home');
 });
 
 
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', function () {
+//     return MenuItem::renderAsHtml();
+// });
 
-Route::group(['middleware' => 'auth'], function () {
+Route::get('/admin', function () {
+    //if(Laratrust::hasRole(['administrator','superadministrator'])) {
+        return redirect('dashboard');
+    /*} else {
+        return redirect('home');
+    }*/
+});
+
+Route::group(['middleware' => 'auth'], function () {    
     Route::get('oauth-admin', function() {
         return view('oauth.index');
     });
+});
 
-    Route::get('/home', 'HomeController@index');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('dashboard', 'HomeController@index');
 
-    Route::get('menus', function() {
-        return view('menus.index');
-    });
-    //Route::resource('menus', 'MenuController');
+    // Route::get('menu-manager', function () {
+    //     return view('menu::index');
+    // });
 
     Route::group(['middleware' => ['role:superadministrator|administrator']], function () {
         Route::resource('users', 'UserController');
 
-        //Route::resource('settings', 'SettingController');
-    });
-
-    Route::group(['middleware' => ['role:superadministrator']], function () {
         Route::resource('roles', 'RoleController');
 
-        Route::resource('permissions', 'PermissionController');
-    });
+        //Route::resource('permissions', 'PermissionController');
 
-    //Route::resource('pages', 'PageController');
+        Route::resource('settings', 'SettingController');
+    });
 });
 
 Route::get('/img/{path}', function(Filesystem $filesystem, $path) {
@@ -60,3 +76,6 @@ Route::get('/img/{path}', function(Filesystem $filesystem, $path) {
 
 })->where('path', '.*');
 
+// Route::get('/{uri}/{all?}', 'Widgets\PageController@index')
+//     ->where('uri', '(?!img)(?!assets)(?!admin)(?!register$)(?!login$)(?!logout$)([A-Za-z0-9\-]+)')
+//     ->where('all', '.*');

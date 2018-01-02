@@ -31,6 +31,9 @@ class APIRoutesGenerator extends BaseGenerator
             $routesTemplate = get_template('api.routes.prefix_routes', 'laravel-generator');
         } else {
             $routesTemplate = get_template('api.routes.routes', 'laravel-generator');
+        }        
+        if (config('infyom.laravel_generator.ignore_api_controller_prefix', false)) {
+            $routesTemplate = get_template('api.routes.routes', 'laravel-generator');
         }
 
         $this->routesTemplate = fill_template($this->commandData->dynamicVars, $routesTemplate);

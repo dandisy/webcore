@@ -11,7 +11,7 @@ class GeneratorPublishCommand extends PublishBaseCommand
      *
      * @var string
      */
-    protected $name = 'webcore:publish';
+    protected $name = 'generate:publish';
 
     /**
      * The console command description.

@@ -1,18 +1,18 @@
 ## 1. Webcore
-### The Concept
+### Concept
 
     Admin Page - UI Component - Front Page
 
 1.  Backend Page (Admin)
     
     Scope of Admin Page :    
-    preparing user input, and then for input data manually or by data source
+    preparing user admin input form, input data by writed or by data source referenced
     
 2. UI Component (just a part of page)
 
     Scope of UI Component (widget) :    
-    provide reusable part of UI (widget) to glue in template of page,
-    and defining tracking configuration user interaction for personalization
+    provide reusable part of UI (widget) to included in template of page,
+    (*and defining tracking configuration user interaction for personalization)
          
     Scope of Page :    
     layout and styling UI Component generally to be a Page by incorporating a template
@@ -63,6 +63,30 @@ then you can access oauth admin panel
 to manage your oauth client 
 in http://localhost/webcore/public/oauth-admin
 
+### Usage
+
+* As Web CMS :
+
+    composer require dandisy/webcore-page
+
+and see https://github.com/dandisy/webcore-page for dependency configuration
+
+    composer require dandisy/webcore-menu
+
+and see https://github.com/dandisy/webcore-menu for dependency configuration
+
+    php artisan generate:api_scaffold Page --fieldsFile=Page.json --datatables=true --prefix=admin
+
+    php artisan generate:api_scaffold Post --fieldsFile=Post.json --datatables=true --prefix=admin
+
+    php artisan generate:api_scaffold Banner --fieldsFile=Banner.json --datatables=true --prefix=admin
+    
+    php artisan generate:api_scaffold Presentation --fieldsFile=Presentation.json --datatables=true --prefix=admin
+
+* As Admin App (no public site in frontend)
+
+    php artisan generate:api_scaffold YourModel --fieldsFile=YourModel.json --datatables=true
+
 ### Features
 
 1. Admin Template
@@ -73,7 +97,11 @@ in http://localhost/webcore/public/oauth-admin
 
     ![File Manager](https://cloud.githubusercontent.com/assets/74367/15646143/77016990-265c-11e6-9ecc-d82ae2c74f71.png)
 
-3. Image Manipulation
+3. Menu Manager
+
+    ![Menu Manager](https://camo.githubusercontent.com/4da267766ad9a79696f8baf988115005ba8bfa9e/68747470733a2f2f7332382e706f7374696d672e6f72672f706678686e716367642f73637265656e73686f745f32303137303831315f3135303331332e706e67)
+
+4. Image Manipulation
 
         to manipulate image use http://localhost/webcore/public/img/{path}?{param=value}
 
@@ -81,14 +109,22 @@ in http://localhost/webcore/public/oauth-admin
         
     see Glide documentation in http://glide.thephpleague.com
 
-4. Additional Form Builder
+5. Laravel Generator with Additional Form Builder
 
-    - Date Time Picker
-    - Select2
-    - HTML Text Editor
-    - File Uploder
+    - Date Time Picker (htmltype = date-picker, time-picker or datetime-picker)
+    - Select2 (all select input will be select2)
+    - HTML Text Editor (htmltype = text-editor)
+    - File Manager (htmltype = file-manager or files-manager)
 
-5. Pre Configured Oauth using Laravel Passport (with resources example)
+6. Reusable Component
+
+    - by Widget (Widget Class & Widget View) using arrilot/laravel-widgets for UI Component
+
+        as much as possible the widget should have a loose coupled, bring data on the fly, avoid directly include / use in widget class
+
+    - by Laravel Package
+
+7. Pre Configured Oauth using Laravel Passport (with resources example)
 
     - to login use http://localhost/webcore/public/oauth/token
 
@@ -142,6 +178,14 @@ in http://localhost/webcore/public/oauth-admin
 
 
 ## 2. Laravel Generator
+
+Webcore use infyomlabs/laravel-generator, with renamed artisan command for
+more generic, to :
+
+    php artisan generate[.command]:{command} {Model_name} [option]
+
+See infyomlabs/laravel-generator documentation here http://labs.infyom.com/laravelgenerator
+
 ### Perspective :
 
     HUMAN
@@ -150,7 +194,7 @@ in http://localhost/webcore/public/oauth-admin
     
     COMPUTER
     Interface       -   Tools (Worker)              -   Executor
-    Generators\*    -   Common\* and Utils\*        -   Commands\*    
+    Generators\*    -   Common\* and Utils\*        -   Commands\*
     
 ### Guidance
 

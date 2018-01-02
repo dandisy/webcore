@@ -38,7 +38,7 @@ class RollbackGeneratorCommand extends Command
      *
      * @var string
      */
-    protected $name = 'webcore:rollback';
+    protected $name = 'generate:rollback';
     /**
      * The console command description.
      *

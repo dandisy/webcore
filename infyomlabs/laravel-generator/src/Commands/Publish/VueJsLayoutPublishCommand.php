@@ -11,7 +11,7 @@ class VueJsLayoutPublishCommand extends PublishBaseCommand
      *
      * @var string
      */
-    protected $name = 'webcore.publish:vuejs';
+    protected $name = 'generate.publish:vuejs';
 
     /**
      * The console command description.

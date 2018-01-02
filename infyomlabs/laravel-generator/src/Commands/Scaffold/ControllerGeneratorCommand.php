@@ -13,7 +13,7 @@ class ControllerGeneratorCommand extends BaseCommand
      *
      * @var string
      */
-    protected $name = 'webcore.scaffold:controller';
+    protected $name = 'generate.scaffold:controller';
 
     /**
      * The console command description.

@@ -13,7 +13,7 @@ class ModelGeneratorCommand extends BaseCommand
      *
      * @var string
      */
-    protected $name = 'webcore:model';
+    protected $name = 'generate:model';
 
     /**
      * The console command description.

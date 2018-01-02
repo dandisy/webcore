@@ -610,9 +610,9 @@ class FileManagerController extends BaseController {
         }*/
         // start by dandisy
         if(last($home) != "public"){
-            $this->publicPath = $append.last($home).$publicPath.'/storage';
+            $this->publicPath = $append.last($home).config('filemanager.assetsDirectory', '').$publicPath;
         } else {
-            $this->publicPath = $append.$publicPath.'/storage';
+            $this->publicPath = $append.config('filemanager.assetsDirectory', '').$publicPath;
         }
         // end by dandisy
     }

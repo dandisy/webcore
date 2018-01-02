@@ -21,48 +21,39 @@ class PermissionDataTable extends DataTable
         return $dataTable
             ->addColumn('action', 'permissions.datatables_actions');
     }
-
+    
     /**
-     * Get the query object to be processed by datatables.
-     *
-     * @return \Illuminate\Database\Query\Builder|\Illuminate\Database\Eloquent\Builder
-     */
-    public function query()
+        * Get query source of dataTable.
+        *
+        * @param \App\Models\Permission $model
+        * @return \Illuminate\Database\Eloquent\Builder
+        */
+    public function query(Permission $model)
     {
-        $permissions = Permission::query();
-
-        return $this->applyScopes($permissions);
+        return $model->newQuery();
     }
-
+    
     /**
-     * Optional method if you want to use html builder.
-     *
-     * @return \Yajra\Datatables\Html\Builder
-     */
+        * Optional method if you want to use html builder.
+        *
+        * @return \Yajra\DataTables\Html\Builder
+        */
     public function html()
     {
         return $this->builder()
             ->columns($this->getColumns())
-            ->addAction(['width' => '10%'])
-            ->ajax('')
+            ->minifiedAjax()
+            ->addAction(['width' => '80px'])
             ->parameters([
-                'dom' => 'Bfrtip',
-                'scrollX' => false,
+                'dom'     => 'Bfrtip',
+                'order'   => [[0, 'desc']],
                 'buttons' => [
+                    'create',
+                    'export',
                     'print',
                     'reset',
                     'reload',
-                    [
-                         'extend'  => 'collection',
-                         'text'    => '<i class="fa fa-download"></i> Export',
-                         'buttons' => [
-                             'csv',
-                             'excel',
-                             /*'pdf',*/
-                         ],
-                    ],
-                    'colvis'
-                ]
+                ],
             ]);
     }
 
@@ -74,8 +65,8 @@ class PermissionDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'name' => ['name' => 'name', 'data' => 'name'],
-            'description' => ['name' => 'description', 'data' => 'description']
+            'name',
+            'description'
         ];
     }
 
@@ -86,6 +77,6 @@ class PermissionDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'permissions';
+        return 'permissions_' . time();
     }
 }

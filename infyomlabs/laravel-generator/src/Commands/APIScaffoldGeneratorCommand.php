@@ -11,7 +11,7 @@ class APIScaffoldGeneratorCommand extends BaseCommand
      *
      * @var string
      */
-    protected $name = 'webcore:api_scaffold';
+    protected $name = 'generate:api_scaffold';
 
     /**
      * The console command description.

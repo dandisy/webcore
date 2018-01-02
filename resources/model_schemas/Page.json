@@ -8,7 +8,18 @@
         "fillable": false,
         "primary": true,
         "inForm": false,
-        "inIndex": false
+        "inIndex": true
+    },
+    {
+        "name": "name",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true
     },
     {
         "name": "title",
@@ -33,11 +44,22 @@
         "inIndex": true
     },
     {
-        "name": "content",
+        "name": "summary",
         "dbType": "text",
-        "htmlType": "textarea-rte",
-        "validations": "required",
-        "searchable": "",
+        "htmlType": "textarea",
+        "validations": null,
+        "searchable": null,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true
+    },
+    {
+        "name": "description",
+        "dbType": "text",
+        "htmlType": "text-editor",
+        "validations": null,
+        "searchable": null,
         "fillable": true,
         "primary": false,
         "inForm": true,
@@ -47,7 +69,40 @@
         "name": "tag",
         "dbType": "string",
         "htmlType": "text",
-        "validations": "",
+        "validations": null,
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true
+    },
+    {
+        "name": "version",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": null,
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true
+    },
+    {
+        "name": "language",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": null,
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true
+    },
+    {
+        "name": "template",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required",
         "searchable": true,
         "fillable": true,
         "primary": false,
@@ -68,8 +123,8 @@
     {
         "name": "created_by",
         "dbType": "integer",
-        "htmlType": "text",
-        "validations": "",
+        "htmlType": null,
+        "validations": null,
         "searchable": true,
         "fillable": true,
         "primary": false,

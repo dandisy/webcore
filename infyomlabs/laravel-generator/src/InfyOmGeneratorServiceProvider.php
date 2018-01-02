@@ -45,96 +45,96 @@ class InfyOmGeneratorServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('webcore.publish', function ($app) {
+        $this->app->singleton('generate.publish', function ($app) {
             return new GeneratorPublishCommand();
         });
 
-        $this->app->singleton('webcore.api', function ($app) {
+        $this->app->singleton('generate.api', function ($app) {
             return new APIGeneratorCommand();
         });
 
-        $this->app->singleton('webcore.scaffold', function ($app) {
+        $this->app->singleton('generate.scaffold', function ($app) {
             return new ScaffoldGeneratorCommand();
         });
 
-        $this->app->singleton('webcore.publish.layout', function ($app) {
+        $this->app->singleton('generate.publish.layout', function ($app) {
             return new LayoutPublishCommand();
         });
 
-        $this->app->singleton('webcore.publish.templates', function ($app) {
+        $this->app->singleton('generate.publish.templates', function ($app) {
             return new PublishTemplateCommand();
         });
 
-        $this->app->singleton('webcore.api_scaffold', function ($app) {
+        $this->app->singleton('generate.api_scaffold', function ($app) {
             return new APIScaffoldGeneratorCommand();
         });
 
-        $this->app->singleton('webcore.migration', function ($app) {
+        $this->app->singleton('generate.migration', function ($app) {
             return new MigrationGeneratorCommand();
         });
 
-        $this->app->singleton('webcore.model', function ($app) {
+        $this->app->singleton('generate.model', function ($app) {
             return new ModelGeneratorCommand();
         });
 
-        $this->app->singleton('webcore.repository', function ($app) {
+        $this->app->singleton('generate.repository', function ($app) {
             return new RepositoryGeneratorCommand();
         });
 
-        $this->app->singleton('webcore.api.controller', function ($app) {
+        $this->app->singleton('generate.api.controller', function ($app) {
             return new APIControllerGeneratorCommand();
         });
 
-        $this->app->singleton('webcore.api.requests', function ($app) {
+        $this->app->singleton('generate.api.requests', function ($app) {
             return new APIRequestsGeneratorCommand();
         });
 
-        $this->app->singleton('webcore.api.tests', function ($app) {
+        $this->app->singleton('generate.api.tests', function ($app) {
             return new TestsGeneratorCommand();
         });
 
-        $this->app->singleton('webcore.scaffold.controller', function ($app) {
+        $this->app->singleton('generate.scaffold.controller', function ($app) {
             return new ControllerGeneratorCommand();
         });
 
-        $this->app->singleton('webcore.scaffold.requests', function ($app) {
+        $this->app->singleton('generate.scaffold.requests', function ($app) {
             return new RequestsGeneratorCommand();
         });
 
-        $this->app->singleton('webcore.scaffold.views', function ($app) {
+        $this->app->singleton('generate.scaffold.views', function ($app) {
             return new ViewsGeneratorCommand();
         });
 
-        $this->app->singleton('webcore.rollback', function ($app) {
+        $this->app->singleton('generate.rollback', function ($app) {
             return new RollbackGeneratorCommand();
         });
 
-        $this->app->singleton('webcore.vuejs', function ($app) {
+        $this->app->singleton('generate.vuejs', function ($app) {
             return new VueJsGeneratorCommand();
         });
-        $this->app->singleton('webcore.publish.vuejs', function ($app) {
+        $this->app->singleton('generate.publish.vuejs', function ($app) {
             return new VueJsLayoutPublishCommand();
         });
 
         $this->commands([
-            'webcore.publish',
-            'webcore.api',
-            'webcore.scaffold',
-            'webcore.api_scaffold',
-            'webcore.publish.layout',
-            'webcore.publish.templates',
-            'webcore.migration',
-            'webcore.model',
-            'webcore.repository',
-            'webcore.api.controller',
-            'webcore.api.requests',
-            'webcore.api.tests',
-            'webcore.scaffold.controller',
-            'webcore.scaffold.requests',
-            'webcore.scaffold.views',
-            'webcore.rollback',
-            'webcore.vuejs',
-            'webcore.publish.vuejs',
+            'generate.publish',
+            'generate.api',
+            'generate.scaffold',
+            'generate.api_scaffold',
+            'generate.publish.layout',
+            'generate.publish.templates',
+            'generate.migration',
+            'generate.model',
+            'generate.repository',
+            'generate.api.controller',
+            'generate.api.requests',
+            'generate.api.tests',
+            'generate.scaffold.controller',
+            'generate.scaffold.requests',
+            'generate.scaffold.views',
+            'generate.rollback',
+            'generate.vuejs',
+            'generate.publish.vuejs',
         ]);
     }
 }

@@ -15,7 +15,7 @@ class TestsGeneratorCommand extends BaseCommand
      *
      * @var string
      */
-    protected $name = 'webcore.api:tests';
+    protected $name = 'generate.api:tests';
 
     /**
      * The console command description.

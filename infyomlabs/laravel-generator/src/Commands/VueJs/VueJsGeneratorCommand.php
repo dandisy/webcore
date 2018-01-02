@@ -21,7 +21,7 @@ class VueJsGeneratorCommand extends BaseCommand
      *
      * @var string
      */
-    protected $name = 'webcore:vuejs';
+    protected $name = 'generate:vuejs';
 
     /**
      * The console command description.

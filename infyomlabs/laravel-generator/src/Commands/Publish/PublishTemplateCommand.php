@@ -9,7 +9,7 @@ class PublishTemplateCommand extends PublishBaseCommand
      *
      * @var string
      */
-    protected $name = 'webcore.publish:templates';
+    protected $name = 'generate.publish:templates';
 
     /**
      * The console command description.

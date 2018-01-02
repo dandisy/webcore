@@ -6,7 +6,10 @@ use App\DataTables\UserDataTable;
 use App\Http\Requests;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
+use App\Repositories\RoleRepository;
 use App\Repositories\UserRepository;
+use App\RoleUser;
+use App\User;
 use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
@@ -15,10 +18,12 @@ class UserController extends AppBaseController
 {
     /** @var  UserRepository */
     private $userRepository;
+    private $roleRepository;
 
-    public function __construct(UserRepository $userRepo)
+    public function __construct(UserRepository $userRepo, RoleRepository $roleRepo)
     {
         $this->userRepository = $userRepo;
+        $this->roleRepository = $roleRepo;
     }
 
     /**
@@ -39,7 +44,9 @@ class UserController extends AppBaseController
      */
     public function create()
     {
-        return view('users.create');
+        $role = $this->roleRepository->all();
+
+        return view('users.create')->with('role', $role);
     }
 
     /**
@@ -51,11 +58,19 @@ class UserController extends AppBaseController
      */
     public function store(CreateUserRequest $request)
     {
-        $input = $request->all();
+        if($request->password === $request->confirm_password) {
+            $user = new User();
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->password = bcrypt($request->password);
+            $user->save();
 
-        $user = $this->userRepository->create($input);
+            $user->roles()->attach([$request->role]);
 
-        Flash::success('User saved successfully.');
+            Flash::success('User saved successfully.');
+        } else {
+            Flash::error('Password not match.');
+        }
 
         return redirect(route('users.index'));
     }
@@ -90,6 +105,9 @@ class UserController extends AppBaseController
     public function edit($id)
     {
         $user = $this->userRepository->findWithoutFail($id);
+        $role = $this->roleRepository->all();
+
+        $user['role'] = @$user->roles()->first()->id;
 
         if (empty($user)) {
             Flash::error('User not found');
@@ -97,7 +115,7 @@ class UserController extends AppBaseController
             return redirect(route('users.index'));
         }
 
-        return view('users.edit')->with('user', $user);
+        return view('users.edit')->with('user', $user)->with('role', $role);
     }
 
     /**
@@ -117,6 +135,10 @@ class UserController extends AppBaseController
 
             return redirect(route('users.index'));
         }
+
+        $user->roles()->sync([$request->role]);
+
+        unset($user['role']);
 
         $user = $this->userRepository->update($request->all(), $id);
 

@@ -13,7 +13,7 @@ class ViewsGeneratorCommand extends BaseCommand
      *
      * @var string
      */
-    protected $name = 'webcore.scaffold:views';
+    protected $name = 'generate.scaffold:views';
 
     /**
      * The console command description.

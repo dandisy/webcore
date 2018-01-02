@@ -834,16 +834,16 @@
 
 @section('scripts')
     <!-- FastClick -->
-    <script src="vendor/adminlte/plugins/fastclick/fastclick.js"></script>
+    <script src="{{ asset('vendor/adminlte/plugins/fastclick/fastclick.js') }}"></script>
     <!-- Sparkline -->
-    <script src="vendor/adminlte/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <script src="{{ asset('vendor/adminlte/plugins/sparkline/jquery.sparkline.min.js') }}"></script>
     <!-- jvectormap -->
-    <script src="vendor/adminlte/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-    <script src="vendor/adminlte/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="{{ asset('vendor/adminlte/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js') }}"></script>
+    <script src="{{ asset('vendor/adminlte/plugins/jvectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
     <!-- SlimScroll 1.3.0 -->
-    <script src="vendor/adminlte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="{{ asset('vendor/adminlte/plugins/slimScroll/jquery.slimscroll.min.js') }}"></script>
     <!-- ChartJS 1.0.1 -->
-    <script src="vendor/adminlte/plugins/chartjs/Chart.min.js"></script>
+    <script src="{{ asset('vendor/adminlte/plugins/chartjs/Chart.min.js') }}"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="vendor/adminlte/dist/js/pages/dashboard2.js"></script>
+    <script src="{{ asset('vendor/adminlte/dist/js/pages/dashboard2.js') }}"></script>
 @endsection

@@ -170,6 +170,8 @@ return [
          Prettus\Repository\Providers\RepositoryServiceProvider::class,
          Nestable\NestableServiceProvider::class,
          Infinety\FileManager\FileManagerServiceProvider::class,
+
+         // package example
          Webcore\Timezones\TimezonesServiceProvider::class,
 
         /*

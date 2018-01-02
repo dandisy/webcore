@@ -13,7 +13,7 @@ class RepositoryGeneratorCommand extends BaseCommand
      *
      * @var string
      */
-    protected $name = 'webcore:repository';
+    protected $name = 'generate:repository';
 
     /**
      * The console command description.

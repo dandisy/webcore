@@ -44,16 +44,3 @@ Route::get('post/{id}', function ($id) use ($posts) {
     return [];
 });
 // end resource example
-
-//Route::resource('menus', 'MenuAPIController');
-
-Route::resource('users', 'UserAPIController');
-
-Route::resource('roles', 'RoleAPIController');
-
-Route::resource('permissions', 'PermissionAPIController');
-
-//Route::resource('settings', 'SettingAPIController');
-
-//Route::resource('pages', 'PageAPIController');
-

@@ -7,6 +7,8 @@ use App\Http\Requests;
 use App\Http\Requests\CreateRoleRequest;
 use App\Http\Requests\UpdateRoleRequest;
 use App\Repositories\RoleRepository;
+use App\Repositories\PermissionRepository;
+use App\Role;
 use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
@@ -16,9 +18,10 @@ class RoleController extends AppBaseController
     /** @var  RoleRepository */
     private $roleRepository;
 
-    public function __construct(RoleRepository $roleRepo)
+    public function __construct(RoleRepository $roleRepo, PermissionRepository $permissionRepo)
     {
         $this->roleRepository = $roleRepo;
+        $this->permissionRepository = $permissionRepo;
     }
 
     /**
@@ -39,7 +42,9 @@ class RoleController extends AppBaseController
      */
     public function create()
     {
-        return view('roles.create');
+        $permission = $this->permissionRepository->all();
+
+        return view('roles.create')->with('permission', $permission);
     }
 
     /**
@@ -51,9 +56,17 @@ class RoleController extends AppBaseController
      */
     public function store(CreateRoleRequest $request)
     {
-        $input = $request->all();
+        $role = new Role();
+        $role->name = snake_case($request->name);
+        $role->display_name = $request->name;
+        $role->description  = $request->description;
+        $role->save();
 
-        $role = $this->roleRepository->create($input);
+        if($request->permission) {
+            foreach ($request->permission as $permission) {
+                $role->permissions()->attach([$permission]);
+            }
+        }
 
         Flash::success('Role saved successfully.');
 
@@ -90,6 +103,7 @@ class RoleController extends AppBaseController
     public function edit($id)
     {
         $role = $this->roleRepository->findWithoutFail($id);
+        $permission = $this->permissionRepository->all();
 
         if (empty($role)) {
             Flash::error('Role not found');
@@ -97,7 +111,7 @@ class RoleController extends AppBaseController
             return redirect(route('roles.index'));
         }
 
-        return view('roles.edit')->with('role', $role);
+        return view('roles.edit')->with('role', $role)->with('permission', $permission);
     }
 
     /**

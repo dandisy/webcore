@@ -27,12 +27,12 @@ class UserDataTable extends DataTable
     /**
         * Get query source of dataTable.
         *
-        * @param \App\Models\Post $model
+        * @param \App\User $model
         * @return \Illuminate\Database\Eloquent\Builder
         */
     public function query(User $model)
     {
-        return $model->newQuery();
+        return $model::with('role');
     }
     
     /**

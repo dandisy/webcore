@@ -13,7 +13,7 @@ class APIControllerGeneratorCommand extends BaseCommand
      *
      * @var string
      */
-    protected $name = 'webcore.api:controller';
+    protected $name = 'generate.api:controller';
 
     /**
      * The console command description.

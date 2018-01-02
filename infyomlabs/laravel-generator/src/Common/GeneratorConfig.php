@@ -114,6 +114,9 @@ class GeneratorConfig
         $this->nsApp = $commandData->commandObj->getLaravel()->getNamespace();
         $this->nsApp = substr($this->nsApp, 0, strlen($this->nsApp) - 1);
         $this->nsRepository = config('infyom.laravel_generator.namespace.repository', 'App\Repositories').$prefix;
+        if (config('infyom.laravel_generator.ignore_repository_prefix', false)) {
+            $this->nsRepository = config('infyom.laravel_generator.namespace.repository', 'App\Repositories');
+        }
         $this->nsModel = config('infyom.laravel_generator.namespace.model', 'App\Models').$prefix;
         if (config('infyom.laravel_generator.ignore_model_prefix', false)) {
             $this->nsModel = config('infyom.laravel_generator.namespace.model', 'App\Models');
@@ -128,7 +131,16 @@ class GeneratorConfig
             'infyom.laravel_generator.namespace.api_controller',
             'App\Http\Controllers\API'
         ).$prefix;
+        if (config('infyom.laravel_generator.ignore_api_controller_prefix', false)) {
+            $this->nsApiController = config(
+                'infyom.laravel_generator.namespace.api_controller',
+                'App\Http\Controllers\API'
+            );
+        }
         $this->nsApiRequest = config('infyom.laravel_generator.namespace.api_request', 'App\Http\Requests\API').$prefix;
+        if (config('infyom.laravel_generator.ignore_api_request_prefix', false)) {
+            $this->nsApiRequest = config('infyom.laravel_generator.namespace.api_request', 'App\Http\Requests\API');
+        }
 
         $this->nsRequest = config('infyom.laravel_generator.namespace.request', 'App\Http\Requests').$prefix;
         $this->nsRequestBase = config('infyom.laravel_generator.namespace.request', 'App\Http\Requests');
@@ -154,6 +166,12 @@ class GeneratorConfig
             'infyom.laravel_generator.path.repository',
             app_path('Repositories/')
         ).$prefix;
+        if (config('infyom.laravel_generator.ignore_repository_prefix', false)) {
+            $this->pathRepository = config(
+                'infyom.laravel_generator.path.repository',
+                app_path('Repositories/')
+            );
+        }
 
         $this->pathModel = config('infyom.laravel_generator.path.model', app_path('Models/')).$prefix;
         if (config('infyom.laravel_generator.ignore_model_prefix', false)) {
@@ -166,11 +184,23 @@ class GeneratorConfig
             'infyom.laravel_generator.path.api_controller',
             app_path('Http/Controllers/API/')
         ).$prefix;
+        if (config('infyom.laravel_generator.ignore_api_controller_prefix', false)) {
+            $this->pathApiController = config(
+                'infyom.laravel_generator.path.api_controller',
+                app_path('Http/Controllers/API/')
+            );
+        }
 
         $this->pathApiRequest = config(
             'infyom.laravel_generator.path.api_request',
             app_path('Http/Requests/API/')
         ).$prefix;
+        if (config('infyom.laravel_generator.ignore_api_request_prefix', false)) {
+            $this->pathApiRequest = config(
+                'infyom.laravel_generator.path.api_request',
+                app_path('Http/Requests/API/')
+            );
+        }
 
         $this->pathApiRoutes = config('infyom.laravel_generator.path.api_routes', app_path('Http/api_routes.php'));
 

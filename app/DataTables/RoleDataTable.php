@@ -27,7 +27,7 @@ class RoleDataTable extends DataTable
     /**
         * Get query source of dataTable.
         *
-        * @param \App\Models\Post $model
+        * @param \App\Models\Role $model
         * @return \Illuminate\Database\Eloquent\Builder
         */
     public function query(Role $model)

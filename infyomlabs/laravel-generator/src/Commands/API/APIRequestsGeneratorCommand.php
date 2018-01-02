@@ -13,7 +13,7 @@ class APIRequestsGeneratorCommand extends BaseCommand
      *
      * @var string
      */
-    protected $name = 'webcore.api:requests';
+    protected $name = 'generate.api:requests';
 
     /**
      * The console command description.

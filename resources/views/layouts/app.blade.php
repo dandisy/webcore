@@ -5,31 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
-    <title>Webcore Platform</title>
+    <title>WebCORE Platform</title>
 
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins//font-awesome/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/select2/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/dist/css/AdminLTE.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/dist/css/skins/_all-skins.min.css') }}">
 
     <!-- Ionicons -->
-    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/ionicons/ionicons.min.css') }}">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
     <!-- Date Picker -->
-    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/datepicker/datepicker3.css') }}">
-
-    <!-- Date Time Picker -->
-    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/datetimepicker/css/bootstrap-datetimepicker.css') }}">
+    <link href="{{ asset('vendor/adminlte/plugins/datepicker/datepicker3.css') }}" rel="stylesheet">
 
     <!-- Tags Input -->
-    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css') }}">
+    <link href="{{ asset('vendor/adminlte/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css') }}" rel="stylesheet">
 
     <!-- include Summernote -->
-    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/summernote/summernote.css') }}">
+    <link href="{{ asset('vendor/adminlte/plugins/summernote/summernote.css') }}" rel="stylesheet">
+
+    <!-- Date Time Picker -->
+    <link href="{{ asset('vendor/adminlte/plugins/datetimepicker/css/bootstrap-datetimepicker.css') }}" rel="stylesheet">
 
     <!-- include Fancybox -->
-    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/fancybox/jquery.fancybox.min.css') }}">
+    <link href="{{ asset('vendor/adminlte/plugins/fancybox/jquery.fancybox.min.css') }}" rel="stylesheet">
 
     <!-- include Fileuploader -->
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/fileuploader/jquery.fileuploader.css') }}">
@@ -65,7 +65,7 @@
 
             <!-- Logo -->
             <a href="#" class="logo">
-                <b>Webcore</b>
+                <b>WebCORE</b>
             </a>
 
             <!-- Header Navbar -->
@@ -126,9 +126,16 @@
             @yield('content')
         </div>
 
+        <div class="summernote-filemanager">
+            <div id="snfmImage-thumb" style="display:none;width:100%">
+                <img src="" alt="" style="width:100%">
+            </div>
+            <a style="display:none" href="{!! url('admin/filemanager/dialog?filter=all&appendId=snfmImage') !!}" class="sn-filemanager fancybox.iframe" data-fancybox-type="iframe"></a>
+        </div>
+
         <!-- Main Footer -->
         <footer class="main-footer" style="max-height: 100px;text-align: center">
-            <strong>Copyright © 2017 <a href="#">Webcore</a>.</strong> All rights reserved.
+            <strong>Copyright © 2017 <a href="#">WebCORE</a>.</strong> All rights reserved.
         </footer>
 
     </div>
@@ -186,8 +193,7 @@
     <!-- Bootstrap -->
     <script src="{{ asset('vendor/adminlte/plugins//bootstrap/js/bootstrap.min.js') }}"></script>
 
-    <!-- Moment -->
-    <script src="{{ asset('vendor/adminlte/plugins/moment/moment.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.min.js"></script>
 
     <!-- Date Picker App -->
     <script src="{{ asset('vendor/adminlte/plugins/datepicker/bootstrap-datepicker.js') }}"></script>
@@ -211,18 +217,61 @@
     <script src="{{ asset('vendor/adminlte/plugins/fileuploader/jquery.fileuploader.min.js') }}"></script>
 
     <!-- Input Mask -->
-    <script src="{{ asset('vendor/adminlte/plugins/inputmask/jquery.inputmask.bundle.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.2.6/jquery.inputmask.bundle.min.js"></script>
 
     <!-- AdminLTE App -->
     <script src="{{ asset('vendor/adminlte/dist/js/app.min.js') }}"></script>
 
     <script>
         $(document).ready(function() {
+            // start summernote
+            var snfmContext;
+
+            var fileManager = function(context) {
+                snfmContext = context;
+
+                var ui = $.summernote.ui;
+
+                // create button
+                var button = ui.button({
+                    contents: '<i class="fa fa-photo"/>',
+                    tooltip: 'File Manager',
+                    click: function() {
+                        $('.sn-filemanager').trigger('click');
+                    }
+                });
+
+                return button.render();
+            }
+
             $('.rte').summernote({
                 height: 250,
                 minHeight: 100,
-                maxHeight: 300
+                maxHeight: 300,
+                toolbar: [
+                    ['style', ['bold', 'italic', 'underline', 'clear']],
+                    ['fontsize', ['fontsize']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['table', ['table']],
+                    ['insert', ['link', 'hr']],
+                    ['image', ['fm']],
+                    ['video', ['video']],
+                    ['misc', ['fullscreen', 'codeview']]
+                ],
+                buttons: {
+                    fm: fileManager
+                }
             });
+
+            $('.sn-filemanager').fancybox({
+                type : 'iframe',
+                afterClose: function() {
+                    var snfmImage = $('#snfmImage-thumb').find('img').attr('src');
+                    snfmContext.invoke('editor.insertImage', snfmImage, snfmImage.substr(snfmImage.lastIndexOf('/') + 1));
+                }
+            });
+            // end summernote
 
             $('.filemanager').fancybox({
                 type : 'iframe'

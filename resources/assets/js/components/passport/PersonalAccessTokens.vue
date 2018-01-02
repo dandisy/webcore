@@ -209,7 +209,7 @@
              * Get all of the personal access tokens for the user.
              */
             getTokens() {
-                axios.get('/webcore/public/oauth/personal-access-tokens')
+                axios.get('/webcore-cms/public/oauth/personal-access-tokens')
                         .then(response => {
                             this.tokens = response.data;
                         });
@@ -219,7 +219,7 @@
              * Get all of the available scopes.
              */
             getScopes() {
-                axios.get('/webcore/public/oauth/scopes')
+                axios.get('/webcore-cms/public/oauth/scopes')
                         .then(response => {
                             this.scopes = response.data;
                         });
@@ -240,7 +240,7 @@
 
                 this.form.errors = [];
 
-                axios.post('/webcore/public/oauth/personal-access-tokens', this.form)
+                axios.post('/webcore-cms/public/oauth/personal-access-tokens', this.form)
                         .then(response => {
                             this.form.name = '';
                             this.form.scopes = [];
@@ -292,7 +292,7 @@
              * Revoke the given token.
              */
             revoke(token) {
-                axios.delete('/webcore/public/oauth/personal-access-tokens/' + token.id)
+                axios.delete('/webcore-cms/public/oauth/personal-access-tokens/' + token.id)
                         .then(response => {
                             this.getTokens();
                         });

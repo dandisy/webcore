@@ -11,7 +11,7 @@ class LayoutPublishCommand extends PublishBaseCommand
      *
      * @var string
      */
-    protected $name = 'webcore.publish:layout';
+    protected $name = 'generate.publish:layout';
 
     /**
      * The console command description.

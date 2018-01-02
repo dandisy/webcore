@@ -12,7 +12,7 @@ class ScaffoldGeneratorCommand extends BaseCommand
      *
      * @var string
      */
-    protected $name = 'webcore:scaffold';
+    protected $name = 'generate:scaffold';
 
     /**
      * The console command description.

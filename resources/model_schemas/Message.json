@@ -36,7 +36,7 @@
         "name": "phone",
         "dbType": "string",
         "htmlType": "text",
-        "validations": "",
+        "validations": null,
         "searchable": true,
         "fillable": true,
         "primary": false,

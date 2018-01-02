@@ -13,7 +13,7 @@ class MigrationGeneratorCommand extends BaseCommand
      *
      * @var string
      */
-    protected $name = 'webcore:migration';
+    protected $name = 'generate:migration';
 
     /**
      * The console command description.

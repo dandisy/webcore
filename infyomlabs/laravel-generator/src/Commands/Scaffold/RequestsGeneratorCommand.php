@@ -13,7 +13,7 @@ class RequestsGeneratorCommand extends BaseCommand
      *
      * @var string
      */
-    protected $name = 'webcore.scaffold:requests';
+    protected $name = 'generate.scaffold:requests';
 
     /**
      * The console command description.

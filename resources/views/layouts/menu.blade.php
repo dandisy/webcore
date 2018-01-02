@@ -1,34 +1,48 @@
+@role(['superadministrator','administrator','verificator','user'])
 <li class="header">DASHBOARD</li>
 
-<li class="treeview">
-    <a href="{!! url('home') !!}"><i class="fa fa-area-chart"></i><span>Stats</span></a>
+<li class="{{ Request::is('dashboard*') ? 'active' : '' }}">>
+    <a href="{!! url('dashboard') !!}"><i class="fa fa-area-chart"></i><span>Stats</span></a>
 </li>
 
-<li class="header">PUBLISH</li>
+{{--<li class="header">CONTENTS</li>
 
-{{--<li class="{{ Request::is('pages*') ? 'active' : '' }}">
-    <a href="{!! route('pages.index') !!}"><i class="fa fa-sticky-note"></i><span>Pages</span></a>
+<li class="{{ Request::is('pages*') ? 'active' : '' }}">
+    <a href="{!! route('admin.pages.index') !!}"><i class="fa fa-edit"></i><span>Pages</span></a>
+</li>
+
+<li class="header">COMPONENTS</li>
+
+<li class="{{ Request::is('posts*') ? 'active' : '' }}">
+    <a href="{!! route('admin.posts.index') !!}"><i class="fa fa-edit"></i><span>Posts</span></a>
+</li>
+
+<li class="{{ Request::is('banners*') ? 'active' : '' }}">
+    <a href="{!! route('admin.banners.index') !!}"><i class="fa fa-edit"></i><span>Banners</span></a>
+</li>
+
+<li class="header">ARRANGEMENT</li>
+
+<li class="{{ Request::is('presentations*') ? 'active' : '' }}">
+    <a href="{!! route('admin.presentations.index') !!}"><i class="fa fa-edit"></i><span>Presentations</span></a>
 </li>--}}
 
-{{--<li class="header">ARRANGE</li>
+<li class="header">MANAGEMENT</li>
 
-<li class="{{ Request::is('menus*') ? 'active' : '' }}">
-    <a href="{!! route('menus.index') !!}"><i class="fa fa-bars"></i><span>Menus</span></a>
+{{--<li class="{{ Request::is('menu-manager*') ? 'active' : '' }}">
+    <a href="{!! url('menu-manager') !!}"><i class="fa fa-bars"></i><span>Menus</span></a>
 </li>--}}
-
-<li class="header">MANAGE</li>
 
 <li class="{{ Request::is('assets*') ? 'active' : '' }}">
     <a href="{!! url('assets') !!}"><i class="fa fa-folder-open"></i><span>Assets</span></a>
 </li>
 
-@role(['superadministrator','administrator'])
 <li class="{{ Request::is('users*') ? 'active' : '' }}">
     <a href="{!! route('users.index') !!}"><i class="fa fa-users"></i><span>Users</span></a>
 </li>
 @endrole
 
-@role('superadministrator')
+@role(['superadministrator','administrator'])
 <li class="{{ Request::is('roles*') ? 'active' : '' }}">
     <a href="{!! route('roles.index') !!}"><i class="fa fa-road"></i><span>Roles</span></a>
 </li>
@@ -39,11 +53,10 @@
 @endrole
 
 @role(['superadministrator','administrator'])
-<li class="header">CONFIGURE</li>
+<li class="header">CONFIGURATION</li>
 
-{{--<li class="{{ Request::is('settings*') ? 'active' : '' }}">
+<li class="{{ Request::is('settings*') ? 'active' : '' }}">
     <a href="{!! route('settings.index') !!}"><i class="fa fa-cog"></i><span>Settings</span></a>
-</li>--}}
+</li>
 @endrole
-
 
