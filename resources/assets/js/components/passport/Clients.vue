@@ -271,7 +271,7 @@
              * Get all of the OAuth clients for the user.
              */
             getClients() {
-                axios.get('/webcore-cms/public/oauth/clients')
+                axios.get('/webcore/public/oauth/clients')
                         .then(response => {
                             this.clients = response.data;
                         });
@@ -289,7 +289,7 @@
              */
             store() {
                 this.persistClient(
-                    'post', '/webcore-cms/public/oauth/clients',
+                    'post', '/webcore/public/oauth/clients',
                     this.createForm, '#modal-create-client'
                 );
             },
@@ -310,7 +310,7 @@
              */
             update() {
                 this.persistClient(
-                    'put', '/webcore-cms/public/oauth/clients/' + this.editForm.id,
+                    'put', '/webcore/public/oauth/clients/' + this.editForm.id,
                     this.editForm, '#modal-edit-client'
                 );
             },
@@ -344,7 +344,7 @@
              * Destroy the given client.
              */
             destroy(client) {
-                axios.delete('/webcore-cms/public/oauth/clients/' + client.id)
+                axios.delete('/webcore/public/oauth/clients/' + client.id)
                         .then(response => {
                             this.getClients();
                         });

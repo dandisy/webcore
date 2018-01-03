@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests\API;
 
-use App\Models\User;
+use App\User;
 use Webcore\Generator\Request\APIRequest;
 
 class UpdateUserAPIRequest extends APIRequest

@@ -57,18 +57,19 @@ then
 
     php artisan storage:link
 
-then get it all on your favorite browser,
+then get it on your favorite browser,
 
 OPTIONAL if you want to activated oauth
+
+    edit the uri oauth in vue files in resources/assets/js/components/passport
+
+    php artisan passport:keys
 
     npm install
 
     npm run dev
 
-    php artisan passport:keys
-
-then you can access oauth admin panel 
-to manage your oauth client 
+then you can access Oauth Client Manager page
 in http://localhost/webcore/public/oauth-admin
 
 ### Usage

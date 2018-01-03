@@ -91,7 +91,7 @@
              * Get all of the authorized tokens for the user.
              */
             getTokens() {
-                axios.get('/webcore-cms/public/oauth/tokens')
+                axios.get('/webcore/public/oauth/tokens')
                         .then(response => {
                             this.tokens = response.data;
                         });
@@ -101,7 +101,7 @@
              * Revoke the given token.
              */
             revoke(token) {
-                axios.delete('/webcore-cms/public/oauth/tokens/' + token.id)
+                axios.delete('/webcore/public/oauth/tokens/' + token.id)
                         .then(response => {
                             this.getTokens();
                         });

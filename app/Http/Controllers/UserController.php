@@ -138,9 +138,14 @@ class UserController extends AppBaseController
 
         $user->roles()->sync([$request->role]);
 
-        unset($user['role']);
+        $data = $request->all();
+        if($request->password === $request->confirm_password) {
+            $data = $user->toArray();
 
-        $user = $this->userRepository->update($request->all(), $id);
+            $data['password'] = bcrypt($request->password);
+        }
+
+        $user = $this->userRepository->update($data, $id);
 
         Flash::success('User updated successfully.');
 

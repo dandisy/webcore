@@ -35,4 +35,15 @@ class User extends Authenticatable
     public function role() {
         return $this->hasOne('App\Models\RoleUser');
     }
+
+    /**
+     * Validation rules
+     *
+     * @var array
+     */
+    public static $rules = [
+        'name' => 'required',
+        'email' => 'required',
+        'password' => 'required'
+    ];
 }
