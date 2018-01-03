@@ -77,6 +77,8 @@ and see https://github.com/dandisy/webcore-page for dependency configuration
 
     php artisan vendor:publish --provider="Webcore\Menu\MenuServiceProvider" --tag=models
 
+    php artisan migrate
+
 see https://github.com/dandisy/webcore-menu for dependency configuration
 
     php artisan generate:api_scaffold Page --fieldsFile=Page.json --datatables=true --prefix=admin
