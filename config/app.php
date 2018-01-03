@@ -171,10 +171,6 @@ return [
          Webcore\FileManager\FileManagerServiceProvider::class,
          //Nestable\NestableServiceProvider::class,
 
-         // package example
-         Webcore\Timezones\TimezonesServiceProvider::class,
-         Webcore\Microsite\MicrositeServiceProvider::class,
-
         /*
          * Application Service Providers...
          */
