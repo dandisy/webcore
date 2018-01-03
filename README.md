@@ -59,7 +59,9 @@ then
 
 then get it all on your favorite browser,
 
-OPTIONAL if you want to activated oauth 
+OPTIONAL if you want to activated oauth
+
+    npm install
 
     npm run dev
 
@@ -76,6 +78,8 @@ in http://localhost/webcore/public/oauth-admin
 run these command in your terminal
 
     composer require dandisy/webcore-page:dev-master
+
+    php artisan vendor:publish --provider="Webcore\Page\PageServiceProvider" --tag=config
 
 and see https://github.com/dandisy/webcore-page for dependency configuration
 
@@ -96,6 +100,8 @@ see https://github.com/dandisy/webcore-menu for dependency configuration
     php artisan generate:api_scaffold Banner --fieldsFile=Banner.json --datatables=true --prefix=admin
 
     php artisan generate:api_scaffold Presentation --fieldsFile=Presentation.json --datatables=true --prefix=admin
+
+then you can arrange admin side menu in resources/views/layouts/menu.blade.php
 
 * As Admin App (no public site in frontend)
 
