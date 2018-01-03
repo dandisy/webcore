@@ -8,5 +8,17 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Webcore\\Timezones\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Webcore\\Timezones\\TimezonesServiceProvider"
+            ]
+        }
+    }
 }
