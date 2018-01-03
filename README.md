@@ -28,13 +28,13 @@ Copy and paste in terminal line by line, just hit Enter key
 
 * Using Git
 
-    git clone https://github.com/dandisy/webcore.git
+        git clone https://github.com/dandisy/webcore.git
 
-    cd webcore
+        cd webcore
 
-    composer install
+        composer install
 
-    cp .env.example .env
+        cp .env.example .env
 
 Make sure your server, create "webcore" database, edit .env using your favorite editor, 
 for example using nano editor copy and paste this in terminal, and hit Enter key
@@ -47,11 +47,11 @@ Again copy and paste in terminal line by line, and hit Enter key
 
 * Using Composer
 
-    composer create-project dandisy/webcore {your-project-name}
+        composer create-project dandisy/webcore {your-project-name}
 
-    cd {your-project-name}
+        cd {your-project-name}
 
-    php artisan migrate --seed
+        php artisan migrate --seed
 
 Finally
 
