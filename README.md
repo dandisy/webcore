@@ -53,7 +53,7 @@ Again copy and paste in terminal line by line, and hit Enter key
 
         php artisan migrate --seed
 
-Finally
+then
 
     php artisan storage:link
 
