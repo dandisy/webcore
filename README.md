@@ -51,9 +51,9 @@ Again copy and paste in terminal line by line, and hit Enter key
 
         cd {your-project-name}
 
-        php artisan migrate --seed
-
 then
+
+    php artisan migrate --seed
 
     php artisan storage:link
 
