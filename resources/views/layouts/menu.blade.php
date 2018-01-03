@@ -29,9 +29,9 @@
 
 <li class="header">MANAGEMENT</li>
 
-<li class="{{ Request::is('menu-manager*') ? 'active' : '' }}">
+{{--<li class="{{ Request::is('menu-manager*') ? 'active' : '' }}">
     <a href="{!! url('menu-manager') !!}"><i class="fa fa-bars"></i><span>Menus</span></a>
-</li>
+</li>--}}
 
 <li class="{{ Request::is('assets*') ? 'active' : '' }}">
     <a href="{!! url('assets') !!}"><i class="fa fa-folder-open"></i><span>Assets</span></a>
