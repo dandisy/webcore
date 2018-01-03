@@ -26,11 +26,21 @@
 
 Copy and paste in terminal line by line, just hit Enter key
 
+* Using Git
+
     git clone https://github.com/dandisy/webcore.git
 
     cd webcore
 
     composer install
+
+* Using Composer
+
+    composer create-project dandisy/webcore {your-project-name}
+
+    cd {your-project-name}
+
+then
 
     cp .env.example .env
 
