@@ -57,11 +57,10 @@ then
 
     php artisan storage:link
 
-then get it on your favorite browser,
+then get it all on your favorite browser,
 
 OPTIONAL if you want to activated oauth
-
-    edit the uri oauth in vue files in resources/assets/js/components/passport
+edit the uri oauth in vue files in resources/assets/js/components/passport
 
     php artisan passport:keys
 
@@ -69,7 +68,8 @@ OPTIONAL if you want to activated oauth
 
     npm run dev
 
-then you can access Oauth Client Manager page
+then you can access oauth admin panel 
+to manage your oauth client 
 in http://localhost/webcore/public/oauth-admin
 
 ### Usage
@@ -78,9 +78,33 @@ in http://localhost/webcore/public/oauth-admin
 
 run these command in your terminal
 
+    php artisan generate:api_scaffold Page --fieldsFile=Page.json --datatables=true --prefix=admin
+
+    php artisan generate:api_scaffold Post --fieldsFile=Post.json --datatables=true --prefix=admin
+
+    php artisan generate:api_scaffold Banner --fieldsFile=Banner.json --datatables=true --prefix=admin
+
+    php artisan generate:api_scaffold Presentation --fieldsFile=Presentation.json --datatables=true --prefix=admin
+
+then
+
     composer require dandisy/webcore-page:dev-master
 
     php artisan vendor:publish --provider="Webcore\Page\PageServiceProvider" --tag=config
+
+if you want page system themes & components sample code run
+
+    php artisan vendor:publish --provider="Webcore\Page\PageServiceProvider" --tag=themes
+
+    php artisan vendor:publish --provider="Webcore\Page\PageServiceProvider" --tag=components
+
+    php artisan vendor:publish --provider="Webcore\Page\PageServiceProvider" --tag=assets
+
+edit your Models/Page.php in the end of class add
+
+    public function presentations() {
+        return $this->hasMany('App\Models\Presentation');
+    }
 
 and see https://github.com/dandisy/webcore-page for dependency configuration
 
@@ -93,14 +117,6 @@ and see https://github.com/dandisy/webcore-page for dependency configuration
     php artisan migrate
 
 see https://github.com/dandisy/webcore-menu for dependency configuration
-
-    php artisan generate:api_scaffold Page --fieldsFile=Page.json --datatables=true --prefix=admin
-
-    php artisan generate:api_scaffold Post --fieldsFile=Post.json --datatables=true --prefix=admin
-
-    php artisan generate:api_scaffold Banner --fieldsFile=Banner.json --datatables=true --prefix=admin
-
-    php artisan generate:api_scaffold Presentation --fieldsFile=Presentation.json --datatables=true --prefix=admin
 
 then you can arrange admin side menu in resources/views/layouts/menu.blade.php
 
