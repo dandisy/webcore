@@ -28,6 +28,8 @@ Copy and paste in terminal line by line, just hit Enter key
 
     git clone https://github.com/dandisy/webcore.git
 
+    cd webcore
+
     composer install
 
     cp .env.example .env
