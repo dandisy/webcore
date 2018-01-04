@@ -100,9 +100,9 @@ edit your Models/Page.php in the end of class add
 
 if you want page system themes & components sample code
 
-    download in https://github.com/dandisy/themes
+download in https://github.com/dandisy/themes
 
-    then extract to your project root directory
+then extract to your project root directory
 
 see https://github.com/dandisy/webcore-page for dependency configuration
 
