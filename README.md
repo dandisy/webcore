@@ -153,15 +153,23 @@ run these command in your terminal (change YourModal to the name of your model t
     - HTML Text Editor (htmltype = text-editor)
     - File Manager (htmltype = file-manager or files-manager)
 
-6. Reusable Component
+6. Page System (support themes and view components)
+
+    Sample code can be download in https://github.com/dandisy/themes
+
+7. Reusable Component
 
     - by Widget (Widget Class & Widget View) using arrilot/laravel-widgets for UI Component
 
         as much as possible the widget should have a loose coupled, bring data on the fly, avoid directly include / use in widget class
 
+        webcore include a widget, with this you able to use shortcode on Page description field
+        to get datasource from models, use syntax :
+        [source=ModelName,where=some_field_name:value,position:some_theme_position,widget=some_widget_view]
+
     - by Laravel Package
 
-7. Pre Configured Oauth using Laravel Passport (with resources example)
+8. Pre Configured Oauth using Laravel Passport (with resources example)
 
     - to login use http://localhost/webcore/public/oauth/token
 
