@@ -212,6 +212,8 @@ run these command in your terminal (change YourModel to the name of your model t
     * pragmarx/tracker or jeremykenedy/laravel-logger
     * spatie/laravel-activitylog
 
+    * fireguard/report or jimmyjs/laravel-report-generator
+
     * barryvdh/laravel-dompdf or seguce92/laravel-dompdf
     * maatwebsite/excel
     * khill/lavacharts
