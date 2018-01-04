@@ -120,7 +120,7 @@ then you can arrange admin side menu in resources/views/layouts/menu.blade.php
 
 * As Admin App (no public site in frontend)
 
-run these command in your terminal (change YourModal to the name of your model to be generate )
+run these command in your terminal (change YourModel to the name of your model to be generate )
 
     php artisan generate:api_scaffold YourModel --fieldsFile=YourModel.json --datatables=true
 
@@ -188,28 +188,33 @@ run these command in your terminal (change YourModal to the name of your model t
 
 ### Dependency
 
+    * dandisy/adminlte-templates based on infyomlabs/adminlte-templates
     * dandisy/laravel-generator based on infyomlabs/laravel-generator
-
+    * dandisy/swagger-generator based on infyomlabs/swagger-generator
     * dandisy/filemanager based on infinety-es/filemanager
 
     * arrilot/laravel-widgets
     * barryvdh/laravel-debugbar
     * league/glide-laravel
     * santigarcor/laratrust
-
     * harimayco/laravel-menu
     * atayahmet/laravel-nestable
     
-    * tymon/jwt-auth
     * barryvdh/laravel-dompdf or seguce92/laravel-dompdf
     * maatwebsite/excel
     * khill/lavacharts
     * spatie/laravel-activitylog
+    
+    if use additional jwt package
+    * tymon/jwt-auth
 
-    For theme use :
+    If you activated laravel passport use
+    * spatie/laravel-cors
+
+    if use other theme package :
     facuz/laravel-themes based on thinhbuzz/laravel-theme
     or yaapis/Theme
-    instead teepluss/laravel-theme
+    or teepluss/laravel-theme
     
     * nwidart/laravel-modules -> OPTIONAL
     * lavary/laravel-menu -> OPTIONAL
@@ -217,9 +222,6 @@ run these command in your terminal (change YourModal to the name of your model t
 
     * toxic-lemurs/menu-builder -> ALTERNATIVE
     * mkdesignn/menubuilder -> ALTERNATIVE
-
-    If you activated laravel passport use
-    * spatie/laravel-cors
 
 //------------------------------------------------#
 
