@@ -1,6 +1,6 @@
 ## Webcore Platform
 
-### Single Platform an be used for Backend Admin Website or Website CMS (built according to your needs)
+### Single Platform can be used for Backend Admin Website or Website CMS (built according to your needs)
 
 ## 1. Webcore
 ### Concept
