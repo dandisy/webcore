@@ -108,7 +108,7 @@ download in https://github.com/dandisy/themes
 
 then extract to your project root directory
 
-see https://github.com/dandisy/webcore-page for dependency configuration
+see https://github.com/dandisy/webcore-page for more info
 
     composer require dandisy/webcore-menu:dev-master
 
@@ -118,7 +118,7 @@ see https://github.com/dandisy/webcore-page for dependency configuration
 
     php artisan migrate
 
-see https://github.com/dandisy/webcore-menu for dependency configuration
+see https://github.com/dandisy/webcore-menu for more info
 
 then you can arrange admin side menu in resources/views/layouts/menu.blade.php
 
