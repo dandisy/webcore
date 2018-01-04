@@ -222,6 +222,9 @@ run these command in your terminal (change YourModel to the name of your model t
     if use additional jwt package
     * tymon/jwt-auth
 
+    for executive reports :
+    * antoineaugusti/laravel-sentiment-analysis
+
     if use other theme package :
     facuz/laravel-themes based on thinhbuzz/laravel-theme
     or yaapis/Theme
