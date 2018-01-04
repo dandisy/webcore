@@ -213,6 +213,7 @@ run these command in your terminal (change YourModel to the name of your model t
     * spatie/laravel-activitylog
 
     * fireguard/report or jimmyjs/laravel-report-generator
+    * reportico/laravel-reportico
 
     * barryvdh/laravel-dompdf or seguce92/laravel-dompdf
     * maatwebsite/excel
