@@ -1,6 +1,6 @@
 {
     "name": "dandisy/webcore",
-    "description": "Webcore Platform",
+    "description": "Webcore Platform - Single platform laravel site ready to be built as per your needs",
     "keywords": ["framework", "laravel", "webcore", "backend", "generator", "cms", "admin"],
     "license": "MIT",
     "type": "project",
