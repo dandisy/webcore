@@ -1,3 +1,5 @@
+Webcore Platform is a Single Platform for Backend Admin Website or Website CMS or can be built according to your needs
+
 ## 1. Webcore
 ### Concept
 
