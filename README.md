@@ -205,17 +205,19 @@ run these command in your terminal (change YourModel to the name of your model t
     * santigarcor/laratrust
     * harimayco/laravel-menu
     * atayahmet/laravel-nestable
+
+    If you activated laravel passport use :
+    * spatie/laravel-cors
     
+    * pragmarx/tracker or jeremykenedy/laravel-logger
+    * spatie/laravel-activitylog
+
     * barryvdh/laravel-dompdf or seguce92/laravel-dompdf
     * maatwebsite/excel
     * khill/lavacharts
-    * spatie/laravel-activitylog
     
     if use additional jwt package
     * tymon/jwt-auth
-
-    If you activated laravel passport use
-    * spatie/laravel-cors
 
     if use other theme package :
     facuz/laravel-themes based on thinhbuzz/laravel-theme
