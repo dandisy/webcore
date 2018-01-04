@@ -173,6 +173,8 @@ run these command in your terminal (change YourModel to the name of your model t
 
     - by Laravel Package
 
+        webcore include microsite package as sample code for basic package
+
 8. Pre Configured Oauth using Laravel Passport (with resources example)
 
     - to login use http://localhost/webcore/public/oauth/token
