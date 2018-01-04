@@ -318,6 +318,19 @@ See infyomlabs/laravel-generator documentation here http://labs.infyom.com/larav
     - define generator functionality with data and template parameters to be used
     - define rollback
 
+//------------------------------------------------#
+
+
+## 3. Roadmap
+
+Versions
+
+    1.0.0 Single Platform
+    1.5.0 Easy Platform
+    2.0.0 In Context Platform
+    3.0.0 Experience Platform
+    4.0.0 Enterprise Platform
+
 
 #
 by dandi@redbuzz.co.id
