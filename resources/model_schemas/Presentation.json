@@ -33,6 +33,17 @@
         "inIndex": true
     },
     {
+        "name": "datasource",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": null,
+        "searchable": false,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true
+    },
+    {
         "name": "order",
         "dbType": "integer",
         "htmlType": "number",
