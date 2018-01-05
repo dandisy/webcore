@@ -170,7 +170,7 @@ or if you want to spesify field interactively in terminal
     - Select2 (all select input will be select2)
     - HTML Text Editor (htmltype = text-editor)
     - File Manager (htmltype = file-manager or files-manager)
-    - Support nullable field in database table
+    - Support nullable field in database table (dbNullable = {bool} or option "n" in console)
 
 see sample schema model files in resources/model_schemas
 
