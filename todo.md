@@ -9,18 +9,18 @@
 
     - add edited by
 
-2. analytics
-
-### 1.1.0
-
-3. field relation
+2. field relation
 
     - generate html type select with option is records on related model
 
-4. field type auto compelite
+3. field type auto compelite
 
     - field auto compelite for read directory and file
     - generate html type auto compelete with list directory and file
+
+### 1.1.0
+
+4. microsite package
 
 ### 1.2.0
 
@@ -32,19 +32,19 @@
 
 7. web installer
 
-8. microsite package
+8. gui generator builder
+
+9. drag & drop component builder
 
 ### 1.4.0
 
-9. gui generator builder
-
-10. reporting builder
+10. live (inline / on the fly) content editing
 
 ## 1.5.0 - Easy Platform
 
-11. drag & drop component builder
+11. analytics
 
-12. live (inline / on the fly) content editing
+12. reporting builder
 
 ### 1.6.0
 
@@ -70,19 +70,19 @@
 
 ### 1.7.0
 
-14. content testing (a/b)
-
-### 1.8.0
+14. frontend login included in CRM system
 
 15. content layout heatmaps (heatmap.js)
 
+### 1.8.0
+
+16. content testing (a/b)
+
 ### 1.9.0
 
-16. backup manager
+17. backup manager
 
 ## 2.0.0 - In Context Platform
-
-17. frontend login included in CRM system
 
 18. omnichannel
 
