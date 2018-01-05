@@ -19,7 +19,8 @@
         "fillable": true,
         "primary": false,
         "inForm": true,
-        "inIndex": false
+        "inIndex": false,
+        "dbNullable" : true
     },
     {
         "name": "description",
@@ -30,7 +31,8 @@
         "fillable": true,
         "primary": false,
         "inForm": true,
-        "inIndex": true
+        "inIndex": true,
+        "dbNullable" : true
     },
     {
         "name": "user_id",

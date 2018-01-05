@@ -45,7 +45,7 @@ for example using nano editor copy and paste this in terminal, and hit Enter key
 
     sudo nano .env
 
-Again copy and paste in terminal line by line, and hit Enter key
+then
 
     php artisan key:generate
 
@@ -61,9 +61,12 @@ then
 
     php artisan storage:link
 
-then get it all on your favorite browser,
+then get its all on your favorite browser,
 
-OPTIONAL if you want to activated oauth
+OPTIONAL 
+
+if you want to activated oauth,
+
 edit the uri oauth in vue files in resources/assets/js/components/passport
 
     php artisan passport:keys
@@ -73,14 +76,17 @@ edit the uri oauth in vue files in resources/assets/js/components/passport
     npm run dev
 
 then you can access oauth admin panel 
-to manage your oauth client 
-in http://localhost/webcore/public/oauth-admin
+to manage your oauth client in 
+
+    http://localhost/webcore/public/oauth-admin
 
 ### Usage
 
 * As Web CMS :
 
-run these command in your terminal
+run these command in your terminal 
+
+( for tidiness, webcore already prepared menu items, so you can use --skip=menu in generate command for Page, Post, Banner and Presentation)
 
     php artisan generate:api_scaffold Page --fieldsFile=Page.json --datatables=true --prefix=admin
 
@@ -96,19 +102,15 @@ then
 
     php artisan vendor:publish --provider="Webcore\Page\PageServiceProvider" --tag=config
 
-edit your Models/Page.php in the end of class add
+if you want Webcore Page System themes & components sample code
 
-    public function presentations() {
-        return $this->hasMany('App\Models\Presentation');
-    }
-
-if you want page system themes & components sample code
-
-download in https://github.com/dandisy/themes
+download in https://github.com/dandisy/themes (don't clone)
 
 then extract to your project root directory
 
 see https://github.com/dandisy/webcore-page for more info
+
+then run
 
     composer require dandisy/webcore-menu:dev-master
 
@@ -120,13 +122,25 @@ see https://github.com/dandisy/webcore-page for more info
 
 see https://github.com/dandisy/webcore-menu for more info
 
-then you can arrange admin side menu in resources/views/layouts/menu.blade.php
+for tidiness,
+
+last, you can arrange Admin Page side menu in resources/views/layouts/menu.blade.php
+
+    delete generated menu items in the end of menu.blade.php
+
+    uncomment already prepared menu items for Pages, Posts, Banners, Presentations and Menus 
 
 * As Admin App (no public site in frontend)
 
-run these command in your terminal (change YourModel to the name of your model to be generate )
+run these command in your terminal, if you have schema model file 
+
+(change YourModel to the name of your model to be generate )
 
     php artisan generate:api_scaffold YourModel --fieldsFile=YourModel.json --datatables=true
+
+or if you want to spesify field interactively in terminal
+
+    php artisan generate:api_scaffold YourModel --datatables=true
 
 ### Features
 
@@ -156,6 +170,9 @@ run these command in your terminal (change YourModel to the name of your model t
     - Select2 (all select input will be select2)
     - HTML Text Editor (htmltype = text-editor)
     - File Manager (htmltype = file-manager or files-manager)
+    - Support nullable field in database table
+
+see sample schema model files in resources/model_schemas
 
 6. Page System (support themes and view components)
 
@@ -213,7 +230,6 @@ run these command in your terminal (change YourModel to the name of your model t
     * spatie/laravel-activitylog
 
     * fireguard/report or jimmyjs/laravel-report-generator
-    * reportico/laravel-reportico
 
     * barryvdh/laravel-dompdf or seguce92/laravel-dompdf
     * maatwebsite/excel
@@ -221,9 +237,6 @@ run these command in your terminal (change YourModel to the name of your model t
     
     if use additional jwt package
     * tymon/jwt-auth
-
-    for executive reports :
-    * antoineaugusti/laravel-sentiment-analysis
 
     if use other theme package :
     facuz/laravel-themes based on thinhbuzz/laravel-theme

@@ -30,7 +30,8 @@
         "fillable": true,
         "primary": false,
         "inForm": true,
-        "inIndex": true
+        "inIndex": true,
+        "dbNullable" : true
     },
     {
         "name": "type",
@@ -41,7 +42,8 @@
         "fillable": true,
         "primary": false,
         "inForm": true,
-        "inIndex": true
+        "inIndex": true,
+        "dbNullable" : true
     },
     {
         "name": "title",
@@ -74,7 +76,8 @@
         "fillable": true,
         "primary": false,
         "inForm": true,
-        "inIndex": true
+        "inIndex": true,
+        "dbNullable" : true
     },
     {
         "name": "link",
@@ -85,7 +88,8 @@
         "fillable": true,
         "primary": false,
         "inForm": true,
-        "inIndex": true
+        "inIndex": true,
+        "dbNullable" : true
     },
     {
         "name": "tag",
@@ -96,7 +100,8 @@
         "fillable": true,
         "primary": false,
         "inForm": true,
-        "inIndex": true
+        "inIndex": true,
+        "dbNullable" : true
     },
     {
         "name": "category",
@@ -107,7 +112,8 @@
         "fillable": true,
         "primary": false,
         "inForm": true,
-        "inIndex": true
+        "inIndex": true,
+        "dbNullable" : true
     },
     {
         "name": "status",
@@ -129,7 +135,8 @@
         "fillable": true,
         "primary": false,
         "inForm": false,
-        "inIndex": true
+        "inIndex": true,
+        "dbNullable" : true
     },
     {
         "name": "created_at",

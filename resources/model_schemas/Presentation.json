@@ -26,7 +26,7 @@
         "dbType": "string",
         "htmlType": "text",
         "validations": "required",
-        "searchable": false,
+        "searchable": true,
         "fillable": true,
         "primary": false,
         "inForm": true,
@@ -37,29 +37,31 @@
         "dbType": "string",
         "htmlType": "text",
         "validations": null,
-        "searchable": false,
+        "searchable": true,
         "fillable": true,
         "primary": false,
         "inForm": true,
-        "inIndex": true
+        "inIndex": true,
+        "dbNullable" : true
     },
     {
         "name": "order",
         "dbType": "integer",
         "htmlType": "number",
         "validations": null,
-        "searchable": false,
+        "searchable": true,
         "fillable": true,
         "primary": false,
         "inForm": true,
-        "inIndex": true
+        "inIndex": true,
+        "dbNullable" : true
     },
     {
         "name": "page_id",
         "dbType": "integer",
         "htmlType": "number",
         "validations": "required",
-        "searchable": false,
+        "searchable": true,
         "fillable": true,
         "primary": false,
         "inForm": true,
@@ -74,7 +76,8 @@
         "fillable": true,
         "primary": false,
         "inForm": false,
-        "inIndex": true
+        "inIndex": true,
+        "dbNullable" : true
     },
     {
         "name": "created_at",

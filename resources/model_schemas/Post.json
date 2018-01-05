@@ -52,7 +52,8 @@
         "fillable": true,
         "primary": false,
         "inForm": true,
-        "inIndex": true
+        "inIndex": true,
+        "dbNullable" : true
     },
     {
         "name": "description",
@@ -74,7 +75,8 @@
         "fillable": true,
         "primary": false,
         "inForm": true,
-        "inIndex": true
+        "inIndex": true,
+        "dbNullable" : true
     },
     {
         "name": "category",
@@ -85,7 +87,8 @@
         "fillable": true,
         "primary": false,
         "inForm": true,
-        "inIndex": true
+        "inIndex": true,
+        "dbNullable" : true
     },
     {
         "name": "cover",
@@ -96,7 +99,8 @@
         "fillable": true,
         "primary": false,
         "inForm": true,
-        "inIndex": true
+        "inIndex": true,
+        "dbNullable" : true
     },
     {
         "name": "version",
@@ -107,7 +111,8 @@
         "fillable": true,
         "primary": false,
         "inForm": true,
-        "inIndex": true
+        "inIndex": true,
+        "dbNullable" : true
     },
     {
         "name": "language",
@@ -118,7 +123,8 @@
         "fillable": true,
         "primary": false,
         "inForm": true,
-        "inIndex": true
+        "inIndex": true,
+        "dbNullable" : true
     },
     {
         "name": "status",
@@ -140,7 +146,8 @@
         "fillable": true,
         "primary": false,
         "inForm": false,
-        "inIndex": true
+        "inIndex": true,
+        "dbNullable" : true
     },
     {
         "name": "created_at",

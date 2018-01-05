@@ -52,7 +52,8 @@
         "fillable": true,
         "primary": false,
         "inForm": false,
-        "inIndex": true
+        "inIndex": true,
+        "dbNullable" : true
     },
     {
         "name": "created_at",

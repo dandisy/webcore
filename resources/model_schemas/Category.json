@@ -30,7 +30,8 @@
         "fillable": true,
         "primary": false,
         "inForm": true,
-        "inIndex": true
+        "inIndex": true,
+        "dbNullable" : true
     },
     {
         "name": "parent",
@@ -41,7 +42,8 @@
         "fillable": true,
         "primary": false,
         "inForm": false,
-        "inIndex": true
+        "inIndex": true,
+        "dbNullable" : true
     },
     {
         "name": "created_by",
@@ -52,7 +54,8 @@
         "fillable": true,
         "primary": false,
         "inForm": false,
-        "inIndex": true
+        "inIndex": true,
+        "dbNullable" : true
     },
     {
         "name": "created_at",
