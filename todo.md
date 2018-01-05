@@ -1,54 +1,70 @@
 # Webcore Todos
 
+1. packaging features
+
+2. merging admin app & web cms
+
 ## 1.0.0 - Single Platform
 
-1. created by fill with user session
+3. created by filled with user session
 
     - generator check if field type user session
     - auto insert user session to this field on create new record
 
     - add edited by
 
-2. field relation
+### 1.0.1
+
+4. field relation
 
     - generate html type select with option is records on related model
 
-3. field type auto compelite
+### 1.0.2
+
+5. field type auto compelite
 
     - field auto compelite for read directory and file
     - generate html type auto compelete with list directory and file
 
-### 1.1.0
+### 1.0.3
 
-4. microsite package
+6. microsite package
 
-### 1.2.0
+### 1.0.4
 
-5. components uploader
+7. components uploader
 
-6. theme uploader
+### 1.0.5
 
-### 1.3.0
+8. theme uploader
 
-7. web installer
+### 1.0.6
 
-8. gui generator builder
+9. web installer
 
-9. drag & drop component builder
+### 1.0.7
 
-### 1.4.0
+10. gui generator builder
 
-10. live (inline / on the fly) content editing
+### 1.0.8
 
-## 1.5.0 - Easy Platform
+11. drag & drop component builder
 
-11. analytics
+### 1.0.9
 
-12. reporting builder
+12. live (inline / on the fly) content editing
 
-### 1.6.0
+## 1.1.0 - Easy Platform
 
-13. personalization
+13. analytics
+
+### 1.1.1
+
+14. reporting builder
+
+### 1.1.2
+
+15. personalization
 
     - model schema
     - by geolocation : city, country, radius
@@ -68,28 +84,30 @@
     - pattern, ie : pattern_name -> sporty = 4, family = 0, off road = 1, touring = 0
     - a.i.
 
-### 1.7.0
+### 1.1.6
 
-14. frontend login included in CRM system
+16. frontend login included in CRM system
 
-15. content layout heatmaps (heatmap.js)
+### 1.1.7
 
-### 1.8.0
+17. content layout heatmaps (heatmap.js)
 
-16. content testing (a/b)
+### 1.1.8
 
-### 1.9.0
+18. content testing (a/b)
 
-17. backup manager
+### 1.1.9
 
-## 2.0.0 - In Context Platform
+19. backup manager
 
-18. omnichannel
+## 1.2.0 - In Context Platform
 
-## 3.0.0 - Experience Platform
+20. omnichannel
 
-19. horizon rethinkdb
+## 1.3.0 - Experience Platform
 
-20. mobile sdk
+21. horizon rethinkdb
 
-## 4.0.0 - Enterprise Platform
+22. mobile sdk
+
+## 1.4.0 - Enterprise Platform
