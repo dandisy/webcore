@@ -83,3 +83,13 @@
 ## 2.0.0 - In Context Platform
 
 17. frontend login included in CRM system
+
+## 3.0.0 - Experience Platform
+
+18. omnichannel
+
+## 4.0.0 - Enterprise Platform
+
+19. horizon rethinkdb
+
+20. mobile sdk
