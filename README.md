@@ -88,13 +88,13 @@ run these command in your terminal
 
 ( for tidiness, webcore already prepared menu items, so you can use --skip=menu in generate command for Page, Post, Banner and Presentation)
 
-    php artisan generate:api_scaffold Page --fieldsFile=Page.json --datatables=true --prefix=admin
+    php artisan generate:api_scaffold Page --fieldsFile=Page.json --datatables=true --prefix=admin --logs
 
-    php artisan generate:api_scaffold Post --fieldsFile=Post.json --datatables=true --prefix=admin
+    php artisan generate:api_scaffold Post --fieldsFile=Post.json --datatables=true --prefix=admin --logs
 
-    php artisan generate:api_scaffold Banner --fieldsFile=Banner.json --datatables=true --prefix=admin
+    php artisan generate:api_scaffold Banner --fieldsFile=Banner.json --datatables=true --prefix=admin --logs
 
-    php artisan generate:api_scaffold Presentation --fieldsFile=Presentation.json --datatables=true --prefix=admin
+    php artisan generate:api_scaffold Presentation --fieldsFile=Presentation.json --datatables=true --prefix=admin --logs
 
 then
 
@@ -170,7 +170,8 @@ or if you want to spesify field interactively in terminal
     - Select2 (all select input will be select2)
     - HTML Text Editor (htmltype = text-editor)
     - File Manager (htmltype = file-manager or files-manager)
-    - Support nullable field in database table (dbNullable = {bool} or option "n" in console)
+    - Support nullable field in database table
+    - Support auto generate log fields in table (console option = --logs)
 
 see sample schema model files in resources/model_schemas
 
@@ -349,10 +350,10 @@ See infyomlabs/laravel-generator documentation here http://labs.infyom.com/larav
 Versions
 
     1.0.0 Single Platform
-    1.1.0 Easy Platform
-    1.2.0 In Context Platform
-    1.3.0 Experience Platform
-    1.4.0 Enterprise Platform
+    1.5.0 Easy Platform
+    2.0.0 In Context Platform
+    3.0.0 Experience Platform
+    4.0.0 Enterprise Platform
 
 
 #

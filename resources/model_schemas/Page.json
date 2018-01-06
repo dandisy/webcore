@@ -137,6 +137,18 @@
         "dbNullable" : true
     },
     {
+        "name": "updated_by",
+        "dbType": "integer",
+        "htmlType": null,
+        "validations": null,
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": false,
+        "inIndex": true,
+        "dbNullable" : true
+    },
+    {
         "name": "created_at",
         "dbType": "timestamp",
         "htmlType": null,

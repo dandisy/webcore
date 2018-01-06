@@ -108,6 +108,6 @@
 
 21. horizon rethinkdb
 
-22. mobile sdk
+22. mobile plarform
 
 ## 1.4.0 - Enterprise Platform
