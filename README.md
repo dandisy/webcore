@@ -83,11 +83,12 @@ to manage your oauth client in
 Now you can browse to http://localhost/webcore/public or http://localhost/webcore/public/admin
 
 Default users are
-* superadminstrator@app.com
-* administrator@app.com
-* user@app.com
 
-with default password is password
+    * superadminstrator@app.com
+    * administrator@app.com
+    * user@app.com
+
+    with default password is password
 
 ### Usage
 
