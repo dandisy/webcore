@@ -63,7 +63,7 @@ then
 
 then get its all on your favorite browser,
 
-OPTIONAL 
+--OPTIONAL--
 
 if you want to activated oauth,
 
@@ -83,14 +83,16 @@ to manage your oauth client in
 Now you can browse to
 
     http://localhost/webcore/public
-    or
+
+    and
+
     http://localhost/webcore/public/admin
 
 Default users are
 
-    * superadminstrator@app.com
-    * administrator@app.com
-    * user@app.com
+    - superadminstrator@app.com
+    - administrator@app.com
+    - user@app.com
 
     with default password is password
 
@@ -156,6 +158,12 @@ or if you want to spesify field interactively in terminal
 
     php artisan generate:api_scaffold YourModel --datatables=true
 
+### Running Example
+
+    if you still confused with above usage instruction you can explore your self and try to install already running completely webcore platform as website cms
+
+download it in https://github.com/dandisy/webcore-sample
+
 ### Features
 
 1. Admin Template
@@ -176,20 +184,20 @@ or if you want to spesify field interactively in terminal
 
         default {path} is configured relative to public_path, see .env for FILESYSTEM_DRIVER and config/filesystems.php
         
-    see Glide documentation in http://glide.thephpleague.com
+    see Glide documentation in http://glide.thephpleague.com for manual guide
 
-5. Laravel Generator with Additional Form Builder
+5. Laravel Generator based on infyomlabs/laravel-generator with Additional features
 
     - Date Time Picker (htmltype = date-picker, time-picker or datetime-picker)
     - Select2 (all select input will be select2)
     - HTML Text Editor (htmltype = text-editor)
     - File Manager (htmltype = file-manager or files-manager)
-    - Support nullable field in database table
-    - Support auto generate log fields in table (console option = --logs)
+    - Nullable field in migration
+    - Logged fields : created_by and updated_by (console option = --logs)
 
-see sample schema model files in resources/model_schemas
+see sample model schema files in resources/model_schemas
 
-6. Page System (support themes and view components)
+6. Page System (support themes, template position and view components)
 
     Sample code can be download in https://github.com/dandisy/themes
 
@@ -207,7 +215,7 @@ see sample schema model files in resources/model_schemas
 
         webcore include webcore-microsite package as sample code for basic package
 
-8. Pre Configured Oauth using Laravel Passport (with resources example)
+8. Pre Configured Oauth using Laravel Passport (with RESTAPI resources example)
 
     - to login use http://localhost/webcore/public/oauth/token
 
@@ -222,7 +230,7 @@ see sample schema model files in resources/model_schemas
 
     - to get resources example http://localhost/webcore/public/api/product
 
-            with header Authorization = Bearer token
+            with header Authorization = Bearer {token}
 
 ### Dependency
 
