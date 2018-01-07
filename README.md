@@ -61,7 +61,21 @@ then
 
     php artisan storage:link
 
-then get its all on your favorite browser,
+then get its all on your favorite browser
+
+    http://localhost/webcore/public
+
+    and
+
+    http://localhost/webcore/public/admin
+
+Default users are
+
+    - superadminstrator@app.com
+    - administrator@app.com
+    - user@app.com
+
+    with default password is password
 
 --OPTIONAL--
 
@@ -79,22 +93,6 @@ then you can access oauth admin panel
 to manage your oauth client in 
 
     http://localhost/webcore/public/oauth-admin
-
-Now you can browse to
-
-    http://localhost/webcore/public
-
-    and
-
-    http://localhost/webcore/public/admin
-
-Default users are
-
-    - superadminstrator@app.com
-    - administrator@app.com
-    - user@app.com
-
-    with default password is password
 
 ### Usage
 
