@@ -152,7 +152,7 @@ run these command in your terminal, if you have schema model file
 
     php artisan generate:api_scaffold YourModel --fieldsFile=YourModel.json --datatables=true
 
-or if you want to spesify field interactively in terminal
+or if you want to specify field interactively in console
 
     php artisan generate:api_scaffold YourModel --datatables=true
 
