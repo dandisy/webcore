@@ -32,15 +32,15 @@
 
 ### 1.0.4
 
-7. components uploader
+7. components manager
 
 ### 1.0.5
 
-8. theme uploader
+8. theme manager
 
 ### 1.0.6
 
-9. web installer
+9. installer
 
 ### 1.0.7
 
@@ -90,11 +90,11 @@
 
 ### 1.1.7
 
-17. content layout heatmaps (heatmap.js)
+17. heatmaps
 
 ### 1.1.8
 
-18. content testing (a/b)
+18. (a/b) testing
 
 ### 1.1.9
 
@@ -110,4 +110,18 @@
 
 22. mobile plarform
 
+23. executive report
+
+24. business intelligence
+
 ## 1.4.0 - Enterprise Platform
+
+25. one stop solution
+
+## 1.5.0 Digital Solution
+
+26. artificial intelligence
+
+27. performance
+
+28. trands
