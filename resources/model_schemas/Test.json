@@ -11,7 +11,7 @@
         "inIndex": false
     },
     {
-        "name": "component",
+        "name": "title",
         "dbType": "string",
         "htmlType": "text",
         "validations": "required",
@@ -20,41 +20,6 @@
         "primary": false,
         "inForm": true,
         "inIndex": true
-    },
-    {
-        "name": "position",
-        "dbType": "string",
-        "htmlType": "text",
-        "validations": "required",
-        "searchable": true,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": true
-    },
-    {
-        "name": "datasource",
-        "dbType": "string",
-        "htmlType": "text",
-        "validations": null,
-        "searchable": true,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": true,
-        "dbNullable" : true
-    },
-    {
-        "name": "order",
-        "dbType": "integer",
-        "htmlType": "number",
-        "validations": null,
-        "searchable": true,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": true,
-        "dbNullable" : true
     },
     {
         "name": "page_id",

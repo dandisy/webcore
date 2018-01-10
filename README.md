@@ -190,8 +190,9 @@ download it in https://github.com/dandisy/webcore-sample
     - Select2 (all select input will be select2)
     - HTML Text Editor (htmltype = text-editor)
     - File Manager (htmltype = file-manager or files-manager)
-    - Nullable field in migration
+    - Nullable field in migration (console option = n, or in json file using dbNullable = true)
     - Logged fields : created_by and updated_by (console option = --logs)
+    - Relational support : add model view in controller, related function in model, and related data in select2 form filed (htmltype = select,model-view=show-field=value-field)
 
 see sample model schema files in resources/model_schemas
 
@@ -237,12 +238,17 @@ see sample model schema files in resources/model_schemas
     * dandisy/swagger-generator based on infyomlabs/swagger-generator
     * dandisy/filemanager based on infinety-es/filemanager
 
+    * dandisy/webcore-page
+    * dandisy/webcore-menu
+
     * arrilot/laravel-widgets
     * barryvdh/laravel-debugbar
     * league/glide-laravel
     * santigarcor/laratrust
     * harimayco/laravel-menu
     * atayahmet/laravel-nestable
+
+    * ixudra/curl
 
     If you activated laravel passport use :
     * spatie/laravel-cors
