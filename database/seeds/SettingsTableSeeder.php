@@ -16,9 +16,7 @@ class SettingsTableSeeder extends Seeder
             ['key' => 'site_slogan', 'value' => 'Site Slogan', 'description' => 'Your site slogan', 'created_at' => date('Y-m-d H:i:s')],
             ['key' => 'site_description', 'value' => 'Site Description', 'description' => 'Your site description', 'created_at' => date('Y-m-d H:i:s')],
             ['key' => 'site_logo', 'value' => 'images/logo/logo.png', 'description' => 'Your site logo. Note : upload your logo using assets manager, and copy your uploded logo link to Value field in here', 'created_at' => date('Y-m-d H:i:s')],
-            ['key' => 'google_analytics', 'value' => 'google_analytics_code', 'description' => 'Your google analytics key', 'created_at' => date('Y-m-d H:i:s')],
-            ['key' => 'facebook', 'value' => 'https://www.facebook.com/youraccount	', 'description' => 'Your facebook page', 'created_at' => date('Y-m-d H:i:s')],
-            ['key' => 'twitter', 'value' => 'https://www.twitter.com/youraccount	', 'description' => 'Your twitter page', 'created_at' => date('Y-m-d H:i:s')]
+            ['key' => 'google_analytics', 'value' => 'google_analytics_code', 'description' => 'Your google analytics key', 'created_at' => date('Y-m-d H:i:s')]
         ]);
     }
 }
