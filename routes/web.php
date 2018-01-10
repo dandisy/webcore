@@ -19,8 +19,8 @@ use Illuminate\Contracts\Filesystem\Filesystem;
 */
 
 Route::get('/', function () {
-    // return view('welcome');
-    return redirect('home');
+    // return redirect('home');
+    return view('welcome');
 });
 
 
@@ -34,9 +34,9 @@ Auth::routes();
 Route::get('/admin', function () {
     //if(Laratrust::hasRole(['administrator','superadministrator'])) {
         return redirect('dashboard');
-    /*} else {
-        return redirect('home');
-    }*/
+    // } else {
+    //     return redirect('home');
+    // }
 });
 
 Route::group(['middleware' => 'auth'], function () {    
@@ -57,7 +57,7 @@ Route::group(['middleware' => 'auth'], function () {
 
         Route::resource('roles', 'RoleController');
 
-        //Route::resource('permissions', 'PermissionController');
+        // Route::resource('permissions', 'PermissionController');
 
         Route::resource('settings', 'SettingController');
     });
