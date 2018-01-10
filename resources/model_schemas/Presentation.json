@@ -13,7 +13,7 @@
     {
         "name": "component",
         "dbType": "string",
-        "htmlType": "text",
+        "htmlType": "select,component",
         "validations": "required",
         "searchable": true,
         "fillable": true,
@@ -24,7 +24,7 @@
     {
         "name": "position",
         "dbType": "string",
-        "htmlType": "text",
+        "htmlType": "select,theme",
         "validations": "required",
         "searchable": true,
         "fillable": true,
