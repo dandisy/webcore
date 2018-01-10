@@ -106,7 +106,7 @@
         <header class="main-header">
 
             <!-- Logo -->
-            <a href="#" class="logo">
+            <a href="{{ url('/dashboard') }}" class="logo">
                 <b>WebCORE</b>
             </a>
 
