@@ -1,0 +1,24 @@
+{
+    "name": "dandisy/webcore-microsite",
+    "description": "Microsite package for webcore platform",
+    "authors": [
+        {
+            "name": "dandi",
+            "email": "dandi@redbuzz.co.id"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Webcore\\Microsite\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Webcore\\Microsite\\MicrositeServiceProvider"
+            ]
+        }
+    }
+}

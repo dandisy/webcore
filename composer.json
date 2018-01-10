@@ -1,0 +1,72 @@
+{
+    "name": "dandisy/webcore",
+    "description": "Webcore Platform - Single platform laravel site ready to be built as per your needs",
+    "keywords": ["framework", "laravel", "webcore", "backend", "generator", "cms", "admin", "web", "app", "platform"],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": ">=7.0.0",
+        "arrilot/laravel-widgets": "^3.7",
+        "dandisy/adminlte-templates": "^1.0.0",
+        "dandisy/filemanager": "^1.0.0",
+        "dandisy/laravel-generator": "^1.0.0",
+        "dandisy/swagger-generator": "^1.0.0",
+        "doctrine/dbal": "~2.3",
+        "fideloper/proxy": "~3.3",
+        "jlapp/swaggervel": "dev-master",
+        "laravel/framework": "5.5.*",
+        "laravel/passport": "^4.0",
+        "laravel/tinker": "~1.0",
+        "laravelcollective/html": "^5.5.0",
+        "league/glide-laravel": "^1.0",
+        "santigarcor/laratrust": "^4.0",
+        "spatie/laravel-cors": "^1.0",
+        "yajra/laravel-datatables-buttons": "3.0",
+        "yajra/laravel-datatables-oracle": "~8.0"
+    },
+    "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.1",
+        "filp/whoops": "~2.0",
+        "fzaninotto/faker": "~1.4",
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "~6.0"
+    },
+    "autoload": {
+        "classmap": [
+            "database/seeds",
+            "database/factories"
+        ],
+        "psr-4": {
+            "App\\": "app/",
+            "Webcore\\": "packages/webcore/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": [
+            ]
+        }
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate"
+        ],
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
+    }
+}
