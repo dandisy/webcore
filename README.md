@@ -10,7 +10,7 @@
 1.  Backend Page (Admin)
     
     Scope of Admin Page :    
-    provide content management, presentation management, asset management and configurartion
+    provide content management, presentation management, asset management and configuration
     
 2. UI Component (just a part of page)
 
@@ -192,7 +192,7 @@ download it in https://github.com/dandisy/webcore-sample
     - File Manager (htmltype = file-manager or files-manager)
     - Nullable field in migration (console option = n, or in json file using dbNullable = true)
     - Logged fields : created_by and updated_by (console option = --logs)
-    - Relational generator : add model view in controller, related function in model, and related data in select2 form filed (htmltype = select,model-view=show-field=value-field)
+    - Relational generator : add model view in controller, related function in model, and related data in select2 form field (htmltype = select,model-view=show-field=value-field)
     - Component and theme reader generator (htmltype = select,component or select,theme)
 
 see sample model schema files in resources/model_schemas
