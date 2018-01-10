@@ -10,25 +10,25 @@
 1.  Backend Page (Admin)
     
     Scope of Admin Page :    
-    preparing user admin input form, input data by writed or by data source referenced
+    provide content management, presentation management, asset management and configurartion
     
 2. UI Component (just a part of page)
 
     Scope of UI Component (widget) :    
-    provide reusable part of UI (widget) to included in template of page,
-    (*and defining tracking configuration user interaction for personalization)
+    provide reusable part of UI (widget) to be used in template of page (with layout positions),
+    (*and provide tracking of user interaction for personalization)
          
     Scope of Page :    
-    layout and styling UI Component generally to be a Page by incorporating a template
+    layouting and styling UI Component globaly as a Page by incorporating a template
     
 3. Frontend Page
 
     Scope of Front Page :    
-    provide User Experience with content personalization using Persona and Pattern
+    provide User Experience with content personalization
 
 ### Installation
 
-Copy and paste in terminal line by line, just hit Enter key
+Copy, paste and hit the Enter key in console line by line
 
 * Using Git
 
@@ -41,7 +41,7 @@ Copy and paste in terminal line by line, just hit Enter key
         cp .env.example .env
 
 Make sure your server, create "webcore" database, edit .env using your favorite editor, 
-for example using nano editor copy and paste this in terminal, and hit Enter key
+for example using nano editor, run this in console
 
     sudo nano .env
 
@@ -61,7 +61,7 @@ then
 
     php artisan storage:link
 
-then get its all on your favorite browser
+now get its all on your favorite browser
 
     http://localhost/webcore/public
 
@@ -79,7 +79,7 @@ Default users are
 
 --OPTIONAL--
 
-if you want to activated oauth,
+if you want to activate oauth,
 
 edit the uri oauth in vue files in resources/assets/js/components/passport
 
@@ -98,9 +98,9 @@ to manage your oauth client in
 
 * As Web CMS :
 
-run these command in your terminal 
+run these command in your console 
 
-( for tidiness, webcore already prepared menu items, so you can use --skip=menu in generate command for Page, Post, Banner and Presentation)
+( for tidiness, webcore already prepared with menu items, so you can use --skip=menu when run command for generate Page, Post, Banner and Presentation)
 
     php artisan generate:api_scaffold Page --fieldsFile=Page.json --datatables=true --prefix=admin --logs
 
@@ -146,7 +146,7 @@ last, you can arrange Admin Page side menu in resources/views/layouts/menu.blade
 
 * As Admin App (no public site in frontend)
 
-run these command in your terminal, if you have schema model file 
+run these command in your console, if you have schema model file 
 
 (change YourModel to the name of your model to be generate )
 
@@ -158,7 +158,7 @@ or if you want to specify field interactively in console
 
 ### Running Example
 
-    if you still confused with above usage instruction you can explore your self and try to install already running completely webcore platform as website cms
+    if you still confused with above usage instruction you can explore your self and try to install already running webcore platform as website cms
 
 download it in https://github.com/dandisy/webcore-sample
 
@@ -192,7 +192,7 @@ download it in https://github.com/dandisy/webcore-sample
     - File Manager (htmltype = file-manager or files-manager)
     - Nullable field in migration (console option = n, or in json file using dbNullable = true)
     - Logged fields : created_by and updated_by (console option = --logs)
-    - Relational support : add model view in controller, related function in model, and related data in select2 form filed (htmltype = select,model-view=show-field=value-field)
+    - Relational generator : add model view in controller, related function in model, and related data in select2 form filed (htmltype = select,model-view=show-field=value-field)
 
 see sample model schema files in resources/model_schemas
 
@@ -202,7 +202,7 @@ see sample model schema files in resources/model_schemas
 
 7. Reusable Component
 
-    - by Widget (Widget Class & Widget View) using arrilot/laravel-widgets for UI Component
+    - using Widget (Widget Class & Widget View) using arrilot/laravel-widgets for UI Component
 
         as much as possible the widget should have a loose coupled, bring data on the fly, avoid directly include / use in widget class
 
@@ -210,7 +210,7 @@ see sample model schema files in resources/model_schemas
         to get datasource from models, use syntax :
         [source=ModelName,where=some_field_name:value,position:some_theme_position,widget=some_widget_view]
 
-    - by Laravel Package
+    - using Laravel Package
 
         webcore include webcore-microsite package as sample code for basic package
 
@@ -282,8 +282,8 @@ see sample model schema files in resources/model_schemas
 
 ## 2. Laravel Generator
 
-Webcore use infyomlabs/laravel-generator, with renamed artisan command for
-more generic, to :
+Webcore use infyomlabs/laravel-generator, by changing the artisan command to be
+more generic :
 
     php artisan generate[.command]:{command} {Model_name} [option]
 
@@ -292,12 +292,12 @@ See infyomlabs/laravel-generator documentation here http://labs.infyom.com/larav
 ### Perspective :
 
     HUMAN
-    Interface       -   Tools (Worker)              -   Executor
-    Commands\*      -   Common\* and Utils\*        -   Generators\* 
+    Interface       -   Tools (Worker)                      -   Executor
+    Commands\*      -   Common\*, Utils\* and helper        -   Generators\* 
     
     COMPUTER
-    Interface       -   Tools (Worker)              -   Executor
-    Generators\*    -   Common\* and Utils\*        -   Commands\*
+    Interface       -   Tools (Worker)                      -   Executor
+    Generators\*    -   Common\*, Utils\* and helper        -   Commands\*
     
 ### Guidance
 
