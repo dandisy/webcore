@@ -8,53 +8,44 @@
         "fillable": false,
         "primary": true,
         "inForm": false,
-        "inIndex": false
+        "inIndex": false,
+        "dbNullable": true
     },
     {
-        "name": "page_id",
-        "dbType": "integer",
-        "htmlType": "select,relation:page=title=id",
+        "name": "name",
+        "dbType": "string",
+        "htmlType": "text",
         "validations": "required",
         "searchable": true,
         "fillable": true,
         "primary": false,
         "inForm": true,
         "inIndex": true,
-        "relation": "mt1,Page,page_id,id"
+        "dbNullable": false
     },
     {
-        "name": "component",
-        "dbType": "string",
-        "htmlType": "select,component",
-        "validations": "required",
-        "searchable": true,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": true
-    },
-    {
-        "name": "position",
-        "dbType": "string",
-        "htmlType": "select,theme",
-        "validations": "required",
-        "searchable": true,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": true
-    },
-    {
-        "name": "order",
-        "dbType": "integer",
-        "htmlType": "number",
+        "name": "description",
+        "dbType": "text",
+        "htmlType": "textarea",
         "validations": null,
         "searchable": true,
         "fillable": true,
         "primary": false,
         "inForm": true,
         "inIndex": true,
-        "dbNullable" : true
+        "dbNullable": true
+    },
+    {
+        "name": "model",
+        "dbType": "string",
+        "htmlType": "select,model",
+        "validations": "required",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "dbNullable": false
     },
     {
         "name": "created_by",
@@ -66,7 +57,7 @@
         "primary": false,
         "inForm": false,
         "inIndex": true,
-        "dbNullable" : true
+        "dbNullable": true
     },
     {
         "name": "updated_by",
@@ -78,28 +69,30 @@
         "primary": false,
         "inForm": false,
         "inIndex": true,
-        "dbNullable" : true
+        "dbNullable": true
     },
     {
         "name": "created_at",
         "dbType": "timestamp",
         "htmlType": null,
         "validations": null,
-        "searchable": false,
+        "searchable": true,
         "fillable": false,
         "primary": false,
         "inForm": false,
-        "inIndex": false
+        "inIndex": true,
+        "dbNullable": true
     },
     {
         "name": "updated_at",
         "dbType": "timestamp",
         "htmlType": null,
         "validations": null,
-        "searchable": false,
+        "searchable": true,
         "fillable": false,
         "primary": false,
         "inForm": false,
-        "inIndex": false
+        "inIndex": true,
+        "dbNullable": true
     }
 ]

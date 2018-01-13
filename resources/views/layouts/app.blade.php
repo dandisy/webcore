@@ -273,6 +273,8 @@
             });
             // end summernote
 
+            $('#dataTableBuilder').wrap('<div class="table-responsive col-md-12"></div>');
+
             $('.filemanager').fancybox({
                 type : 'iframe'
             });

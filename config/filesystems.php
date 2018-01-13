@@ -78,6 +78,11 @@ return [
             'root' => resource_path('views/vendor/themes'),
         ],
 
+        'model' => [
+            'driver' => 'local',
+            'root' => app_path('Models/Remote'),
+        ],
+
     ],
 
 ];
