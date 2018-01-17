@@ -100,11 +100,13 @@
 
 22. business process / workflow
 
-23. CRM integration
+23. crm
 
 24. executive report
 
 25. business intelligence
+
+26. erp integration
 
 ## 1.4.0 - Enterprise Platform
 
