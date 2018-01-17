@@ -110,12 +110,12 @@
 
 ## 1.4.0 - Enterprise Platform
 
-26. one stop solution
+27. one stop solution
 
-27. performance
+28. performance
 
 ## 1.5.0 Digital Solution
 
-28. artificial intelligence
+29. artificial intelligence
 
-29. trands
+30. trands
