@@ -192,7 +192,7 @@ download it in https://github.com/dandisy/webcore-sample
     - File Manager (htmltype = file-manager or files-manager)
     - Nullable field in migration (console option = n, or in json file using dbNullable = true)
     - Logged fields : created_by and updated_by (console option = --logs)
-    - Relational generator : add view model in controller, relational function in model, and relational data in select2 form field (htmltype = select,{view-model}={field-to-show}={field-as-value})
+    - Relational generator : add view model in controller, relational function in model, and relational data in select2 form field (htmltype = select,relation:{view-model}={field-to-show}={field-as-value})
     - Component and theme reader generator (htmltype = select,component or select,theme)
     - Model reader generator (htmltype = select,model)
 
