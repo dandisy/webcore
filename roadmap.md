@@ -98,20 +98,22 @@
 
 21. centrallized realtime db
 
-22. CRM integration
+22. business process / workflow
 
-23. executive report
+23. CRM integration
 
-24. business intelligence
+24. executive report
+
+25. business intelligence
 
 ## 1.4.0 - Enterprise Platform
 
-25. one stop solution
+26. one stop solution
 
-26. performance
+27. performance
 
 ## 1.5.0 Digital Solution
 
-27. artificial intelligence
+28. artificial intelligence
 
-28. trands
+29. trands
