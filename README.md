@@ -75,7 +75,7 @@ to manage your oauth client in
 
 * As Web CMS :
 
--- Concept --
+#### Concept
 
     Admin Page - UI Component - Front Page
 
@@ -98,9 +98,7 @@ to manage your oauth client in
     Scope of Front Page :    
     provide User Experience with content personalization
 
--- OK run these --
-
-run these command in your console 
+#### run these command in your console 
 
 ( for tidiness, webcore already prepared with menu items, so you can use --skip=menu when run command for generate Page, Post, Banner and Presentation)
 
