@@ -3,29 +3,6 @@
 ### Single Platform can be used for Backend Admin Website or Website CMS (built according to your needs)
 
 ## 1. Webcore
-### Concept
-
-    Admin Page - UI Component - Front Page
-
-1.  Backend Page (Admin)
-    
-    Scope of Admin Page :    
-    provide content management, presentation management, asset management and configuration
-    
-2. UI Component (just a part of page)
-
-    Scope of UI Component (widget) :    
-    provide reusable part of UI (widget) to be used in template of page (with layout positions),
-    (*and provide tracking of user interaction for personalization)
-         
-    Scope of Page :    
-    layouting and styling UI Component globaly as a Page by incorporating a template
-    
-3. Frontend Page
-
-    Scope of Front Page :    
-    provide User Experience with content personalization
-
 ### Installation
 
 Copy, paste and hit the Enter key in console line by line
@@ -98,6 +75,31 @@ to manage your oauth client in
 
 * As Web CMS :
 
+-- Concept --
+
+    Admin Page - UI Component - Front Page
+
+1.  Backend Page (Admin)
+    
+    Scope of Admin Page :    
+    provide content management, presentation management, asset management and configuration
+    
+2. UI Component (just a part of page)
+
+    Scope of UI Component (widget) :    
+    provide reusable part of UI (widget) to be used in template of page (with layout positions),
+    (*and provide tracking of user interaction for personalization)
+         
+    Scope of Page :    
+    layouting and styling UI Component globaly as a Page by incorporating a template
+    
+3. Frontend Page
+
+    Scope of Front Page :    
+    provide User Experience with content personalization
+
+-- OK run these --
+
 run these command in your console 
 
 ( for tidiness, webcore already prepared with menu items, so you can use --skip=menu when run command for generate Page, Post, Banner and Presentation)
@@ -146,7 +148,7 @@ last, you can arrange Admin Page side menu in resources/views/layouts/menu.blade
 
 * As Admin App (no public site in frontend)
 
-run these command in your console, if you have schema model file 
+#### run these command in your console, if you have schema model file 
 
 (change YourModel to the name of your model to be generate )
 
@@ -192,8 +194,9 @@ download it in https://github.com/dandisy/webcore-sample
     - File Manager (htmltype = file-manager or files-manager)
     - Nullable field in migration (console option = n, or in json file using dbNullable = true)
     - Logged fields : created_by and updated_by (console option = --logs)
-    - Relational generator : add model view in controller, related function in model, and related data in select2 form field (htmltype = select,model-view=show-field=value-field)
+    - Relational generator : add view model in controller, relational function in model, and relational data in select2 form field (htmltype = select,{view-model}={field-to-show}={field-as-value})
     - Component and theme reader generator (htmltype = select,component or select,theme)
+    - Model reader generator (htmltype = select,model)
 
 see sample model schema files in resources/model_schemas
 
@@ -230,7 +233,7 @@ see sample model schema files in resources/model_schemas
 
     - to get resources example http://localhost/webcore/public/api/product
 
-            with header Authorization = Bearer {token}
+            with header Authorization = Bearer {your-token}
 
 ### Dependency
 
@@ -271,12 +274,12 @@ see sample model schema files in resources/model_schemas
     or yaapis/Theme
     or teepluss/laravel-theme
     
-    * nwidart/laravel-modules -> OPTIONAL
-    * lavary/laravel-menu -> OPTIONAL
-    * h4cc/wkhtmltopdf-amd64 -> OPTIONAL
+    * nwidart/laravel-modules
+    * lavary/laravel-menu
+    * h4cc/wkhtmltopdf-amd64
 
-    * toxic-lemurs/menu-builder -> ALTERNATIVE
-    * mkdesignn/menubuilder -> ALTERNATIVE
+    * toxic-lemurs/menu-builder
+    * mkdesignn/menubuilder
 
 //------------------------------------------------#
 

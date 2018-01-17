@@ -6,25 +6,15 @@
 
 ## 1.0.0 - Single Platform
 
-3. created by filled with user session
-
-    - generator check if field type user session
-    - auto insert user session to this field on create new record
-
-    - add edited by
+3. logged user session generator
 
 ### 1.0.1
 
-4. field relation
-
-    - generate html type select with option is records on related model
+4. relational generator
 
 ### 1.0.2
 
-5. field type auto compelite
-
-    - field auto compelite for read directory and file
-    - generate html type auto compelete with list directory and file
+5. theme, template & component reader generator
 
 ### 1.0.3
 
@@ -86,7 +76,7 @@
 
 ### 1.1.6
 
-16. frontend login included in CRM system
+16. mobile plarform
 
 ### 1.1.7
 
@@ -106,9 +96,9 @@
 
 ## 1.3.0 - Experience Platform
 
-21. horizon rethinkdb
+21. centrallized realtime db
 
-22. mobile plarform
+22. CRM integration
 
 23. executive report
 
@@ -118,10 +108,10 @@
 
 25. one stop solution
 
+26. performance
+
 ## 1.5.0 Digital Solution
 
-26. artificial intelligence
-
-27. performance
+27. artificial intelligence
 
 28. trands
