@@ -1,6 +1,6 @@
 ## Webcore Platform
 
-### Single Platform can be used for Backend Admin Website or Website CMS (built according to your needs)
+### Single Platform can be used for Admin Panel or Web CMS (built according to your needs)
 
 ## 1. Webcore
 ### Installation
@@ -144,7 +144,7 @@ last, you can arrange Admin Page side menu in resources/views/layouts/menu.blade
 
     uncomment already prepared menu items for Pages, Posts, Banners, Presentations and Menus 
 
-* As Admin App (no public site in frontend)
+* As Admin Panel (no public site in frontend)
 
 #### run these command in your console, if you have schema model file 
 
@@ -254,30 +254,14 @@ see sample model schema files in resources/model_schemas
 
     If you activated laravel passport use :
     * spatie/laravel-cors
+
+    * barryvdh/laravel-dompdf or seguce92/laravel-dompdf
+    * maatwebsite/excel
     
     * pragmarx/tracker or jeremykenedy/laravel-logger
     * spatie/laravel-activitylog
 
     * fireguard/report or jimmyjs/laravel-report-generator
-
-    * barryvdh/laravel-dompdf or seguce92/laravel-dompdf
-    * maatwebsite/excel
-    * khill/lavacharts
-    
-    if use additional jwt package
-    * tymon/jwt-auth
-
-    if use other theme package :
-    facuz/laravel-themes based on thinhbuzz/laravel-theme
-    or yaapis/Theme
-    or teepluss/laravel-theme
-    
-    * nwidart/laravel-modules
-    * lavary/laravel-menu
-    * h4cc/wkhtmltopdf-amd64
-
-    * toxic-lemurs/menu-builder
-    * mkdesignn/menubuilder
 
 //------------------------------------------------#
 
