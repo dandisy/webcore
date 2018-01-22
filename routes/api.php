@@ -17,30 +17,141 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// start resource example
-Route::get('product', function () {
-    return [
-        ['id' => '123', 'name' => 'dummy product 1', 'price' => '1000'],
-        ['id' => '234', 'name' => 'dummy product 2', 'price' => '5'],
-        ['id' => '345', 'name' => 'dummy product 3', 'price' => '90151'],
-    ];
+
+/*
+|--------------------------------------------------------------------------
+| Global API for direct model class under Models directory
+|--------------------------------------------------------------------------
+|
+| URL encode :
+| %3D for =
+| %3E for >
+| %3C for <
+| %21 for !
+| %25 for %
+|
+| Example :
+| api/JSON/Page?query[a][function]=where&query[a][field]=name&query[a][operator]=%3D&query[a][value]=arrival&query[b][function]=get
+|
+*/
+Route::get('JSON/{model}/{id?}', function(Request $request, $model, $id = NULL) {
+    $modelNameSpace = 'App\Models\\'.$model;
+    $data = new $modelNameSpace();
+
+    if($id) {
+        return $data->find($id);
+    }
+
+    foreach($request->all()['query'] as $query) {
+        $queryFunc = $query['function'];
+
+        if($queryFunc === 'latest') {
+            $data = $data->latest();
+        } else if(
+                $queryFunc === 'select' || 
+                $queryFunc === 'addSelect' || 
+                $queryFunc === 'groupBy' || 
+                $queryFunc === 'whereNull' || 
+                $queryFunc === 'whereNotNull' || 
+                $queryFunc === 'avg' || 
+                $queryFunc === 'max'
+            ) {
+            $data = $data->$queryFunc(explode(',', $query['field']));
+        } else if(
+                $queryFunc === 'where' || 
+                $queryFunc === 'orWhere' ||  
+                $queryFunc === 'whereDate' ||  
+                $queryFunc === 'whereMonth' ||  
+                $queryFunc === 'whereDay' ||  
+                $queryFunc === 'whereYear' ||  
+                $queryFunc === 'whereTime' ||  
+                $queryFunc === 'whereColumn' || 
+                $queryFunc === 'having'
+            ) {
+            $data = $data->$queryFunc($query['field'], $query['operator'], $query['value']);
+        }  else if($queryFunc === 'orderBy') {
+            $data = $data->$queryFunc($query['field'], $query['value']);
+        } else if(
+                $queryFunc === 'selectRaw' || 
+                $queryFunc === 'offset' || 
+                $queryFunc === 'limit' || 
+                $queryFunc === 'with' || 
+                $queryFunc === 'whereIn' || 
+                $queryFunc === 'whereNotIn' || 
+                $queryFunc === 'whereBetween' || 
+                $queryFunc === 'whereNotBetween' ||
+                $queryFunc === 'whereRaw' ||
+                $queryFunc === 'orWhereRaw' ||
+                $queryFunc === 'orderByRaw' ||
+                $queryFunc === 'havingRaw' ||
+                $queryFunc === 'join' ||
+                $queryFunc === 'leftJoin'
+            ) {
+            $data = $data->$queryFunc($query['value']);
+        }
+    }
+
+    $lastQuery = end($request->all()['query'])['function'];
+
+    if($lastQuery === 'first') {
+        $data = $data->first();
+    } else if($lastQuery === 'inRandomOrder') {
+        $data = $data->inRandomOrder();
+    } else if($lastQuery === 'count') {
+        $data = $data->count();
+    } else if($lastQuery === 'max') {
+        $data = $data->max(explode(',', end($request->all()['query'])['field']));
+    } else if($lastQuery === 'avg') {
+        $data = $data->avg(explode(',', end($request->all()['query'])['field']));
+    } else {
+        $data = $data->get();
+    }
+
+    return $data;
 })->middleware('auth:api');
 
-$posts = [
-    ['id' => '123', 'title' => 'blog post 1', 'body' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'],
-    ['id' => '234', 'title' => 'blog post 2', 'body' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'],
-    ['id' => '345', 'title' => 'blog post 3', 'body' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'],
-];
+Route::post('JSON/{model}', function(Request $request, $model) {
+    $modelNameSpace = 'App\Models\\'.$model;
+    $data = new $modelNameSpace();
 
-Route::get('post', function () use ($posts) {
-    return $posts;
-});
-
-Route::get('post/{id}', function ($id) use ($posts) {
-    $key = array_search($id, array_column($posts, 'id'));
-    if (false !== $key) {
-        return $posts[$key];
+    if($request->all()) {
+        //return $data->insert($request->all());
+        return $data->create($request->all());
     }
-    return [];
-});
-// end resource example
+})->middleware('auth:api');
+
+Route::put('JSON/{model}/{id}', function(Request $request, $model, $id) {
+    $modelNameSpace = 'App\Models\\'.$model;
+    $data = new $modelNameSpace();
+
+    $data = $data->find($id);
+
+    if($data && $request->all()) {
+        return $data->update($request->all());
+    }
+})->middleware('auth:api');
+
+Route::patch('JSON/{model}/{id}', function(Request $request, $model, $id) {
+    $modelNameSpace = 'App\Models\\'.$model;
+    $data = new $modelNameSpace();
+
+    $data = $data->find($id);
+
+    if($data && $request->all()) {
+        $data->delete();
+
+        return $data->insert($request->all());
+    }
+})->middleware('auth:api');
+
+Route::delete('JSON/{model}/{id}', function(Request $request, $model, $id) {
+    $modelNameSpace = 'App\Models\\'.$model;
+    $data = new $modelNameSpace();
+
+    $data = $data->find($id);
+
+    if($data) {
+        return $data->delete();
+    }
+})->middleware('auth:api');
+// End global API for direct model class under Models directory

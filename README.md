@@ -187,7 +187,8 @@ download it in https://github.com/dandisy/webcore-sample
 5. Laravel Generator based on infyomlabs/laravel-generator with Additional features
 
     - Date Time Picker (htmltype = date-picker, time-picker or datetime-picker)
-    - Select2 (all select input will be select2)
+    - Select2 (all select input will be select2, for multiple use htmltype = multi-select)
+    - Two side Multiple Select (htmltype = two-side-select)
     - HTML Text Editor (htmltype = text-editor)
     - File Manager (htmltype = file-manager or files-manager)
     - Nullable field in migration (console option = n, or in json file using dbNullable = true)
