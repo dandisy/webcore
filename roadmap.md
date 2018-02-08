@@ -114,7 +114,7 @@
 
 28. performance
 
-## 1.5.0 Digital Solution
+## 1.5.0 - Digital Solution
 
 29. artificial intelligence
 
