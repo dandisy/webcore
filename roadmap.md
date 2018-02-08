@@ -38,7 +38,7 @@
 
 ### 1.0.8
 
-11. drag & drop component builder
+11. drag & drop component presentation to page template
 
 ### 1.0.9
 
