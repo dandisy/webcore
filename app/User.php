@@ -31,10 +31,6 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-    
-    public function role() {
-        return $this->hasOne('App\Models\RoleUser');
-    }
 
     /**
      * Validation rules
@@ -46,4 +42,8 @@ class User extends Authenticatable
         'email' => 'required',
         'password' => 'required'
     ];
+
+    public function role() {
+        return $this->hasOne('App\Models\RoleUser');
+    }
 }

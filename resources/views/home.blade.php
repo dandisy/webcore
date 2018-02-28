@@ -14,7 +14,7 @@
 </section>
 
 <!-- Main content -->
-{{--<section class="content">
+<section class="content">
     <!-- Info boxes -->
     <div class="row">
         <div class="col-md-3 col-sm-6 col-xs-12">
@@ -355,10 +355,10 @@
                                             <img class="contacts-list-img" src="vendor/adminlte/dist/img/user1-128x128.jpg" alt="User Image">
 
                                             <div class="contacts-list-info">
-                                <span class="contacts-list-name">
-                                  Count Dracula
-                                  <small class="contacts-list-date pull-right">2/28/2015</small>
-                                </span>
+                                                <span class="contacts-list-name">
+                                                  Count Dracula
+                                                  <small class="contacts-list-date pull-right">2/28/2015</small>
+                                                </span>
                                                 <span class="contacts-list-msg">How have you been? I was...</span>
                                             </div>
                                             <!-- /.contacts-list-info -->
@@ -370,10 +370,10 @@
                                             <img class="contacts-list-img" src="vendor/adminlte/dist/img/user7-128x128.jpg" alt="User Image">
 
                                             <div class="contacts-list-info">
-                                <span class="contacts-list-name">
-                                  Sarah Doe
-                                  <small class="contacts-list-date pull-right">2/23/2015</small>
-                                </span>
+                                                <span class="contacts-list-name">
+                                                  Sarah Doe
+                                                  <small class="contacts-list-date pull-right">2/23/2015</small>
+                                                </span>
                                                 <span class="contacts-list-msg">I will be waiting for...</span>
                                             </div>
                                             <!-- /.contacts-list-info -->
@@ -385,10 +385,10 @@
                                             <img class="contacts-list-img" src="vendor/adminlte/dist/img/user3-128x128.jpg" alt="User Image">
 
                                             <div class="contacts-list-info">
-                                <span class="contacts-list-name">
-                                  Nadia Jolie
-                                  <small class="contacts-list-date pull-right">2/20/2015</small>
-                                </span>
+                                                <span class="contacts-list-name">
+                                                  Nadia Jolie
+                                                  <small class="contacts-list-date pull-right">2/20/2015</small>
+                                                </span>
                                                 <span class="contacts-list-msg">I'll call you back at...</span>
                                             </div>
                                             <!-- /.contacts-list-info -->
@@ -400,10 +400,10 @@
                                             <img class="contacts-list-img" src="vendor/adminlte/dist/img/user5-128x128.jpg" alt="User Image">
 
                                             <div class="contacts-list-info">
-                                <span class="contacts-list-name">
-                                  Nora S. Vans
-                                  <small class="contacts-list-date pull-right">2/10/2015</small>
-                                </span>
+                                                <span class="contacts-list-name">
+                                                  Nora S. Vans
+                                                  <small class="contacts-list-date pull-right">2/10/2015</small>
+                                                </span>
                                                 <span class="contacts-list-msg">Where is your new...</span>
                                             </div>
                                             <!-- /.contacts-list-info -->
@@ -415,10 +415,10 @@
                                             <img class="contacts-list-img" src="vendor/adminlte/dist/img/user6-128x128.jpg" alt="User Image">
 
                                             <div class="contacts-list-info">
-                                <span class="contacts-list-name">
-                                  John K.
-                                  <small class="contacts-list-date pull-right">1/27/2015</small>
-                                </span>
+                                                <span class="contacts-list-name">
+                                                  John K.
+                                                  <small class="contacts-list-date pull-right">1/27/2015</small>
+                                                </span>
                                                 <span class="contacts-list-msg">Can I take a look at...</span>
                                             </div>
                                             <!-- /.contacts-list-info -->
@@ -430,10 +430,10 @@
                                             <img class="contacts-list-img" src="vendor/adminlte/dist/img/user8-128x128.jpg" alt="User Image">
 
                                             <div class="contacts-list-info">
-                                <span class="contacts-list-name">
-                                  Kenneth M.
-                                  <small class="contacts-list-date pull-right">1/4/2015</small>
-                                </span>
+                                                <span class="contacts-list-name">
+                                                  Kenneth M.
+                                                  <small class="contacts-list-date pull-right">1/4/2015</small>
+                                                </span>
                                                 <span class="contacts-list-msg">Never mind I found...</span>
                                             </div>
                                             <!-- /.contacts-list-info -->
@@ -451,8 +451,8 @@
                                 <div class="input-group">
                                     <input type="text" name="message" placeholder="Type Message ..." class="form-control">
                                     <span class="input-group-btn">
-                            <button type="button" class="btn btn-warning btn-flat">Send</button>
-                          </span>
+                                        <button type="button" class="btn btn-warning btn-flat">Send</button>
+                                    </span>
                                 </div>
                             </form>
                         </div>
@@ -470,9 +470,11 @@
 
                             <div class="box-tools pull-right">
                                 <span class="label label-danger">8 New Members</span>
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                    <i class="fa fa-minus"></i>
                                 </button>
-                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                    <i class="fa fa-times"></i>
                                 </button>
                             </div>
                         </div>
@@ -769,11 +771,12 @@
                                 <img src="vendor/adminlte/dist/img/default-50x50.gif" alt="Product Image">
                             </div>
                             <div class="product-info">
-                                <a href="javascript:void(0)" class="product-title">Samsung TV
-                                    <span class="label label-warning pull-right">$1800</span></a>
+                                <a href="javascript:void(0)" class="product-title">
+                                    Samsung TV <span class="label label-warning pull-right">$1800</span>
+                                </a>
                                 <span class="product-description">
-                          Samsung 32" 1080p 60Hz LED Smart HDTV.
-                        </span>
+                                    Samsung 32" 1080p 60Hz LED Smart HDTV.
+                                </span>
                             </div>
                         </li>
                         <!-- /.item -->
@@ -782,11 +785,12 @@
                                 <img src="vendor/adminlte/dist/img/default-50x50.gif" alt="Product Image">
                             </div>
                             <div class="product-info">
-                                <a href="javascript:void(0)" class="product-title">Bicycle
-                                    <span class="label label-info pull-right">$700</span></a>
+                                <a href="javascript:void(0)" class="product-title">
+                                    Bicycle <span class="label label-info pull-right">$700</span>
+                                </a>
                                 <span class="product-description">
-                          26" Mongoose Dolomite Men's 7-speed, Navy Blue.
-                        </span>
+                                    26" Mongoose Dolomite Men's 7-speed, Navy Blue.
+                                </span>
                             </div>
                         </li>
                         <!-- /.item -->
@@ -795,10 +799,12 @@
                                 <img src="vendor/adminlte/dist/img/default-50x50.gif" alt="Product Image">
                             </div>
                             <div class="product-info">
-                                <a href="javascript:void(0)" class="product-title">Xbox One <span class="label label-danger pull-right">$350</span></a>
+                                <a href="javascript:void(0)" class="product-title">
+                                    Xbox One <span class="label label-danger pull-right">$350</span>
+                                </a>
                                 <span class="product-description">
-                          Xbox One Console Bundle with Halo Master Chief Collection.
-                        </span>
+                                    Xbox One Console Bundle with Halo Master Chief Collection.
+                                </span>
                             </div>
                         </li>
                         <!-- /.item -->
@@ -807,11 +813,12 @@
                                 <img src="vendor/adminlte/dist/img/default-50x50.gif" alt="Product Image">
                             </div>
                             <div class="product-info">
-                                <a href="javascript:void(0)" class="product-title">PlayStation 4
-                                    <span class="label label-success pull-right">$399</span></a>
+                                <a href="javascript:void(0)" class="product-title">
+                                    PlayStation 4 <span class="label label-success pull-right">$399</span>
+                                </a>
                                 <span class="product-description">
-                          PlayStation 4 500GB Console (PS4)
-                        </span>
+                                    PlayStation 4 500GB Console (PS4)
+                                </span>
                             </div>
                         </li>
                         <!-- /.item -->

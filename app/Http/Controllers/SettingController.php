@@ -11,7 +11,7 @@ use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
 
-class SettingController extends AppBaseController
+class SettingController extends Controller
 {
     /** @var  SettingRepository */
     private $settingRepository;

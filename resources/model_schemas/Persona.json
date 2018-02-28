@@ -11,39 +11,28 @@
         "inIndex": false
     },
     {
-        "name": "image",
-        "dbType": "string",
-        "htmlType": "file-manager",
-        "validations": null,
-        "searchable": false,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": false,
-        "dbNullable" : true
-    },
-    {
-        "name": "biografy",
-        "dbType": "text",
-        "htmlType": "textarea",
-        "validations": null,
+        "name": "user_id",
+        "dbType": "integer",
+        "htmlType": "select,relation:user=id=id",
+        "validations": "required",
         "searchable": true,
         "fillable": true,
         "primary": false,
         "inForm": true,
         "inIndex": true,
-        "dbNullable" : true
+        "relation": "mt1,User,user_id,id"
     },
     {
-        "name": "user_id",
+        "name": "pattern_card_id",
         "dbType": "integer",
-        "htmlType": "text",
-        "validations": null,
-        "searchable": false,
+        "htmlType": "select,relation:pattern_card=name=id",
+        "validations": "required",
+        "searchable": true,
         "fillable": true,
         "primary": false,
-        "inForm": false,
-        "inIndex": false
+        "inForm": true,
+        "inIndex": true,
+        "relation": "mt1,PatternCard,pattern_card_id,id"
     },
     {
         "name": "created_at",

@@ -11,56 +11,9 @@
         "inIndex": false
     },
     {
-        "name": "page_id",
-        "dbType": "integer",
-        "htmlType": "select,relation:page=title=id",
-        "validations": "required",
-        "searchable": true,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": true,
-        "relation": "mt1,Page,page_id,id"
-    },
-    {
-        "name": "component",
-        "dbType": "string",
-        "htmlType": "select,component",
-        "validations": "required",
-        "searchable": true,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": true
-    },
-    {
-        "name": "source",
-        "dbType": "string",
-        "htmlType": "select,DataField,DataSource",
-        "validations": null,
-        "searchable": true,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": true,
-        "dbNullable" : true
-    },
-    {
-        "name": "data",
+        "name": "name",
         "dbType": "string",
         "htmlType": "text",
-        "validations": null,
-        "searchable": true,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": true,
-        "dbNullable" : true
-    },
-    {
-        "name": "position",
-        "dbType": "string",
-        "htmlType": "select,theme",
         "validations": "required",
         "searchable": true,
         "fillable": true,
@@ -69,9 +22,9 @@
         "inIndex": true
     },
     {
-        "name": "order",
-        "dbType": "integer",
-        "htmlType": "number",
+        "name": "description",
+        "dbType": "string",
+        "htmlType": "textarea",
         "validations": null,
         "searchable": true,
         "fillable": true,

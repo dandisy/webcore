@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Page;
 //use App\Models\MenuItem;
 use Illuminate\Http\Request;
 use League\Glide\ServerFactory;
@@ -32,7 +31,7 @@ Auth::routes();
 // });
 
 Route::get('/admin', function () {
-    //if(Laratrust::hasRole(['administrator','superadministrator'])) {
+    // if(Laratrust::hasRole(['administrator','superadministrator'])) {
         return redirect('dashboard');
     // } else {
     //     return redirect('home');
@@ -55,9 +54,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::group(['middleware' => ['role:superadministrator|administrator']], function () {
         Route::resource('users', 'UserController');
 
+        Route::resource('profiles', 'ProfileController');
+
         Route::resource('roles', 'RoleController');
 
-        // Route::resource('permissions', 'PermissionController');
+        Route::resource('permissions', 'PermissionController');
 
         Route::resource('settings', 'SettingController');
     });

@@ -11,39 +11,62 @@
         "inIndex": false
     },
     {
-        "name": "image",
-        "dbType": "string",
-        "htmlType": "file-manager",
-        "validations": null,
-        "searchable": false,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": false,
-        "dbNullable" : true
-    },
-    {
-        "name": "biografy",
-        "dbType": "text",
-        "htmlType": "textarea",
-        "validations": null,
+        "name": "pattern_card_id",
+        "dbType": "integer",
+        "htmlType": "select,relation:pattern_card=name=id",
+        "validations": "required",
         "searchable": true,
         "fillable": true,
         "primary": false,
         "inForm": true,
         "inIndex": true,
-        "dbNullable" : true
+        "relation": "mt1,PatternCard,pattern_card_id,id"
     },
     {
-        "name": "user_id",
-        "dbType": "integer",
+        "name": "key",
+        "dbType": "string",
         "htmlType": "text",
+        "validations": "required",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true
+    },
+    {
+        "name": "value",
+        "dbType": "integer",
+        "htmlType": "number",
+        "validations": "required",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true
+    },
+    {
+        "name": "created_by",
+        "dbType": "integer",
+        "htmlType": null,
         "validations": null,
-        "searchable": false,
+        "searchable": true,
         "fillable": true,
         "primary": false,
         "inForm": false,
-        "inIndex": false
+        "inIndex": true,
+        "dbNullable" : true
+    },
+    {
+        "name": "updated_by",
+        "dbType": "integer",
+        "htmlType": null,
+        "validations": null,
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": false,
+        "inIndex": true,
+        "dbNullable" : true
     },
     {
         "name": "created_at",

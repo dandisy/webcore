@@ -11,7 +11,7 @@ use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
 
-class PermissionController extends AppBaseController
+class PermissionController extends Controller
 {
     /** @var  PermissionRepository */
     private $permissionRepository;

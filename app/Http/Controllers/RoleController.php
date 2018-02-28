@@ -13,7 +13,7 @@ use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
 
-class RoleController extends AppBaseController
+class RoleController extends Controller
 {
     /** @var  RoleRepository */
     private $roleRepository;

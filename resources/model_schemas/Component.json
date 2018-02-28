@@ -12,22 +12,57 @@
         "dbNullable": true
     },
     {
-        "name": "data_source_id",
-        "dbType": "integer",
-        "htmlType": "select,relation:datasource=name=id",
+        "name": "name",
+        "dbType": "string",
+        "htmlType": "text",
         "validations": "required",
         "searchable": true,
         "fillable": true,
         "primary": false,
         "inForm": true,
         "inIndex": true,
-        "dbNullable": false,
-        "relation": "mt1,DataSource,data_source_id,id"
+        "dbNullable": false
     },
     {
-        "name": "parent",
+        "name": "description",
+        "dbType": "text",
+        "htmlType": "textarea",
+        "validations": null,
+        "searchable": false,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": false,
+        "dbNullable": true
+    },
+    {
+        "name": "view",
+        "dbType": "string",
+        "htmlType": "select,component",
+        "validations": "required",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "dbNullable": false
+    },
+    {
+        "name": "source",
+        "dbType": "string",
+        "htmlType": "select,DataField,DataSource",
+        "validations": null,
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "dbNullable" : true
+    },
+    {
+        "name": "data_source_id",
         "dbType": "integer",
-        "htmlType": "select,relation:dataquery=id=id",
+        "htmlType": "select,relation:datasource=name=id",
         "validations": null,
         "searchable": true,
         "fillable": true,
@@ -35,55 +70,19 @@
         "inForm": true,
         "inIndex": true,
         "dbNullable": true,
-        "relation": "mt1,DataQuery,parent,id"
+        "relation": "mt1,DataSource,data_source_id,id"
     },
     {
-        "name": "command",
-        "dbType": "string",
-        "htmlType": "select,get:get,first:first,orderBy:orderBy,orderByRaw:orderByRaw,inRandomOrder:inRandomOrder,latest:latest,offset:offset,limit:limit,select:select,addSelect:addSelect,selectRaw:selectRaw,where:where,whereNull:whereNull,whereNotNull:whereNotNull,whereIn:whereIn,whereNotIn:whereNotIn,orWhere:orWhere,whereBetween:whereBetween,whereNotBetween:whereNotBetween,whereDate:whereDate,whereMonth:whereMonth,whereDay:whereDay,whereYear:whereYear,whereTime:whereTime,whereColumn:whereColumn,whereExists:whereExists,whereRaw:whereRaw,join:join,leftJoin:leftJoin,on:on,orOn:orOn,groupBy:groupBy,having:having,havingRaw:havingRaw,orHavingRaw:orHavingRaw,count:count,max:max,avg:avg,with:with",
-        "validations": "required",
-        "searchable": false,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": false,
-        "dbNullable": false
-    },
-    {
-        "name": "column",
-        "dbType": "string",
-        "htmlType": "select,field1:field1,field2:field2,field3:field3",
-        "validations": null,
-        "searchable": false,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": false,
-        "dbNullable": true
-    },
-    {
-        "name": "operator",
-        "dbType": "string",
-        "htmlType": "select,=:=,>:>,<:<,>=:>=,<=:<=.!=:!=,NULL:NULL,LIKE:LIKE",
-        "validations": null,
-        "searchable": false,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": false,
-        "dbNullable": true
-    },
-    {
-        "name": "value",
+        "name": "data",
         "dbType": "string",
         "htmlType": "text",
         "validations": null,
-        "searchable": false,
+        "searchable": true,
         "fillable": true,
         "primary": false,
         "inForm": true,
-        "inIndex": false,
-        "dbNullable": true
+        "inIndex": true,
+        "dbNullable" : true
     },
     {
         "name": "created_by",

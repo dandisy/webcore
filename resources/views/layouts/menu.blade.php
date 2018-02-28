@@ -1,4 +1,4 @@
-@role(['superadministrator','administrator','verificator','user'])
+@role(['superadministrator','administrator','user'])
 <li class="header">DASHBOARD</li>
 
 <li class="{{ Request::is('dashboard*') ? 'active' : '' }}">>
@@ -36,23 +36,25 @@
 <li class="{{ Request::is('assets*') ? 'active' : '' }}">
     <a href="{!! url('assets') !!}"><i class="fa fa-folder-open"></i><span>Assets</span></a>
 </li>
-
-<li class="{{ Request::is('users*') ? 'active' : '' }}">
-    <a href="{!! route('users.index') !!}"><i class="fa fa-users"></i><span>Users</span></a>
-</li>
 @endrole
 
 @role(['superadministrator','administrator'])
+<li class="{{ Request::is('users*') ? 'active' : '' }}">
+    <a href="{!! route('users.index') !!}"><i class="fa fa-users"></i><span>Users</span></a>
+</li>
+
+<li class="{{ Request::is('profiles*') ? 'active' : '' }}">
+    <a href="{!! route('profiles.index') !!}"><i class="fa fa-edit"></i><span>Profiles</span></a>
+</li>
+
 <li class="{{ Request::is('roles*') ? 'active' : '' }}">
     <a href="{!! route('roles.index') !!}"><i class="fa fa-road"></i><span>Roles</span></a>
 </li>
 
-{{--<li class="{{ Request::is('permissions*') ? 'active' : '' }}">
+<li class="{{ Request::is('permissions*') ? 'active' : '' }}">
     <a href="{!! route('permissions.index') !!}"><i class="fa fa-ticket"></i><span>Permissions</span></a>
-</li>--}}
-@endrole
+</li>
 
-@role(['superadministrator','administrator'])
 <li class="header">CONFIGURATION</li>
 
 <li class="{{ Request::is('settings*') ? 'active' : '' }}">

@@ -46,6 +46,4 @@ class Setting extends Model
         'key' => 'required',
         'value' => 'required'
     ];
-
-    
 }

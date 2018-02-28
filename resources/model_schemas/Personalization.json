@@ -23,32 +23,22 @@
         "relation": "mt1,Page,page_id,id"
     },
     {
-        "name": "media",
-        "dbType": "string",
-        "htmlType": "select,Desktop,Mobile",
-        "validations": "required",
-        "searchable": true,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": true
-    },
-    {
         "name": "component_id",
-        "dbType": "string",
+        "dbType": "integer",
         "htmlType": "select,relation:component=name=id",
-        "validations": "required",
+        "validations": null,
         "searchable": true,
         "fillable": true,
         "primary": false,
         "inForm": true,
         "inIndex": true,
+        "dbNullable" : true,
         "relation": "mt1,Component,component_id,id"
     },
     {
-        "name": "position",
+        "name": "target",
         "dbType": "string",
-        "htmlType": "select,theme",
+        "htmlType": "select,time:time,date:date,datetime:datetime,radius:radius,region:region,city:city,country:country,language:language,before:before,event:event,persona:persona",
         "validations": "required",
         "searchable": true,
         "fillable": true,
@@ -57,9 +47,9 @@
         "inIndex": true
     },
     {
-        "name": "order",
-        "dbType": "integer",
-        "htmlType": "number",
+        "name": "value",
+        "dbType": "string",
+        "htmlType": "text",
         "validations": null,
         "searchable": true,
         "fillable": true,
@@ -97,21 +87,21 @@
         "dbType": "timestamp",
         "htmlType": null,
         "validations": null,
-        "searchable": true,
+        "searchable": false,
         "fillable": false,
         "primary": false,
         "inForm": false,
-        "inIndex": true
+        "inIndex": false
     },
     {
         "name": "updated_at",
         "dbType": "timestamp",
         "htmlType": null,
         "validations": null,
-        "searchable": true,
+        "searchable": false,
         "fillable": false,
         "primary": false,
         "inForm": false,
-        "inIndex": true
+        "inIndex": false
     }
 ]

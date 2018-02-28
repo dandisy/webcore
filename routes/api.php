@@ -115,7 +115,7 @@ Route::post('JSON/{model}', function(Request $request, $model) {
     $data = new $modelNameSpace();
 
     if($request->all()) {
-        //return $data->insert($request->all());
+        // return $data->insert($request->all());
         return $data->create($request->all());
     }
 })->middleware('auth:api');
@@ -144,7 +144,7 @@ Route::patch('JSON/{model}/{id}', function(Request $request, $model, $id) {
     }
 })->middleware('auth:api');
 
-Route::delete('JSON/{model}/{id}', function(Request $request, $model, $id) {
+Route::delete('JSON/{model}/{id}', function($model, $id) {
     $modelNameSpace = 'App\Models\\'.$model;
     $data = new $modelNameSpace();
 
@@ -155,3 +155,5 @@ Route::delete('JSON/{model}/{id}', function(Request $request, $model, $id) {
     }
 })->middleware('auth:api');
 // End global API for direct model class under Models directory
+
+Route::resource('profiles', 'ProfileAPIController');
