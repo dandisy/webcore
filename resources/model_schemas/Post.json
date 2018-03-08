@@ -19,7 +19,7 @@
         "fillable": true,
         "primary": false,
         "inForm": true,
-        "inIndex": true
+        "inIndex": false
     },
     {
         "name": "title",
@@ -52,7 +52,7 @@
         "fillable": true,
         "primary": false,
         "inForm": true,
-        "inIndex": true,
+        "inIndex": false,
         "dbNullable" : true
     },
     {
@@ -64,7 +64,7 @@
         "fillable": true,
         "primary": false,
         "inForm": true,
-        "inIndex": true
+        "inIndex": false
     },
     {
         "name": "tag",
@@ -146,7 +146,7 @@
         "fillable": true,
         "primary": false,
         "inForm": false,
-        "inIndex": true,
+        "inIndex": false,
         "dbNullable" : true
     },
     {

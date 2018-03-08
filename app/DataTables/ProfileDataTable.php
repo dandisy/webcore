@@ -64,7 +64,8 @@ class ProfileDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'biografy'
+            'image',
+            'biography'
         ];
     }
 

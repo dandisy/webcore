@@ -20,7 +20,7 @@ class ProfileRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
-        'biografy'
+        'biography'
     ];
 
     /**

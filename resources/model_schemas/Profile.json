@@ -19,11 +19,11 @@
         "fillable": true,
         "primary": false,
         "inForm": true,
-        "inIndex": false,
+        "inIndex": true,
         "dbNullable" : true
     },
     {
-        "name": "biografy",
+        "name": "biography",
         "dbType": "text",
         "htmlType": "textarea",
         "validations": null,
