@@ -70,7 +70,7 @@ return [
 
         'component' => [
             'driver' => 'local',
-            'root' => resource_path('views/components'),
+            'root' => resource_path('views/vendor/components'),
         ],
 
         'theme' => [
