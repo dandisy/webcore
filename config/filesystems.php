@@ -80,7 +80,7 @@ return [
 
         'model' => [
             'driver' => 'local',
-            'root' => app_path('Models/Remote'),
+            'root' => app_path('Models'),
         ],
 
     ],

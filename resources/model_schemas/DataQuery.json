@@ -52,7 +52,7 @@
     {
         "name": "column",
         "dbType": "string",
-        "htmlType": "select,field1:field1,field2:field2,field3:field3",
+        "htmlType": "text",
         "validations": null,
         "searchable": false,
         "fillable": true,
@@ -76,7 +76,7 @@
     {
         "name": "value",
         "dbType": "string",
-        "htmlType": "text",
+        "htmlType": "textarea",
         "validations": null,
         "searchable": false,
         "fillable": true,
