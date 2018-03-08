@@ -21,8 +21,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *          type="string"
  *      ),
  *      @SWG\Property(
- *          property="biografy",
- *          description="biografy",
+ *          property="biography",
+ *          description="biography",
  *          type="string"
  *      ),
  *      @SWG\Property(
@@ -57,7 +57,7 @@ class Profile extends Model
 
     public $fillable = [
         'image',
-        'biografy',
+        'biography',
         'user_id'
     ];
 
@@ -68,7 +68,7 @@ class Profile extends Model
      */
     protected $casts = [
         'image' => 'string',
-        'biografy' => 'string',
+        'biography' => 'string',
         'user_id' => 'integer'
     ];
 

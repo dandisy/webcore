@@ -836,7 +836,7 @@
     </div>
     <!-- /.row -->
 </section>
-<!-- /.content -->--}}
+<!-- /.content -->
 @endsection
 
 @section('scripts')
