@@ -94,5 +94,13 @@
         "inForm": false,
         "inIndex": true,
         "dbNullable": true
+    },
+    {
+        "type": "relation",
+        "relation": "1tm,DataQuery,data_source_id"
+    },
+    {
+        "type": "relation",
+        "relation": "1tm,DataColumn,data_source_id"
     }
 ]
