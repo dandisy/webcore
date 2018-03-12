@@ -68,7 +68,7 @@
 
             <!-- Logo -->
             <a href="{{ url('/dashboard') }}" class="logo">
-                <b>WebCORE</b>
+                <b>Webcore</b>
             </a>
 
             <!-- Header Navbar -->

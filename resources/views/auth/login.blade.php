@@ -34,7 +34,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="{{ url('/home') }}"><b>Webore </b>Platform</a>
+        <a href="{{ url('/home') }}"><b>Webcore </b>Platform</a>
     </div>
 
     <!-- /.login-logo -->
