@@ -116,7 +116,7 @@ then
 
     php artisan vendor:publish --provider="Webcore\Page\PageServiceProvider" --tag=config
 
-if you want Webcore Page System themes & components sample code
+if you want Webcore Front Page System themes & components sample code
 
 download in https://github.com/dandisy/themes (don't clone)
 
@@ -257,7 +257,7 @@ see sample model schema files in resources/model_schemas
     * spatie/laravel-cors
 
     * barryvdh/laravel-dompdf or seguce92/laravel-dompdf
-    * maatwebsite/excel
+    * maatwebsite/excel or phpoffice/phpspreadsheet
     
     * pragmarx/tracker or jeremykenedy/laravel-logger
     * spatie/laravel-activitylog
