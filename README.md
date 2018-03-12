@@ -168,9 +168,9 @@ download it in https://github.com/dandisy/webcore-sample
 
 4. Image Manipulation
 
-        to manipulate image use http://localhost/webcore/public/img/{path}?{param=value}
+    to manipulate image use http://localhost/webcore/public/img/{path}?{param=value}
 
-        default {path} is configured relative to public_path, see .env for FILESYSTEM_DRIVER and config/filesystems.php
+    default {path} is configured relative to public_path, see .env for FILESYSTEM_DRIVER and config/filesystems.php
         
     see Glide documentation in http://glide.thephpleague.com for manual guide
 
