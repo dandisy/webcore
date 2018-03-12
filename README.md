@@ -2,6 +2,8 @@
 
 ### Single Platform can be used for Admin Panel or Web CMS (built according to your needs)
 
+Documentation in https://dandisy.github.io
+
 ## 1. Webcore
 ### Installation
 
@@ -73,6 +75,18 @@ to manage your oauth client in
 
 ### Usage
 
+* As Admin Panel (no public site in frontend)
+
+#### run these artisan commands in your console
+
+if you have schema model file, change YourModel to the name of model to be generate 
+
+    php artisan generate:api_scaffold YourModel --fieldsFile=YourModel.json --datatables=true
+
+or if you want to specify field interactively in console
+
+    php artisan generate:api_scaffold YourModel --datatables=true
+
 * As Web CMS :
 
 #### Concept
@@ -98,19 +112,13 @@ to manage your oauth client in
     Scope of Front Page :    
     provide User Experience with content personalization
 
-#### run these command in your console 
-
-( for tidiness, webcore already prepared with menu items, so you can use --skip=menu when run command for generate Page, Post, Banner and Presentation)
+#### run these artisan commands in your console
 
     php artisan generate:api_scaffold Page --fieldsFile=Page.json --datatables=true --prefix=admin --logs
 
     php artisan generate:api_scaffold Post --fieldsFile=Post.json --datatables=true --prefix=admin --logs
 
-    php artisan generate:api_scaffold Banner --fieldsFile=Banner.json --datatables=true --prefix=admin --logs
-
-    php artisan generate:api_scaffold Presentation --fieldsFile=Presentation.json --datatables=true --prefix=admin --logs
-
-then
+then run
 
     composer require dandisy/webcore-page:dev-master
 
@@ -118,13 +126,13 @@ then
 
 if you want Webcore Front Page System themes & components sample code
 
-download in https://github.com/dandisy/themes (don't clone)
+download it in https://github.com/dandisy/themes (please don't clone!)
 
 then extract to your project root directory
 
 see https://github.com/dandisy/webcore-page for more info
 
-then run
+then
 
     composer require dandisy/webcore-menu:dev-master
 
@@ -136,29 +144,11 @@ then run
 
 see https://github.com/dandisy/webcore-menu for more info
 
-for tidiness,
+for tidiness, you can arrange Admin Page side menu in resources/views/layouts/menu.blade.php
 
-last, you can arrange Admin Page side menu in resources/views/layouts/menu.blade.php
+### Ready to Use
 
-    delete generated menu items in the end of menu.blade.php
-
-    uncomment already prepared menu items for Pages, Posts, Banners, Presentations and Menus 
-
-* As Admin Panel (no public site in frontend)
-
-#### run these command in your console, if you have schema model file 
-
-(change YourModel to the name of your model to be generate )
-
-    php artisan generate:api_scaffold YourModel --fieldsFile=YourModel.json --datatables=true
-
-or if you want to specify field interactively in console
-
-    php artisan generate:api_scaffold YourModel --datatables=true
-
-### Running Example
-
-    if you still confused with above usage instruction you can explore your self and try to install already running webcore platform as website cms
+    If you still confused with above usage instruction you can explore your self and try to install ready to use webcore sample as website cms
 
 download it in https://github.com/dandisy/webcore-sample
 
@@ -199,13 +189,17 @@ download it in https://github.com/dandisy/webcore-sample
 
 see sample model schema files in resources/model_schemas
 
-6. Page System (support themes, template position and view components)
+6. Front Page System (support themes, template position and view components)
 
     Sample code can be download in https://github.com/dandisy/themes
 
 7. Reusable Component
 
-    - using Widget (Widget Class & Widget View) using arrilot/laravel-widgets for UI Component
+    - Using Webcore Component Presentation System for Font Page Component 
+
+        Code Sample can be download in https://github.com/dandisy/themes
+
+    - Using Widget (Widget Class & Widget View) using arrilot/laravel-widgets for UI Component
 
         as much as possible the widget should have a loose coupled, bring data on the fly, avoid directly include / use in widget class
 
@@ -213,11 +207,13 @@ see sample model schema files in resources/model_schemas
         to get datasource from models, use syntax :
         [source=ModelName,where=some_field_name:value,position:some_theme_position,widget=some_widget_view]
 
-    - using Laravel Package
+    - Using Laravel Package
 
         webcore include webcore-microsite package as sample code for basic package
 
-8. Pre Configured Oauth using Laravel Passport (with RESTAPI resources example)
+8. Pre Configured Oauth using Laravel Passport
+
+    with Elorest as Laravel eloquent RESTAPI package see https://github.com/dandisy/elorest
 
     - to login use http://localhost/webcore/public/oauth/token
 
