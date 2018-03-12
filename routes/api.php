@@ -155,5 +155,3 @@ Route::delete('JSON/{model}/{id}', function($model, $id) {
     }
 })->middleware('auth:api');
 // End global API for direct model class under Models directory
-
-Route::resource('profiles', 'ProfileAPIController');
