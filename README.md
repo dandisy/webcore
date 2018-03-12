@@ -148,7 +148,7 @@ for tidiness, you can arrange Admin Page side menu in resources/views/layouts/me
 
 ### Ready to Use
 
-    If you still confused with above usage instruction you can explore your self and try to install ready to use webcore sample as website cms
+If you still confused with above usage instruction you can explore your self and try to install ready to use webcore sample as website cms
 
 download it in https://github.com/dandisy/webcore-sample
 
