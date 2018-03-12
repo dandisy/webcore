@@ -152,6 +152,10 @@ If you still confused with above usage instruction you can explore your self and
 
 download it in https://github.com/dandisy/webcore-sample
 
+or for better CMS structure
+
+download it in https://github.com/dandisy/webcore-cms
+
 ### Features
 
 1. Admin Template
