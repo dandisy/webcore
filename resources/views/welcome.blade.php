@@ -83,8 +83,8 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://dandisy.github.io/1.0.1/start.html" target="_blank">Quick Start</a>
-                    <a href="https://dandisy.github.io/1.0.1/documentation.html" target="_blank">Documentation</a>
+                    <a href="https://dandisy.github.io/1.0.4/start.html" target="_blank">Quick Start</a>
+                    <a href="https://dandisy.github.io/1.0.4/documentation.html" target="_blank">Documentation</a>
                     <a href="https://dandisy.github.io" target="_blank">Website</a>
                     <a href="https://github.com/dandisy/webcore-sample" target="_blank">CMS Sample</a>
                     <a href="https://github.com/dandisy/webcore" target="_blank">GitHub</a>
