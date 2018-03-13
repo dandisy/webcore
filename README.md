@@ -253,13 +253,13 @@ see sample model schema files in resources/model_schemas
     * harimayco/laravel-menu
     * atayahmet/laravel-nestable
 
-    * ixudra/curl
+    * ixudra/curl or guzzlehttp/guzzle
 
     If you activated laravel passport use :
     * spatie/laravel-cors
 
     * barryvdh/laravel-dompdf or seguce92/laravel-dompdf
-    * maatwebsite/excel or phpoffice/phpspreadsheet
+    * phpoffice/phpspreadsheet or maatwebsite/excel
     
     * pragmarx/tracker or jeremykenedy/laravel-logger
     * spatie/laravel-activitylog
