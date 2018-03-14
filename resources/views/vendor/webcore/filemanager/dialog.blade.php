@@ -20,8 +20,8 @@
         <link type="text/css" rel="stylesheet" href="{{ asset('/vendor/filemanager/vendor/highlight/styles/agate.css') }}">
         {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
-        @if( view()->exists('vendor.infinety.filemanager.modals') )
-            @include('vendor.infinety.filemanager.modals')
+        @if( view()->exists('vendor.webcore.filemanager.modals') )
+            @include('vendor.webcore.filemanager.modals')
         @else
             @include('filemanager::modals')
         @endif

@@ -14,8 +14,8 @@
 @stop
 
 @section('content')
-     @if( view()->exists('vendor.infinety.filemanager.modals') )
-        @include('vendor.infinety.filemanager.modals')
+    @if( view()->exists('vendor.webcore.filemanager.modals') )
+        @include('vendor.webcore.filemanager.modals')
     @else
         @include('filemanager::modals')
     @endif
