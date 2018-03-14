@@ -266,6 +266,8 @@ see sample model schema files in resources/model_schemas
 
     * fireguard/report or jimmyjs/laravel-report-generator
 
+    * khill/lavacharts or consoletvs/charts
+
 //------------------------------------------------#
 
 
