@@ -152,7 +152,7 @@ If you still confused with above usage instruction you can explore your self and
 
 download it in https://github.com/dandisy/webcore-sample
 
-or for better CMS structure, using https://github.com/dandisy/elogui
+or for better user experience CMS structure, with https://github.com/dandisy/elogui or https://github.com/dandisy/webcore-presentation
 
 download it in https://github.com/dandisy/webcore-cms
 
