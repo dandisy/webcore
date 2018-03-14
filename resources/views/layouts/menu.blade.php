@@ -38,17 +38,5 @@
 
 {{--<li class="{{ Request::is('menu-manager*') ? 'active' : '' }}">
     <a href="{!! url('menu-manager') !!}"><i class="fa fa-bars"></i><span>Menus</span></a>
-</li>
-
-<li class="{{ Request::is('pages*') ? 'active' : '' }}">
-    <a href="{!! route('admin.pages.index') !!}"><i class="fa fa-file-text"></i><span>Pages</span></a>
-</li>
-
-<li class="{{ Request::is('posts*') ? 'active' : '' }}">
-    <a href="{!! route('admin.posts.index') !!}"><i class="fa fa-clone"></i><span>Posts</span></a>
-</li>
-
-<li class="{{ Request::is('presentations*') ? 'active' : '' }}">
-    <a href="{!! route('admin.presentations.index') !!}"><i class="fa fa-newspaper-o"></i><span>Presentations</span></a>
 </li>--}}
 
