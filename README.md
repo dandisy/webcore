@@ -271,6 +271,29 @@ see sample model schema files in resources/model_schemas
 //------------------------------------------------#
 
 
+### More Screenshots
+
+Webcore Platform using https://github.com/dandisy/elogui or https://github.com/dandisy/webcore-presentation
+
+* Sample front page
+
+![sample front page](https://github.com/dandisy/webcore-screenshots/blob/master/sample%20front%20page.png)
+
+* Login page
+
+![login page](https://github.com/dandisy/webcore-screenshots/blob/master/login%20page.png)
+
+* Admin page
+
+![Webcore Admin Dashboard](https://github.com/dandisy/webcore-screenshots/blob/master/webcore-admin-dashboard.jpg)
+
+![Webcore Page Presentation](https://github.com/dandisy/webcore-screenshots/blob/master/webcore-admin-page-presentation.jpg)
+
+![Webcore Datasource Elogui](https://github.com/dandisy/webcore-screenshots/blob/master/webcore-admin-datasource-elogui.jpg)
+
+//------------------------------------------------#
+
+
 ## 2. Laravel Generator
 
 Webcore use infyomlabs/laravel-generator, by changing the artisan command to be
