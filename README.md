@@ -273,7 +273,9 @@ see sample model schema files in resources/model_schemas
 
 ### More Screenshots
 
-Webcore Platform using https://github.com/dandisy/elogui or https://github.com/dandisy/webcore-presentation
+Webcore CMS using https://github.com/dandisy/elogui or https://github.com/dandisy/webcore-presentation
+
+Download Webcore CMS in https://github.com/dandisy/webcore-cms
 
 * Sample front page
 
