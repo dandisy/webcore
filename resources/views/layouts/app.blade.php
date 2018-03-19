@@ -133,7 +133,7 @@
             <div id="snfmImage-thumb" style="display:none;width:100%">
                 <img src="" alt="" style="width:100%">
             </div>
-            <a style="display:none" href="{!! url('admin/filemanager/dialog?filter=all&appendId=snfmImage') !!}" class="sn-filemanager fancybox.iframe" data-fancybox-type="iframe"></a>
+            <a style="display:none" href="{!! url(config('filemanager.defaultRoute','filemanager').'/dialog?filter=all&appendId=snfmImage') !!}" class="sn-filemanager fancybox.iframe" data-fancybox-type="iframe"></a>
         </div>
 
         <!-- Main Footer -->
