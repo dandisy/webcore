@@ -4,6 +4,12 @@
     {!! Form::text('name', null, ['class' => 'form-control']) !!}
 </div>
 
+<!-- Display Name Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('display_name', 'Display Name:') !!}
+    {!! Form::text('display_name', null, ['class' => 'form-control']) !!}
+</div>
+
 <!-- Description Field -->
 <div class="form-group col-sm-12 col-lg-12">
     {!! Form::label('description', 'Description:') !!}

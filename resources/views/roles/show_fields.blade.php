@@ -10,6 +10,12 @@
     <p>{!! $role->name !!}</p>
 </div>
 
+<!-- Display Name Field -->
+<div class="form-group">
+    {!! Form::label('display_name', 'Display Name:') !!}
+    <p>{!! $permission->display_name !!}</p>
+</div>
+
 <!-- Description Field -->
 <div class="form-group">
     {!! Form::label('description', 'Description:') !!}

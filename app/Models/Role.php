@@ -8,6 +8,7 @@ class Role extends Model
 {
     public $fillable = [
         'name',
+        'display_name',
         'description'
     ];
 

@@ -66,6 +66,7 @@ class PermissionDataTable extends DataTable
     {
         return [
             'name',
+            'display_name',
             'description'
         ];
     }

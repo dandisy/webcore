@@ -5,11 +5,13 @@ return [
         'superadministrator' => [
             'users' => 'c,r,u,d',
             'acl' => 'c,r,u,d',
-            'profile' => 'r,u'
+            'profile' => 'r,u',
+            'post' => 'p' // by dandisy
         ],
         'administrator' => [
             'users' => 'c,r,u,d',
-            'profile' => 'r,u'
+            'profile' => 'r,u',
+            'post' => 'p' // by dandisy
         ],
         'user' => [
             'profile' => 'r,u'
@@ -24,6 +26,7 @@ return [
         'c' => 'create',
         'r' => 'read',
         'u' => 'update',
-        'd' => 'delete'
+        'd' => 'delete',
+        'p' => 'publish' // by dandisy
     ]
 ];

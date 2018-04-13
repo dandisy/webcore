@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 use League\Glide\ServerFactory;
 use League\Glide\Responses\LaravelResponseFactory;
 use Illuminate\Contracts\Filesystem\Filesystem;
+use App\Repositories\ProfileRepository;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +44,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('oauth-admin', function() {
         return view('oauth.index');
     });
+});
+
+Route::get('edit-profile', function(ProfileRepository $profileRepository) {
+    return view('profiles.edit')->with('profile', $profileRepository->findWhere(['user_id' => Auth::user()->id])->first());
 });
 
 Route::group(['middleware' => 'auth'], function () {

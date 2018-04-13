@@ -22,6 +22,17 @@
         "inIndex": true
     },
     {
+        "name": "display_name",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true
+    },
+    {
         "name": "description",
         "dbType": "text",
         "htmlType": "textarea",

@@ -68,6 +68,7 @@ class RoleDataTable extends DataTable
     {
         return [
             'name',
+            'display_name',
             'description',
             'permission'
         ];
