@@ -168,7 +168,7 @@ download it in https://github.com/dandisy/webcore-cms
 
 3. Menu Manager
 
-    ![Menu Manager](https://camo.githubusercontent.com/4da267766ad9a79696f8baf988115005ba8bfa9e/68747470733a2f2f7332382e706f7374696d672e6f72672f706678686e716367642f73637265656e73686f745f32303137303831315f3135303331332e706e67)
+    ![Menu Manager](https://raw.githubusercontent.com/harimayco/wmenu-builder/master/screenshot.png)
 
 4. Image Manipulation
 
@@ -180,18 +180,19 @@ download it in https://github.com/dandisy/webcore-cms
         
     see Glide documentation in http://glide.thephpleague.com for manual guide
 
-5. Laravel Generator based on infyomlabs/laravel-generator with Additional features
+5. Laravel Generator based on http://labs.infyom.com/laravelgenerator with Additional features
 
     - Date Time Picker (htmltype = date-picker, time-picker or datetime-picker)
     - Select2 (all select input will be select2, for multiple use htmltype = multi-select)
     - Two side Multiple Select (htmltype = two-side-select)
     - HTML Text Editor (htmltype = text-editor)
     - File Manager (htmltype = file-manager or files-manager)
-    - Nullable field in migration (console option = n, or in json file using dbNullable = true)
-    - Logged fields : created_by and updated_by (console option = --logs)
-    - Relational generator : add view model in controller, relational function in model, and relational data in select2 form field (htmltype = select,relation:{view-model}={field-to-show}={field-as-value})
-    - Component and theme reader generator (htmltype = select,component or select,theme)
-    - Model reader generator (htmltype = select,model)
+    - Nullable field in migration (console option = n, or in json schema file using dbNullable = true)
+    - Log fields : created_by and updated_by (artisan command option = --logs)
+    - Related Dropdown (in console, use --relations option) : add view model in controller, and relational input form in view (htmltype = select,relation:{view-model}={field-to-show}={field-as-value})
+    - Related Form (in console, use --relations option) : add view model in controller, and relational input form in view (dbtype = table and htmltype = related-form,related-field1,related-field2,related-field3,...)
+    - Component and theme directory reader generator (htmltype = select,component or select,theme)
+    - Model directory reader generator (htmltype = select,model)
 
 see sample model schema files in resources/model_schemas
 
@@ -221,7 +222,7 @@ see sample model schema files in resources/model_schemas
 
     with Elorest as Laravel eloquent RESTAPI package see https://github.com/dandisy/elorest
 
-    - to login use http://localhost/webcore/public/oauth/token
+    - to login (password grant) use http://localhost/webcore/public/oauth/token
 
             with params :
 
@@ -255,7 +256,7 @@ see sample model schema files in resources/model_schemas
 
     * ixudra/curl or guzzlehttp/guzzle
 
-    If you activated laravel passport use :
+    If you use laravel passport :
     * spatie/laravel-cors
 
     * barryvdh/laravel-dompdf or seguce92/laravel-dompdf
@@ -317,7 +318,7 @@ See infyomlabs/laravel-generator documentation here http://labs.infyom.com/larav
     
 ### Guidance
 
-1. To add HTML type definition, add and edit these :
+1. To add additional HTML type definition, add and edit these :
     * add stub file in adminlte-templates\templates\scaffold\fields
     * add stub file in adminlte-templates\templates\vuejs\fields
     * edit Utils\HTMLFieldGenerator
@@ -325,7 +326,7 @@ See infyomlabs/laravel-generator documentation here http://labs.infyom.com/larav
     * edit Generators\ViewGenerator
     * edit Generators\VueJs\ViewGenerator
 
-2. To add command, command option, or fields option
+2. To add additional command, command option, or fields option
     * edit or add Common\\*
     * edit or add Commands\\* (BaseCommand, etc)
         

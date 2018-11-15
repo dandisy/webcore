@@ -18,7 +18,11 @@ class ProfileDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'profiles.datatables_actions');
+        return $dataTable
+            ->editColumn('image', '<img width="100" src="{{$image}}">')
+            ->editColumn('user_id', '{{ $user["email"] }}')
+            ->addColumn('action', 'profiles.datatables_actions')
+            ->rawColumns(['image', 'action']);
     }
 
     /**
@@ -29,7 +33,7 @@ class ProfileDataTable extends DataTable
      */
     public function query(Profile $model)
     {
-        return $model->newQuery();
+        return $model->with('user');
     }
 
     /**
@@ -65,6 +69,7 @@ class ProfileDataTable extends DataTable
     {
         return [
             'image',
+            'user_id',
             'biography'
         ];
     }

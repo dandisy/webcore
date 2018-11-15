@@ -18,6 +18,7 @@ class CreateSettingsTable extends Migration
             $table->string('key');
             $table->string('value')->nullable();
             $table->text('description')->nullable();
+            $table->string('type')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

@@ -19,6 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 /*
+| Using password grant
+|
 |--------------------------------------------------------------------------
 | Global API for direct model class under Models directory
 |--------------------------------------------------------------------------
@@ -155,3 +157,8 @@ Route::delete('JSON/{model}/{id}', function($model, $id) {
     }
 })->middleware('auth:api');
 // End global API for direct model class under Models directory
+
+// using client credentials
+Route::group(['middleware' => 'client_credentials'], function () {
+    // your public route resource here!
+});

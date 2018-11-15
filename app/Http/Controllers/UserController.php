@@ -13,6 +13,7 @@ use App\User;
 use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
+use Illuminate\Support\Facades\Auth; // added by dandisy
 
 class UserController extends Controller
 {
@@ -104,10 +105,15 @@ class UserController extends Controller
      */
     public function edit($id)
     {
+        // handling edit profile non superadmin
+        if(Auth::user()->hasRole(['administrator','user']) && Auth::user()->id != $id) {
+            return abort(404);
+        }
+
         $user = $this->userRepository->findWithoutFail($id);
         $role = $this->roleRepository->all();
 
-        $user['role'] = @$user->roles()->first()->id;
+        $user['role'] = isset($user->roles()->first()->id) ? $user->roles()->first()->id : NULL;
 
         if (empty($user)) {
             Flash::error('User not found');
@@ -128,26 +134,56 @@ class UserController extends Controller
      */
     public function update($id, UpdateUserRequest $request)
     {
+        // handling edit profile non superadmin
+        if(Auth::user()->hasRole(['administrator','user']) && Auth::user()->id != $id) {
+            return abort(404);
+        }
+        
         $user = $this->userRepository->findWithoutFail($id);
+        // dd($user->roles()->sync([$user->with('role')->find($id)->role->role_id]));
+        // dd($user->with('role')->find($id)->role->role_id);
 
         if (empty($user)) {
             Flash::error('User not found');
+            
+            // handling edit profile non superadmin
+            if(Auth::user()->hasRole(['administrator','user'])) {
+                return redirect(url('dashboard'));
+            }
 
             return redirect(route('users.index'));
         }
 
-        $user->roles()->sync([$request->role]);
-
-        $data = $request->all();
-        if($request->password === $request->confirm_password) {
-            $data = $user->toArray();
-
-            $data['password'] = bcrypt($request->password);
+        if($request->role) {
+            $user->roles()->sync([$request->role]);
         }
 
-        $user = $this->userRepository->update($data, $id);
+        $input = $request->all();
+        if($request->password) {
+            if($request->password === $request->confirm_password) {
+                $input['password'] = bcrypt($request->password);
+            } else {
+                Flash::success('Password not match.');
+
+                // handling edit profile non superadmin
+                if(Auth::user()->hasRole(['administrator','user'])) {
+                    return redirect(url('dashboard'));
+                }
+
+                return redirect(route('users.index'));
+            }
+        } else {
+            $input['password'] = $user->password;
+        }
+
+        $user = $this->userRepository->update($input, $id);
 
         Flash::success('User updated successfully.');
+
+        // handling edit profile non superadmin
+        if(Auth::user()->hasRole(['administrator','user'])) {
+            return redirect(url('dashboard'));
+        }
 
         return redirect(route('users.index'));
     }

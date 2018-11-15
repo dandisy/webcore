@@ -10,8 +10,10 @@ use App\Repositories\ProfileRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
-use Illuminate\Support\Facades\Auth; // add by dandisy
-use Illuminate\Support\Facades\Storage; // add by dandisy
+use Illuminate\Support\Facades\Auth; // added by dandisy
+use Illuminate\Support\Facades\Storage; // added by dandisy
+use Illuminate\Http\Request;
+use App\User;
 
 class ProfileController extends AppBaseController
 {
@@ -42,11 +44,13 @@ class ProfileController extends AppBaseController
      */
     public function create()
     {
-        // add by dandisy
-        
+        if(Auth::user()->hasRole(['superadministrator'])) {
+            $user = User::all();
 
-        // edit by dandisy
-        //return view('profiles.create');
+            return view('profiles.create')
+                ->with('user', $user);
+        }
+
         return view('profiles.create');
     }
 
@@ -61,11 +65,21 @@ class ProfileController extends AppBaseController
     {
         $input = $request->all();
 
+        // handling edit profile non superadmin
+        if(Auth::user()->hasRole(['administrator','user'])) {
+            $input['user_id'] = Auth::user()->id;
+        }
+
         $input['created_by'] = Auth::user()->id;
 
         $profile = $this->profileRepository->create($input);
 
         Flash::success('Profile saved successfully.');
+
+        // handling edit profile non superadmin
+        if(Auth::user()->hasRole(['administrator','user'])) {
+            return redirect(url('dashboard'));
+        }
 
         return redirect(route('profiles.index'));
     }
@@ -99,19 +113,33 @@ class ProfileController extends AppBaseController
      */
     public function edit($id)
     {
-        // add by dandisy
-        
-
-        $profile = $this->profileRepository->findWithoutFail($id);
+        $profile = NULL;
+        if(Auth::user()->hasRole(['administrator','user'])) {            
+            $profile = $this->profileRepository->findWhere(['user_id' => Auth::user()->id])->first();
+        }
+        if(Auth::user()->hasRole(['superadministrator'])) {
+            $profile = $this->profileRepository->findWithoutFail($id);
+        }
 
         if (empty($profile)) {
+            // handling edit profile non superadmin
+            if (Auth::user()->hasRole(['superadministrator','administrator','user'])) {
+                return redirect(url('profiles/create'));
+            }
+
             Flash::error('Profile not found');
 
             return redirect(route('profiles.index'));
         }
+        
+        if(Auth::user()->hasRole(['superadministrator'])) {   
+            $user = User::all();
 
-        // edit by dandisy
-        //return view('profiles.edit')->with('profile', $profile);
+            return view('profiles.edit')
+                ->with('user', $user)
+                ->with('profile', $profile);
+        }
+        
         return view('profiles.edit')
             ->with('profile', $profile);
     }
@@ -130,17 +158,33 @@ class ProfileController extends AppBaseController
 
         $input['updated_by'] = Auth::user()->id;
 
-        $profile = $this->profileRepository->findWithoutFail($id);
+        $profile = NULL;
+        if(Auth::user()->hasRole(['administrator','user'])) {            
+            $profile = $this->profileRepository->findWhere(['user_id' => Auth::user()->id])->first();
+        }
+        if(Auth::user()->hasRole(['superadministrator'])) {
+            $profile = $this->profileRepository->findWithoutFail($id);
+        }
 
         if (empty($profile)) {
             Flash::error('Profile not found');
+            
+            // handling edit profile non superadmin
+            if(Auth::user()->hasRole(['administrator','user'])) {
+                return redirect(url('dashboard'));
+            }
 
             return redirect(route('profiles.index'));
         }
 
-        $profile = $this->profileRepository->update($input, $id);
+        $profile = $this->profileRepository->update($input, $profile->id);
 
         Flash::success('Profile updated successfully.');
+
+        // handling edit profile non superadmin
+        if(Auth::user()->hasRole(['administrator','user'])) {
+            return redirect(url('dashboard'));
+        }
 
         return redirect(route('profiles.index'));
     }

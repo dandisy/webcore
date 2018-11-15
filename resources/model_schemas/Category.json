@@ -19,7 +19,7 @@
         "fillable": true,
         "primary": false,
         "inForm": true,
-        "inIndex": false
+        "inIndex": true
     },
     {
         "name": "description",
@@ -30,20 +30,46 @@
         "fillable": true,
         "primary": false,
         "inForm": true,
-        "inIndex": true,
+        "inIndex": false,
         "dbNullable" : true
     },
     {
-        "name": "parent",
+        "name": "type_id",
         "dbType": "integer",
-        "htmlType": "select,Null:0,Category1:1,Category2:2",
+        "htmlType": "select,relation:type=name=id",
         "validations": null,
         "searchable": true,
         "fillable": true,
         "primary": false,
-        "inForm": false,
+        "inForm": true,
+        "inIndex": true,
+        "dbNullable" : true,
+        "relation": "mt1,Type,type_id,id"
+    },
+    {
+        "name": "image",
+        "dbType": "text",
+        "htmlType": "file-manager",
+        "validations": null,
+        "searchable": false,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
         "inIndex": true,
         "dbNullable" : true
+    },
+    {
+        "name": "parent_id",
+        "dbType": "integer",
+        "htmlType": "select,relation:category=name=id",
+        "validations": null,
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "dbNullable" : true,
+        "relation": "mt1,Category,parent_id,id"
     },
     {
         "name": "created_by",

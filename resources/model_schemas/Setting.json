@@ -46,6 +46,18 @@
         "dbNullable" : true
     },
     {
+        "name": "type",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": null,
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "dbNullable" : true
+    },
+    {
         "name": "created_at",
         "dbType": "timestamp",
         "htmlType": null,

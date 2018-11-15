@@ -40,10 +40,14 @@ class User extends Authenticatable
     public static $rules = [
         'name' => 'required',
         'email' => 'required',
-        'password' => 'required'
+        // 'password' => 'required'
     ];
 
     public function role() {
         return $this->hasOne('App\Models\RoleUser');
+    }
+
+    public function profile() {
+        return $this->hasOne('App\Models\Profile');
     }
 }

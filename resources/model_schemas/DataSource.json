@@ -12,7 +12,7 @@
         "dbNullable": true
     },
     {
-        "name": "name",
+        "name": "title",
         "dbType": "string",
         "htmlType": "text",
         "validations": "required",
@@ -36,16 +36,15 @@
         "dbNullable": true
     },
     {
-        "name": "model",
-        "dbType": "string",
-        "htmlType": "select,model",
-        "validations": "required",
+        "name": "type",
+        "dbType": "string,20",
+        "htmlType": "select,Data Set:dataset,DB Query:dbquery,API Query:apiquery",
+        "validations": null,
         "searchable": true,
         "fillable": true,
         "primary": false,
         "inForm": true,
-        "inIndex": true,
-        "dbNullable": false
+        "inIndex": true
     },
     {
         "name": "created_by",
@@ -97,10 +96,18 @@
     },
     {
         "type": "relation",
-        "relation": "1tm,DataQuery,data_source_id"
+        "relation": "1tm,DbQuery,data_source_id"
     },
     {
         "type": "relation",
-        "relation": "1tm,DataColumn,data_source_id"
+        "relation": "1tm,ApiQuery,data_source_id"
+    },
+    {
+        "type": "relation",
+        "relation": "1tm,DataSet,data_source_id"
+    },
+    {
+        "type": "relation",
+        "relation": "1tm,DatatableColumn,data_source_id"
     }
 ]

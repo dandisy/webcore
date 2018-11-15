@@ -23,7 +23,8 @@ class Setting extends Model
     public $fillable = [
         'key',
         'value',
-        'description'
+        'description',
+        'type'
     ];
 
     /**
@@ -34,7 +35,8 @@ class Setting extends Model
     protected $casts = [
         'key' => 'string',
         'value' => 'string',
-        'description' => 'string'
+        'description' => 'string',
+        'type' => 'string'
     ];
 
     /**

@@ -169,6 +169,7 @@ return [
          */
          Prettus\Repository\Providers\RepositoryServiceProvider::class,
          Webcore\FileManager\FileManagerServiceProvider::class,
+         Jlapp\Swaggervel\SwaggervelServiceProvider::class,
          //Nestable\NestableServiceProvider::class,
 
         /*

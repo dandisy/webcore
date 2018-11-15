@@ -63,5 +63,8 @@ class Kernel extends HttpKernel
         'role' => \Laratrust\Middleware\LaratrustRole::class,
         'permission' => \Laratrust\Middleware\LaratrustPermission::class,
         'ability' => \Laratrust\Middleware\LaratrustAbility::class,
+
+        // client credentials
+        'client_credentials' => \Laravel\Passport\Http\Middleware\CheckClientCredentials::class,
     ];
 }

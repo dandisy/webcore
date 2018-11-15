@@ -30,6 +30,7 @@
     <div class="row">
         <!-- Role Field -->
         <div class="col-sm-12">
+            @role(['superadministrator'])
             {!! Form::label('role', 'Role:') !!}
             <div class="form-group">
                 @foreach($role as $item)
@@ -38,6 +39,7 @@
                     </label>
                 @endforeach
             </div>
+            @endrole
         </div>
     </div>
 </div>
@@ -45,5 +47,5 @@
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
     {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-    <a href="{!! route('users.index') !!}" class="btn btn-default">Cancel</a>
+    <a href="{!! Auth::user()->hasRole(['administrator','user']) ? url('dashboard') : route('users.index') !!}" class="btn btn-default">Cancel</a>
 </div>

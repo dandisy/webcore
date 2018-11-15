@@ -13,7 +13,8 @@ class SettingRepository extends BaseRepository
     protected $fieldSearchable = [
         'key',
         'value',
-        'description'
+        'description',
+        'type'
     ];
 
     /**

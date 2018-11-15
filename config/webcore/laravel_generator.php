@@ -178,9 +178,19 @@ return [
     |--------------------------------------------------------------------------
     |
     */
+
     'ignore_model_prefix' => true,
     
+    // added by dandisy
+    /*
+    |--------------------------------------------------------------------------
+    | Ignore prefix - additional for webcore laravel generator
+    |--------------------------------------------------------------------------
+    |
+    */
+
     'ignore_repository_prefix' => true,
+    'ignore_route_api_prefix' => true,
     'ignore_api_controller_prefix' => true,
     'ignore_api_request_prefix' => true,
 

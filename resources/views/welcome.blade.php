@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Webcore</title>
+        <title>{{ $appName }}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -69,7 +69,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/dashboard') }}">Dashboard</a>
+                        <a href="{{ url('/home') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>
@@ -79,15 +79,15 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Webcore
+                    {{ $appName }}
                 </div>
 
                 <div class="links">
-                    <a href="https://dandisy.github.io/1.0.4/start.html" target="_blank">Quick Start</a>
-                    <a href="https://dandisy.github.io/1.0.4/documentation.html" target="_blank">Documentation</a>
-                    <a href="https://dandisy.github.io" target="_blank">Website</a>
-                    <a href="https://github.com/dandisy/webcore-sample" target="_blank">CMS Sample</a>
-                    <a href="https://github.com/dandisy/webcore" target="_blank">GitHub</a>
+                    <a href="https://dandisy.github.io/1.0.4/documentation.html">Documentation</a>
+                    <a href="https://dandisy.github.io/1.0.4/start.html">Quick Start</a>
+                    <a href="https://dandisy.github.io/">Site</a>
+                    <a href="https://github.com/dandisy/webcore-sample">Sample Backend</a>
+                    <a href="https://github.com/dandisy/webcore-cms">CMS</a>
                 </div>
             </div>
         </div>

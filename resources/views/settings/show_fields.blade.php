@@ -22,6 +22,12 @@
     <p>{!! $setting->description !!}</p>
 </div>
 
+<!-- Type Field -->
+<div class="form-group">
+    {!! Form::label('type', 'Type:') !!}
+    <p>{!! $setting->type !!}</p>
+</div>
+
 <!-- Created At Field -->
 <div class="form-group">
     {!! Form::label('created_at', 'Created At:') !!}

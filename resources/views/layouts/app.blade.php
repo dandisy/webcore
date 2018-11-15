@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
-    <title>Webcore</title>
+    <title>{{ $appName }}</title>
 
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins//font-awesome/css/font-awesome.min.css') }}">
@@ -14,22 +14,22 @@
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/dist/css/skins/_all-skins.min.css') }}">
 
     <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/ionicons/v2/css/ionicons.min.css') }}">
 
     <!-- Date Picker -->
-    <link href="{{ asset('vendor/adminlte/plugins/datepicker/datepicker3.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/datepicker/datepicker3.css') }}">
 
     <!-- Tags Input -->
-    <link href="{{ asset('vendor/adminlte/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css') }}">
 
     <!-- include Summernote -->
-    <link href="{{ asset('vendor/adminlte/plugins/summernote/summernote.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/summernote/summernote.css') }}">
 
     <!-- Date Time Picker -->
-    <link href="{{ asset('vendor/adminlte/plugins/datetimepicker/css/bootstrap-datetimepicker.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/datetimepicker/css/bootstrap-datetimepicker.css') }}">
 
     <!-- include Fancybox -->
-    <link href="{{ asset('vendor/adminlte/plugins/fancybox/jquery.fancybox.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/fancybox/jquery.fancybox.min.css') }}">
 
     <!-- include Fileuploader -->
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/fileuploader/jquery.fileuploader.css') }}">
@@ -55,6 +55,31 @@
         .file-item {
             margin-top: 15px;
         }
+        .no-side-menu {
+            margin-left: 0;
+        }
+        .btn {
+            border-radius: 0;
+        }
+        .panel {
+            border-radius: 0;
+        }
+        #image-thumb {
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+        }
+        .pagination a, .pagination span {
+            border-radius: 0 !important;
+        }
+        .btn-group-xs>.btn, .btn-xs {
+            padding: 1px 4px;
+        }
+        table.dataTable tbody tr.even {
+            background-color: #fdfdfd;
+        }
+        table.dataTable tbody tr:hover {
+            background-color: #f9f9f9;
+        }
     </style>
 
     @yield('css')
@@ -68,15 +93,17 @@
 
             <!-- Logo -->
             <a href="{{ url('/dashboard') }}" class="logo">
-                <b>Webcore</b>
+                <b>{{ $appName }}</b>
             </a>
 
             <!-- Header Navbar -->
             <nav class="navbar navbar-static-top" role="navigation">
+                @if(!Request::is('dashboard*') and !Request::is('stats*'))
                 <!-- Sidebar toggle button-->
                 <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
                     <span class="sr-only">Toggle navigation</span>
                 </a>
+                @endif
                 <!-- Navbar Right Menu -->
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
@@ -85,16 +112,26 @@
                             <!-- Menu Toggle Button -->
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <!-- The user image in the navbar-->
-                                <img src="{{ asset('vendor/adminlte/dist/img/user2-160x160.jpg') }}"
+                                @if(isset(Auth::user()->with('profile')->find(Auth::user()->id)->profile->image))
+                                <img src="{{ Auth::user()->with('profile')->find(Auth::user()->id)->profile->image }}"
                                      class="user-image" alt="User Image"/>
+                                @else                                
+                                <img src="{{ asset('vendor/adminlte/dist/img/user2-160x160.jpg') }}"
+                                    class="user-image" alt="User Image"/>
+                                @endif
                                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
                                 <span class="hidden-xs">{!! Auth::user()->name !!}</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- The user image in the menu -->
                                 <li class="user-header">
-                                    <img src="{{ asset('vendor/adminlte/dist/img/user2-160x160.jpg') }}"
+                                    @if(isset(Auth::user()->with('profile')->find(Auth::user()->id)->profile->image))
+                                    <img src="{{ Auth::user()->with('profile')->find(Auth::user()->id)->profile->image }}"
                                          class="img-circle" alt="User Image"/>
+                                    @else                                
+                                    <img src="{{ asset('vendor/adminlte/dist/img/user2-160x160.jpg') }}"
+                                        class="img-circle" alt="User Image"/>
+                                    @endif
                                     <p>
                                         {!! Auth::user()->name !!}
                                         <small>Member since {!! Auth::user()->created_at->format('M. Y') !!}</small>
@@ -103,7 +140,7 @@
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <a href="{{ url('edit-profile') }}" class="btn btn-default btn-flat">Profile</a>
+                                        <a href="{!! url('profiles/'.Auth::user()->id.'/edit') !!}" class="btn btn-default btn-flat">Profile</a>
                                     </div>
                                     <div class="pull-right">
                                         <a href="{!! url('/logout') !!}" class="btn btn-default btn-flat"
@@ -123,9 +160,11 @@
         </header>
 
         <!-- Left side column. contains the logo and sidebar -->
+        @if(!Request::is('dashboard*') and !Request::is('stats*'))
         @include('layouts.sidebar')
+        @endif
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
+        <div class="content-wrapper{{ (Request::is('dashboard*') or Request::is('stats*')) ? ' no-side-menu' : '' }}">
             @yield('content')
         </div>
 
@@ -137,7 +176,7 @@
         </div>
 
         <!-- Main Footer -->
-        <footer class="main-footer" style="max-height: 100px;text-align: center">
+        <footer class="main-footer{{ (Request::is('dashboard*') or Request::is('stats*')) ? ' no-side-menu' : '' }}" style="max-height: 100px;text-align: center">
             <strong>Copyright © 2017 <a href="#">Webcore</a>.</strong> All rights reserved.
         </footer>
 
@@ -196,7 +235,7 @@
     <!-- Bootstrap -->
     <script src="{{ asset('vendor/adminlte/plugins//bootstrap/js/bootstrap.min.js') }}"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.min.js"></script>
+    <script src="{{ asset('vendor/adminlte/plugins/moment/moment.min.js') }}"></script>
 
     <!-- Date Picker App -->
     <script src="{{ asset('vendor/adminlte/plugins/datepicker/bootstrap-datepicker.js') }}"></script>
@@ -226,7 +265,7 @@
     <script src="{{ asset('vendor/adminlte/plugins/quicksearch/jquery.quicksearch.min.js') }}"></script>
 
     <!-- Input Mask -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.2.6/jquery.inputmask.bundle.min.js"></script>
+    <script src="{{ asset('vendor/adminlte/plugins/inputmask/min/jquery.inputmask.bundle.min.js') }}"></script>
 
     <!-- AdminLTE App -->
     <script src="{{ asset('vendor/adminlte/dist/js/app.min.js') }}"></script>
@@ -334,7 +373,7 @@
                 format:	'YYYY-MM-DDTHH:mm:ss.XZ'
             });
 
-            $(".currency").inputmask({ alias : "currency", prefix: "", digits: 0 });
+            // $(".currency").inputmask({ alias : "currency", prefix: "", digits: 0 });
 
             $('#filer_input').fileuploader({
                 enableApi: true,

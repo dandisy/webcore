@@ -4,7 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
-//use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\View;
+use App\Models\Setting;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -17,7 +18,8 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
 
-        //View::addNamespace('microsite', storage_path('app/public/microsite'));
+        View::share('appName', Setting::where('key', "app-name")->first()->value ? : 'Webcore');
+        // View::addNamespace('microsite', storage_path('app/public/microsite'));
     }
 
     /**

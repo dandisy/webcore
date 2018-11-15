@@ -11,33 +11,11 @@
         "inIndex": false
     },
     {
-        "name": "title",
+        "name": "image",
         "dbType": "string",
-        "htmlType": "text",
-        "validations": "required",
-        "searchable": true,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": true
-    },
-    {
-        "name": "slug",
-        "dbType": "string",
-        "htmlType": "text",
-        "validations": "required",
-        "searchable": true,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": true
-    },
-    {
-        "name": "summary",
-        "dbType": "text",
-        "htmlType": "textarea",
+        "htmlType": "file-manager",
         "validations": null,
-        "searchable": true,
+        "searchable": false,
         "fillable": true,
         "primary": false,
         "inForm": true,
@@ -45,15 +23,27 @@
         "dbNullable" : true
     },
     {
-        "name": "description",
-        "dbType": "text",
-        "htmlType": "text-editor",
+        "name": "name",
+        "dbType": "string",
+        "htmlType": "text",
         "validations": "required",
         "searchable": true,
         "fillable": true,
         "primary": false,
         "inForm": true,
         "inIndex": true
+    },
+    {
+        "name": "description",
+        "dbType": "text",
+        "htmlType": "text-editor",
+        "validations": null,
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "dbNullable" : true
     },
     {
         "name": "tag",
@@ -68,9 +58,35 @@
         "dbNullable" : true
     },
     {
-        "name": "category",
+        "name": "category_id",
         "dbType": "integer",
-        "htmlType": "select,Uncategorized:0,Category1:1,Category2:2",
+        "htmlType": "select,relation:category=name=id",
+        "validations": null,
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "dbNullable" : true,
+        "relation": "mt1,Category,category_id,id"
+    },
+    {
+        "name": "type_id",
+        "dbType": "integer",
+        "htmlType": "select,relation:type=name=id",
+        "validations": null,
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "dbNullable" : true,
+        "relation": "mt1,Type,type_id,id"
+    },
+    {
+        "name": "stock",
+        "dbType": "integer",
+        "htmlType": "number",
         "validations": null,
         "searchable": true,
         "fillable": true,
@@ -80,41 +96,7 @@
         "dbNullable" : true
     },
     {
-        "name": "status",
-        "dbType": "string",
-        "htmlType": "select,Pending:pending,Publish:publish",
-        "validations": "required",
-        "searchable": true,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": true
-    },
-    {
-        "name": "cover",
-        "dbType": "string",
-        "htmlType": "file-manager",
-        "validations": null,
-        "searchable": false,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": true
-    },
-    {
-        "name": "album",
-        "dbType": "string",
-        "htmlType": "files-manager",
-        "validations": null,
-        "searchable": false,
-        "fillable": false,
-        "primary": false,
-        "inForm": false,
-        "inIndex": false,
-        "dbNullable" : true
-    },
-    {
-        "name": "version",
+        "name": "stock_unit",
         "dbType": "string",
         "htmlType": "text",
         "validations": null,
@@ -126,10 +108,46 @@
         "dbNullable" : true
     },
     {
-        "name": "language",
+        "name": "price",
+        "dbType": "integer",
+        "htmlType": "number",
+        "validations": null,
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "dbNullable" : true
+    },
+    {
+        "name": "price_unit",
         "dbType": "string",
         "htmlType": "text",
-        "validations": "required",
+        "validations": null,
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "dbNullable" : true
+    },
+    {
+        "name": "weight",
+        "dbType": "integer",
+        "htmlType": "number",
+        "validations": null,
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "dbNullable" : true
+    },
+    {
+        "name": "weight_unit",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": null,
         "searchable": true,
         "fillable": true,
         "primary": false,
