@@ -18,7 +18,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
 
-        View::share('appName', Setting::where('key', "app-name")->first()->value ? : 'Webcore');
+        // View::share('appName', isset(Setting::where('key', "app-name")->first()->value) ? Setting::where('key', "app-name")->first()->value : 'Webcore');
         // View::addNamespace('microsite', storage_path('app/public/microsite'));
     }
 
