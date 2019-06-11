@@ -39,17 +39,17 @@ Route::get('JSON/{model}/{id?}', function(Request $request, $model, $id = NULL) 
     $paginate = null;
     $query = $request->all();
     $modelNameSpace = 'App\Models\\'.$model;
-    $model = new $modelNameSpace();
+    $data = new $modelNameSpace();
 
     if($id == 'columns') {
-        return $model->getTableColumns();
+        return $data->getTableColumns();
     }
 
     if($id) {
-        return $model->find($id);
+        return $data->find($id);
     }
     if(!$query) {
-        return $model->get();
+        return $data->get();
     }
 
     foreach($query as $key => $val) {
@@ -66,7 +66,7 @@ Route::get('JSON/{model}/{id?}', function(Request $request, $model, $id = NULL) 
             }
 
             foreach($vals as $item) {                    
-                if(preg_match('/\[(.*?)\]/', $item, $match)) { // due to whereIn, $val using [...]
+                if(preg_match('/\[(.*?)\]/', $item, $match)) { // due to whereIn, the $val using [...] syntax
                     $item = str_replace(','.$match[0], '', $item);
                     $item = explode(',', $item);
                     array_push($item, explode(',',$match[1]));
@@ -74,16 +74,16 @@ Route::get('JSON/{model}/{id?}', function(Request $request, $model, $id = NULL) 
                     $item = explode(',', $item);
                 }
 
-                $model = call_user_func_array(array($model,$key), $item);
+                $data = call_user_func_array(array($data,$key), $item);
             }
 
             if($key === 'paginate') {
-                $model->appends(['paginate' => $paginate])->links();
+                $data->appends(['paginate' => $paginate])->links();
             }
         }
     }
     
-    return $model;
+    return $data;
 })->middleware('auth:api');
 
 Route::post('JSON/{model}', function(Request $request, $model) {
