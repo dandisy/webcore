@@ -19,97 +19,71 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 /*
-| Using password grant
-|
 |--------------------------------------------------------------------------
-| Global API for direct model class under Models directory
+| EloREST - Using Password Grant
 |--------------------------------------------------------------------------
 |
-| URL encode :
-| %3D for =
-| %3E for >
-| %3C for <
-| %21 for !
-| %25 for %
+| Borrowing laravel eloquent commands syntax (methodes name & params),
+| including laravel pagination.
 |
-| Example :
-| api/JSON/Page?query[a][function]=where&query[a][field]=name&query[a][operator]=%3D&query[a][value]=arrival&query[b][function]=get
+| Please, check again laravel documentation
+|
+| Example API query :
+| https://your-domain-name/JSON/Post?leftJoin=comments,posts.id,comments.post_id&whereIn=category_id,[2,4,5]&select=*&get=
+| https://your-domain-name/JSON/Post?join[]=authors,posts.id,authors.author_id&join[]=comments,posts.id,comments.post_id&whereIn=category_id,[2,4,5]&select=posts.*,authors.name as author_name,comments.title as comment_title&get=
+| https://your-domain-name/JSON/Post?&with=author,comment&select=*&get=
+| https://your-domain-name/JSON/Post?paginate=10&page=1
 |
 */
 Route::get('JSON/{model}/{id?}', function(Request $request, $model, $id = NULL) {
+    $paginate = null;
+    $query = $request->all();
     $modelNameSpace = 'App\Models\\'.$model;
-    $data = new $modelNameSpace();
+    $model = new $modelNameSpace();
+
+    if($id == 'columns') {
+        return $model->getTableColumns();
+    }
 
     if($id) {
-        return $data->find($id);
+        return $model->find($id);
+    }
+    if(!$query) {
+        return $model->get();
     }
 
-    foreach($request->all()['query'] as $query) {
-        $queryFunc = $query['function'];
+    foreach($query as $key => $val) {
+        if($key === 'paginate') {
+            $paginate = $val;
+        }
+        if($key !== 'page') {
+            $vals = [];
 
-        if($queryFunc === 'latest') {
-            $data = $data->latest();
-        } else if(
-                $queryFunc === 'select' || 
-                $queryFunc === 'addSelect' || 
-                $queryFunc === 'groupBy' || 
-                $queryFunc === 'whereNull' || 
-                $queryFunc === 'whereNotNull' || 
-                $queryFunc === 'avg' || 
-                $queryFunc === 'max'
-            ) {
-            $data = $data->$queryFunc(explode(',', $query['field']));
-        } else if(
-                $queryFunc === 'where' || 
-                $queryFunc === 'orWhere' ||  
-                $queryFunc === 'whereDate' ||  
-                $queryFunc === 'whereMonth' ||  
-                $queryFunc === 'whereDay' ||  
-                $queryFunc === 'whereYear' ||  
-                $queryFunc === 'whereTime' ||  
-                $queryFunc === 'whereColumn' || 
-                $queryFunc === 'having'
-            ) {
-            $data = $data->$queryFunc($query['field'], $query['operator'], $query['value']);
-        }  else if($queryFunc === 'orderBy') {
-            $data = $data->$queryFunc($query['field'], $query['value']);
-        } else if(
-                $queryFunc === 'selectRaw' || 
-                $queryFunc === 'offset' || 
-                $queryFunc === 'limit' || 
-                $queryFunc === 'with' || 
-                $queryFunc === 'whereIn' || 
-                $queryFunc === 'whereNotIn' || 
-                $queryFunc === 'whereBetween' || 
-                $queryFunc === 'whereNotBetween' ||
-                $queryFunc === 'whereRaw' ||
-                $queryFunc === 'orWhereRaw' ||
-                $queryFunc === 'orderByRaw' ||
-                $queryFunc === 'havingRaw' ||
-                $queryFunc === 'join' ||
-                $queryFunc === 'leftJoin'
-            ) {
-            $data = $data->$queryFunc($query['value']);
+            if(is_array($val)) {
+                $vals = $val;
+            } else {
+                array_push($vals, $val);
+            }
+
+            foreach($vals as $item) {                    
+                if(preg_match('/\[(.*?)\]/', $item, $match)) { // due to whereIn, $val using [...]
+                    $item = str_replace(','.$match[0], '', $item);
+                    $item = explode(',', $item);
+                    array_push($item, explode(',',$match[1]));
+                } else {
+                    $item = explode(',', $item);
+                }
+
+                $model = call_user_func_array(array($model,$key), $item);
+            }
+
+            if($key === 'paginate') {
+                $model->appends(['paginate' => $paginate])->links();
+            }
         }
     }
-
-    $lastQuery = end($request->all()['query'])['function'];
-
-    if($lastQuery === 'first') {
-        $data = $data->first();
-    } else if($lastQuery === 'inRandomOrder') {
-        $data = $data->inRandomOrder();
-    } else if($lastQuery === 'count') {
-        $data = $data->count();
-    } else if($lastQuery === 'max') {
-        $data = $data->max(explode(',', end($request->all()['query'])['field']));
-    } else if($lastQuery === 'avg') {
-        $data = $data->avg(explode(',', end($request->all()['query'])['field']));
-    } else {
-        $data = $data->get();
-    }
-
-    return $data;
+    
+    return $model;
 })->middleware('auth:api');
 
 Route::post('JSON/{model}', function(Request $request, $model) {
