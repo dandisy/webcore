@@ -236,6 +236,26 @@ see sample model schema files in resources/model_schemas
     - to get resources example http://localhost/webcore/public/api/product
 
             with header Authorization = Bearer {your-token}
+            
+9. EloREST
+
+    REST API using Laravel Eloquest Syntax
+    
+    Example API query :
+    
+        https://your-domain-name/JSON/Post?leftJoin=comments,posts.id,comments.post_id&whereIn=category_id,[2,4,5]&select=*&get=
+        https://your-domain-name/JSON/Post?join[]=authors,posts.id,authors.author_id&join[]=comments,posts.id,comments.post_id&whereIn=category_id,[2,4,5]&select=posts.*,authors.name as author_name,comments.title as comment_title&get=
+        https://your-domain-name/JSON/Post?&with=author,comment&get=*
+        https://your-domain-name/JSON/Post?&with=author(where=name,like,%dandisy%),comment&get=*
+        
+        multi first nested closure deep
+        https://your-domain-name/JSON/Post?&with=author(where=name,like,%dandisy%)(where=nick,like,%dandisy%),comment&get=*
+        
+        second nested closure deep
+        https://your-domain-name/JSON/Post?&with=author(with=city(where=name,like,%jakarta%)),comment&get=*
+        
+        https://your-domain-name/JSON/Post?&with[]=author(where=name,like,%dandisy%)&with[]=comment(where=title,like,%test%)&get=*
+        https://your-domain-name/JSON/Post?paginate=10&page=1
 
 ### Dependency
 
