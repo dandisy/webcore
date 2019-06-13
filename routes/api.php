@@ -164,7 +164,7 @@ function getData($data, $key, $param) {
     //     return $match;
     // }
 
-    // if(preg_match('/(.*?)\((.*?)\)/', $param, $closureMatch)) { // handling closure, for now only support once nested closure
+    // if(preg_match('/(.*?)\((.*?)\)/', $param, $closureMatch)) { // handling closure, this only support once nested closure deep
     //     $param = str_replace('('.$closureMatch[2].')', '', $param);
     //     $param = explode(',', $param);
 
@@ -180,7 +180,7 @@ function getData($data, $key, $param) {
     //             $data = $data->$key($par);
     //         }
     //     }
-    if(preg_match_all("/\((([^()]*|(?R))*)\)/", $param, $closureMatch)) { // handling closure, for now only support once nested closure
+    if(preg_match_all("/\((([^()]*|(?R))*)\)/", $param, $closureMatch)) { // handling closure, support multiple nested closure deep
         // $closureMatch[1] = [
         //     "contactPerson(with=phone(where=city_code,021))(where=first_name,like,%test%)",
         //     "organization(where=name,like,%test%)",
