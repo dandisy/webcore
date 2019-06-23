@@ -13,6 +13,7 @@
         "dandisy/swagger-generator": "^1.0.0",
         "doctrine/dbal": "~2.3",
         "fideloper/proxy": "~3.3",
+        "itsgoingd/clockwork": "^3.1",
         "jlapp/swaggervel": "dev-master",
         "laravel/framework": "5.5.*",
         "laravel/passport": "^4.0",
@@ -25,7 +26,6 @@
         "yajra/laravel-datatables-oracle": "~8.0"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.1",
         "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",

@@ -1,26 +1,3 @@
-TODO
-	add query for relatedData in controller
-	fixing api url menggunakan ignore_prefix di config file, edit Common/GeneratorConfig.php
-	handling related-form, edit CommondData.php, GeneratorFIeldsInputUtil.php, GeneratorField.php
-
-webcore
-	setting appName
-	Dashboard main
-	tidy up layout
-	user
-	profile	
-	readme
-	excel import
-	sweggervel
-	Utils -> ResponseUtil.php
-
-generator
-	datatable
-		ditambah id di table
-	Utils -> ResponseUtil.php
-	related-form html type
-		for now related field hardcode to input type text 
-
 swaggervel
 	if error
 	Temporary solution

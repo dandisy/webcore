@@ -43,7 +43,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 */
 Route::get('JSON/{model}/{id?}', function(Request $request, $model, $id = NULL) {
     $paginate = null;
-    $query = $request->all();
+    $input = $request->all();
     $modelNameSpace = 'App\Models\\'.$model;
     $data = new $modelNameSpace();
 
@@ -54,11 +54,11 @@ Route::get('JSON/{model}/{id?}', function(Request $request, $model, $id = NULL) 
     if($id) {
         return $data->find($id);
     }
-    if(!$query) {
+    if(!$input) {
         return $data->get();
     }
 
-    foreach($query as $key => $val) {
+    foreach($input as $key => $val) {
         if($key === 'paginate') {
             $paginate = $val;
         }
@@ -82,7 +82,7 @@ Route::get('JSON/{model}/{id?}', function(Request $request, $model, $id = NULL) 
 
                 // $data = call_user_func_array(array($data,$key), $item);
 
-                $data = getData($data, $key, $item);//['data'];
+                $data = getDataQuery($data, $key, $item);//['data'];
 
             }
 
@@ -103,41 +103,83 @@ Route::post('JSON/{model}', function(Request $request, $model) {
         // return $data->insert($request->all());
         return $data->create($request->all());
     }
+
+    return response(json_encode([
+        "status" => "error",
+        "message" => "data input not valid"
+    ], 200))
+        ->header('Content-Type', 'application/json');
 })->middleware('auth:api');
 
 Route::put('JSON/{model}/{id}', function(Request $request, $model, $id) {
     $modelNameSpace = 'App\Models\\'.$model;
     $data = new $modelNameSpace();
 
-    $data = $data->find($id);
+    if($request->all()) {
+        if($id) {
+            $data = $data->find($id);
+        } else {
+            $data = getDataQuery($request->all(), $data)->first();
+        }
 
-    if($data && $request->all()) {
-        return $data->update($request->all());
+        if($data) {
+            return $data->update($request->all());
+        }
     }
+
+    return response(json_encode([
+        "status" => "error",
+        "message" => "data input not valid"
+    ], 200))
+        ->header('Content-Type', 'application/json');
 })->middleware('auth:api');
 
 Route::patch('JSON/{model}/{id}', function(Request $request, $model, $id) {
     $modelNameSpace = 'App\Models\\'.$model;
     $data = new $modelNameSpace();
 
-    $data = $data->find($id);
+    if($request->all()) {
+        if($id) {
+            $data = $data->find($id);
+        } else {
+            $data = getDataQuery($request->all(), $data)->first();
+        }
 
-    if($data && $request->all()) {
-        $data->delete();
-
-        return $data->insert($request->all());
+        if($data) {
+            $data->delete();
+    
+            return $data->insert($request->all());
+        }
     }
+
+    return response(json_encode([
+        "status" => "error",
+        "message" => "data input not valid"
+    ], 200))
+        ->header('Content-Type', 'application/json');
 })->middleware('auth:api');
 
-Route::delete('JSON/{model}/{id}', function($model, $id) {
+Route::delete('JSON/{model}/{id}', function(Request $request, $model, $id) {
     $modelNameSpace = 'App\Models\\'.$model;
     $data = new $modelNameSpace();
 
-    $data = $data->find($id);
+    if($request->all()) {
+        if($id) {
+            $data = $data->find($id);
+        } else {
+            $data = getDataQuery($request->all(), $data)->first();
+        }
 
-    if($data) {
-        return $data->delete();
+        if($data) {
+            return $data->delete();
+        }
     }
+
+    return response(json_encode([
+        "status" => "error",
+        "message" => "data input not valid"
+    ], 200))
+        ->header('Content-Type', 'application/json');
 })->middleware('auth:api');
 
 /*
@@ -156,50 +198,73 @@ Route::group(['middleware' => 'client_credentials'], function () {
 | EloREST - Halpers
 |--------------------------------------------------------------------------
 |
-| getData
+| getDataQuery
 |
 */
-function getData($data, $key, $param) {
-    // if(preg_match_all('/\((.*?)\)/', $request->test, $match)) { // multi occurence
-    //     return $match;
-    // }
-
-    // if(preg_match('/(.*?)\((.*?)\)/', $param, $closureMatch)) { // handling closure, this only support once nested closure deep
-    //     $param = str_replace('('.$closureMatch[2].')', '', $param);
-    //     $param = explode(',', $param);
-
-    //     foreach($param as $par) {
-    //         if($par == $closureMatch[1]) {
-    //             $data = $data->$key([$closureMatch[1] => function($closureQuery) use ($closureMatch) {
-    //                 $closureParams = explode('=', trim($closureMatch[2]));
-    //                 $closureParam = getData($closureQuery, $closureParams[0], $closureParams[1])['param'];
-
-    //                 call_user_func_array(array($closureQuery,$closureParams[0]), $closureParam);
-    //             }]);
-    //         } else {
-    //             $data = $data->$key($par);
-    //         }
-    //     }
-    if(preg_match_all("/\((([^()]*|(?R))*)\)/", $param, $closureMatch)) { // handling closure, support multiple nested closure deep
-        // $closureMatch[1] = [
-        //     "contactPerson(with=phone(where=city_code,021))(where=first_name,like,%test%)",
-        //     "organization(where=name,like,%test%)",
-        //     "product"
-        // ]
-        $arrayParam = recursiveParam($param);
-        if(count($arrayParam) > 0) {
-            $data = recursiveQuery($data, $key, $param, $closureMatch, $arrayParam);//['data'];
-        }
-    } else {
-        if(preg_match('/\[(.*?)\]/', $param, $arrParamMatch)) { // handling whereIn, due to whereIn params using whereIn('field', ['val_1', 'val_2', 'val_n']) syntax
-            $param = str_replace(','.$arrParamMatch[0], '', $param);
-            $param = explode(',', trim($param));
-            array_push($param, explode(',', trim($arrParamMatch[1])));
-        } else {
-            $param = explode(',', trim($param));
+function getDataQuery($query, $data) {
+    foreach($query as $key => $val) {
+        if($key === 'paginate') {
+            $paginate = $val;
         }
 
-        $data = call_user_func_array(array($data,$key), $param);
+        if($key !== 'page') {
+            $vals = [];
+
+            if(is_array($val)) {
+                $vals = $val;
+            } else {
+                array_push($vals, $val);
+            }
+
+            foreach($vals as $param) {
+                // if(preg_match_all('/\((.*?)\)/', $request->test, $match)) { // multi occurence
+                //     return $match;
+                // }
+
+                // if(preg_match('/(.*?)\((.*?)\)/', $param, $closureMatch)) { // handling closure, this only support once nested closure
+                //     $param = str_replace('('.$closureMatch[2].')', '', $param);
+                //     $param = explode(',', $param);
+
+                //     foreach($param as $par) {
+                //         if($par == $closureMatch[1]) {
+                //             $data = $data->$key([$closureMatch[1] => function($closureQuery) use ($closureMatch) {
+                //                 $closureParams = explode('=', trim($closureMatch[2]));
+                //                 $closureParam = getDataQuery($closureQuery, $closureParams[0], $closureParams[1])['param'];
+
+                //                 call_user_func_array(array($closureQuery,$closureParams[0]), $closureParam);
+                //             }]);
+                //         } else {
+                //             $data = $data->$key($par);
+                //         }
+                //     }
+                if(preg_match_all("/\((([^()]*|(?R))*)\)/", $param, $closureMatch)) { // handling closure, support multiple nested closure deep
+                    // $closureMatch[1] = [
+                    //     "contactPerson(with=phone(where=city_code,021))(where=first_name,like,%test%)",
+                    //     "organization(where=name,like,%test%)",
+                    //     "product"
+                    // ]
+                    $arrayParam = recursiveParam($param);
+                    if(count($arrayParam) > 0) {
+                        $data = recursiveQuery($data, $key, $param, $closureMatch, $arrayParam);//['data'];
+                    }
+                } else {
+                    if(preg_match('/\[(.*?)\]/', $param, $arrParamMatch)) { // handling whereIn, due to whereIn params using whereIn('field', ['val_1', 'val_2', 'val_n']) syntax
+                        $param = str_replace(','.$arrParamMatch[0], '', $param);
+                        $param = explode(',', trim($param));
+                        array_push($param, explode(',', trim($arrParamMatch[1])));
+                    } else {
+                        $param = explode(',', trim($param));
+                    }
+
+                    $data = call_user_func_array(array($data,$key), $param);
+                }
+
+            }
+
+            if($key === 'paginate') {
+                $data->appends(['paginate' => $paginate])->links();
+            }
+        }
     }
 
     // return [
@@ -234,7 +299,7 @@ function recursiveQuery($data, $key, $param, $matches, $arrayParam) {
 
             if(count($items) > 1) {
                 $data = $data->$key([$param => function($query) use ($items) {
-                    recursiveClosure($items);
+                    recursiveClosure($query, $items);
                     // this, only support second nested closure deep
                     // foreach($items as $idx => $val) {
                     //     if($idx < count($items)-1) {
@@ -280,7 +345,7 @@ function recursiveQuery($data, $key, $param, $matches, $arrayParam) {
 | recursiveClosure
 |
 */
-function recursiveClosure($items) {
+function recursiveClosure($query, $items) {
     foreach($items as $idx => $val) {
         if($idx < count($items)-2) {
             $closureParam = $items[$idx+1];
@@ -288,7 +353,7 @@ function recursiveClosure($items) {
             $closureData = explode('=', trim($closure));
 
             $query = $query->$closureData[0]([$closureData[1] => function($query) use ($items) {
-                recursiveClosure(array_shift($items));
+                recursiveClosure($query, array_shift($items));
             }]);
         } else {
             if($idx < count($items)-1) {
