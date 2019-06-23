@@ -114,5 +114,4 @@ Route::get('/img/{path}', function(Filesystem $filesystem, $path) {
     ]);
 
     return $server->getImageResponse($path, request()->all());
-
 })->where('path', '.*');

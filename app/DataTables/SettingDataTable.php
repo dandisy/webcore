@@ -67,6 +67,7 @@ class SettingDataTable extends DataTable
         return [
             'key',
             'value',
+            'type',
             'description'
         ];
     }
