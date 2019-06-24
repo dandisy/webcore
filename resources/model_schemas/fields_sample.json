@@ -1,0 +1,205 @@
+[
+    {
+        "name": "id",
+        "dbType": "increments",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "title",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "post_date",
+        "dbType": "dateTime",
+        "htmlType": "date",
+        "searchable": true
+    },
+    {
+        "name": "body",
+        "dbType": "text",
+        "htmlType": "textarea",
+        "dbNullable" : true
+    },
+    {
+        "name": "description",
+        "dbType": "text",
+        "htmlType": "text-editor",
+        "validations": null,
+        "searchable": null,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": false
+    },
+    {
+        "name": "password",
+        "dbType": "string",
+        "htmlType": "password",
+        "searchable": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "token",
+        "dbType": "string",
+        "htmlType": "hidden",
+        "searchable": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "email",
+        "dbType": "string",
+        "htmlType": "email",
+        "searchable": true
+    },
+    {
+        "name": "date",
+        "dbType": "string",
+        "htmlType": "date-picker",
+        "validations": "required",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "dbNullable" : true
+    },
+    {
+        "name": "author_gender",
+        "dbType": "integer",
+        "htmlType": "radio,Male:1,Female:0"
+    },
+    {
+        "name": "post_type",
+        "dbType": "string",
+        "htmlType": "radio,Public,Private",
+        "searchable": true
+    },
+    {
+        "name": "post_visits",
+        "dbType": "integer",
+        "htmlType": "number"
+    },
+    {
+        "name": "category",
+        "dbType": "string",
+        "htmlType": "select,Technology,LifeStyle,Education,Games",
+        "searchable": true
+    },
+    {
+        "name": "category_short",
+        "dbType": "string",
+        "htmlType": "select,Technology:tech,LifeStyle:ls,Education:edu,Games:game"
+    },
+    {
+        "name": "is_private",
+        "dbType": "boolean",
+        "htmlType": "checkbox:1"
+    },
+    {
+        "name": "writer_id",
+        "dbType": "integer:unsigned:foreign,writers,id",
+        "htmlType": "text",
+        "relation": "mt1,Writer,writer_id,id"
+    },
+    {
+        "type": "relation",
+        "relation": "1tm,Comment"
+    },
+    {
+        "name": "users",
+        "type": "relation",
+        "relation": "mtm,Role,user_roles,user_id,role_id"
+    },
+    {
+        "name": "parent_id",
+        "dbType": "integer",
+        "htmlType": "select,relation:modelname=id=id",
+        "validations": null,
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "dbNullable": true,
+        "relation": "mt1,ModelName,parent_id,id"
+    },
+    {
+        "name": "file",
+        "dbType": "string",
+        "htmlType": "file-manager",
+        "validations": "required",
+        "searchable": false,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true
+    },
+    {
+        "name": "package",
+        "dbType": "text",
+        "htmlType": "select,component",
+        "validations": "required",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true
+    },
+    {
+        "name": "template",
+        "dbType": "string",
+        "htmlType": "select,theme",
+        "validations": "required",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true
+    },
+    {
+        "name": "position",
+        "dbType": "string",
+        "htmlType": "select,theme",
+        "validations": "required",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true
+    },
+    {
+        "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false,
+        "dbNullable": true
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false,
+        "dbNullable": true
+    }
+]
