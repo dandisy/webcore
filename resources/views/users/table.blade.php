@@ -1,4 +1,4 @@
-@section('css')
+@section('styles')
     @include('layouts.datatables_css')
 @endsection
 

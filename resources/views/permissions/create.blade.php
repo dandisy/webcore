@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('content')
+@section('contents')
     <section class="content-header">
         <h1>
             Permission
