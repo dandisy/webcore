@@ -130,16 +130,16 @@
         },
         {
             "name": "dandisy/adminlte-templates",
-            "version": "1.0.2",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dandisy/adminlte-templates.git",
-                "reference": "9cd59e087078f6ae15e39f679916cafa59d7e655"
+                "reference": "cd8ce2a32af59cf15eccc6e422c96a8e6e300abd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dandisy/adminlte-templates/zipball/9cd59e087078f6ae15e39f679916cafa59d7e655",
-                "reference": "9cd59e087078f6ae15e39f679916cafa59d7e655",
+                "url": "https://api.github.com/repos/dandisy/adminlte-templates/zipball/cd8ce2a32af59cf15eccc6e422c96a8e6e300abd",
+                "reference": "cd8ce2a32af59cf15eccc6e422c96a8e6e300abd",
                 "shasum": ""
             },
             "require": {
@@ -178,7 +178,7 @@
                 "templates",
                 "webcore"
             ],
-            "time": "2018-11-15T08:52:49+00:00"
+            "time": "2019-06-24T16:56:17+00:00"
         },
         {
             "name": "dandisy/filemanager",
@@ -230,16 +230,16 @@
         },
         {
             "name": "dandisy/laravel-generator",
-            "version": "1.0.8",
+            "version": "1.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dandisy/laravel-generator.git",
-                "reference": "742797c8483bc88b54b6302a516a9a85eeb8579b"
+                "reference": "b54787fef83b41ca49112868a52e3b50fc3c8633"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dandisy/laravel-generator/zipball/742797c8483bc88b54b6302a516a9a85eeb8579b",
-                "reference": "742797c8483bc88b54b6302a516a9a85eeb8579b",
+                "url": "https://api.github.com/repos/dandisy/laravel-generator/zipball/b54787fef83b41ca49112868a52e3b50fc3c8633",
+                "reference": "b54787fef83b41ca49112868a52e3b50fc3c8633",
                 "shasum": ""
             },
             "require": {
@@ -284,16 +284,10 @@
                 "crud",
                 "generator",
                 "laravel",
-                "migration",
-                "model",
-                "repository",
-                "request",
                 "swagger",
-                "test",
-                "view",
                 "webcore"
             ],
-            "time": "2018-11-15T11:12:27+00:00"
+            "time": "2019-06-24T16:58:44+00:00"
         },
         {
             "name": "dandisy/swagger-generator",
@@ -1246,16 +1240,16 @@
         },
         {
             "name": "intervention/image",
-            "version": "2.4.2",
+            "version": "2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Intervention/image.git",
-                "reference": "e82d274f786e3d4b866a59b173f42e716f0783eb"
+                "reference": "39eaef720d082ecc54c64bf54541c55f10db546d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Intervention/image/zipball/e82d274f786e3d4b866a59b173f42e716f0783eb",
-                "reference": "e82d274f786e3d4b866a59b173f42e716f0783eb",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/39eaef720d082ecc54c64bf54541c55f10db546d",
+                "reference": "39eaef720d082ecc54c64bf54541c55f10db546d",
                 "shasum": ""
             },
             "require": {
@@ -1312,7 +1306,7 @@
                 "thumbnail",
                 "watermark"
             ],
-            "time": "2018-05-29T14:19:03+00:00"
+            "time": "2019-06-24T14:06:31+00:00"
         },
         {
             "name": "itsgoingd/clockwork",
@@ -2870,16 +2864,16 @@
         },
         {
             "name": "phpseclib/phpseclib",
-            "version": "2.0.19",
+            "version": "2.0.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "d2085db7b7394baa071a69c8f9159723c250f2ba"
+                "reference": "d6819a55b05e123db1e881d8b230d57f912126be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/d2085db7b7394baa071a69c8f9159723c250f2ba",
-                "reference": "d2085db7b7394baa071a69c8f9159723c250f2ba",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/d6819a55b05e123db1e881d8b230d57f912126be",
+                "reference": "d6819a55b05e123db1e881d8b230d57f912126be",
                 "shasum": ""
             },
             "require": {
@@ -2958,7 +2952,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2019-06-20T03:34:11+00:00"
+            "time": "2019-06-23T16:33:11+00:00"
         },
         {
             "name": "prettus/l5-repository",
