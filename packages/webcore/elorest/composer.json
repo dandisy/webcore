@@ -1,6 +1,9 @@
 {
-    "name": "dandisy/webcore-elorest",
-    "description": "Elorest package for webcore platform",
+    "name": "dandisy/elorest",
+    "description": "REST API using the laravel eloquest (methods and params)",
+    "keywords": ["laravel", "api", "restapi", "query"],
+    "homepage": "https://github.com/dandisy/elorest",
+    "license": "MIT",
     "authors": [
         {
             "name": "dandi",
@@ -8,7 +11,9 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "php": ">=5.5.9"
+    },
     "autoload": {
         "psr-4": {
             "Webcore\\Elorest\\": "src/"

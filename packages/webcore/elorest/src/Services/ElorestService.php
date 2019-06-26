@@ -4,16 +4,29 @@ namespace Webcore\Elorest;
 
 class ElorestService
 {
+    protected $input;
+    protected $data;
+
+    public function __construct($input, $data)
+    {
+        $this->input = $input;
+        $this->data = $data;
+    }
+
+    function invoke() {
+        return $this->getQuery($this->input, $this->data);
+    }
+
     /*
     |--------------------------------------------------------------------------
     | EloREST - Halpers
     |--------------------------------------------------------------------------
     |
-    | getDataQuery
+    | getQuery
     |
     */
-    function getDataQuery($query, $data) {
-        foreach($query as $key => $val) {
+    protected function getQuery($input, $data) {
+        foreach($input as $key => $val) {
             if($key === 'paginate') {
                 $paginate = $val;
             }
@@ -40,7 +53,7 @@ class ElorestService
                     //         if($par == $closureMatch[1]) {
                     //             $data = $data->$key([$closureMatch[1] => function($closureQuery) use ($closureMatch) {
                     //                 $closureParams = explode('=', trim($closureMatch[2]));
-                    //                 $closureParam = $this->getDataQuery($closureQuery, $closureParams[0], $closureParams[1])['param'];
+                    //                 $closureParam = $this->getQuery($closureQuery, $closureParams[0], $closureParams[1])['param'];
     
                     //                 call_user_func_array(array($closureQuery,$closureParams[0]), $closureParam);
                     //             }]);

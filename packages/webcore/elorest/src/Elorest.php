@@ -8,7 +8,59 @@ use Webcore\Elorest\ElorestService;
 
 class Elorest
 {
+    protected static $routes = [
+        'get',
+        'post',
+        'put',
+        'patch',
+        'delete'
+    ];
+
     static function routes(array $middleware = null) {
+        $routes = self::$routes;
+
+        if($middleware) {
+            if(isset($middleware['only']))
+            {
+                foreach($middleware['only'] as $route) {
+                    if(in_array($route, $routes)) {
+                        self::$route()->middleware($middleware['middleware']);
+                    }
+                }
+
+                $except = array_diff($routes, $middleware['only']);
+                foreach($except as $route) {
+                    self::$route();
+                }
+            } 
+            else if(isset($middleware['except'])) 
+            {
+                $only = array_diff($routes, $middleware['except']);
+                foreach($only as $route) {
+                    self::$route()->middleware($middleware['middleware']);
+                }
+                foreach($middleware['except'] as $route) {
+                    self::$route();
+                }
+            }
+            else
+            {
+                foreach($routes as $route) {
+                    self::$route()->middleware($middleware['middleware']);
+                }
+            }
+        } else {
+            foreach($routes as $route) {
+                self::$route();
+            }
+        }
+    }
+
+    protected function register($routes) {
+        array_push(self::$routes, $routes);
+    }
+
+    protected static function get() {
         /*
         |--------------------------------------------------------------------------
         | EloREST - Using Password Grant
@@ -34,34 +86,34 @@ class Elorest
         | https://your-domain-name/api/elorest/User?paginate=10&page=1
         |
         */
-        $get = Route::get('elorest/{model}/{id?}/{identity?}', function(Request $request, $model, $id = NULL, $identity = NULL) {
+        return Route::get('elorest/{namespaceOrModel}/{idOrModel?}/{id?}', function(Request $request, $namespaceOrModel, $idOrModel = NULL, $id = NULL) {
             $paginate = null;
-            $query = $request->all();
-            $modelNameSpace = 'App\\'.$model;
+            $input = $request->all();
+            $modelNameSpace = 'App\\'.$namespaceOrModel;
 
-            if($id == 'columns') {
+            if($idOrModel == 'columns') {
                 $data = new $modelNameSpace();
                 return $data->getTableColumns();
             }
-            if(is_numeric($id)) {
+            if(is_numeric($idOrModel)) {
                 $data = new $modelNameSpace();
-                return $data->find($id);
+                return $data->find($idOrModel);
             }
-            if($id) {
-                $modelNameSpace .= '\\'.$id;
+            if($idOrModel) {
+                $modelNameSpace .= '\\'.$idOrModel;
                 $data = new $modelNameSpace();
 
-                if($identity == 'columns') {
+                if($id == 'columns') {
                     return $data->getTableColumns();
                 }
-                if(is_numeric($identity)) {
+                if(is_numeric($id)) {
                     return $data->find($id);
                 }
             } else {
-                $data = new $modelNameSpace();
+                $data = new $model();
             }
 
-            if(!$query) {
+            if(!$input) {
                 return $data->get();
             }
 
@@ -89,7 +141,7 @@ class Elorest
 
             //             // $data = call_user_func_array(array($data,$key), $item);
 
-            //             $data = getDataQuery($data, $key, $item);//['data'];
+            //             $data = getQuery($data, $key, $item);//['data'];
 
             //         }
 
@@ -101,13 +153,21 @@ class Elorest
 
             // return $data;
 
-            $service = new ElorestService();
-            return $service->getDataQuery($query, $data);
+            $elorestQuery = new ElorestService($input, $data);
+            return $elorestQuery->invoke();
         });//->middleware('auth:api', 'throttle:60,1');
+    }
 
-        $post = Route::post('elorest/{model}', function(Request $request, $model) {
-            $modelNameSpace = 'App\\'.$model;
-            $data = new $modelNameSpace();
+    protected static function post() {
+        return Route::post('elorest/{namespaceOrModel}/{model?}', function(Request $request, $namespaceOrModel, $model = null) {
+            $modelNameSpace = 'App\\'.$namespaceOrModel;
+
+            if(!$model) {
+                $data = new $modelNameSpace();
+            } else {
+                $modelNameSpace .= '\\'.$model;
+                $data = new $modelNameSpace();
+            }
 
             if($request->all()) {
                 // return $data->insert($request->all());
@@ -120,17 +180,25 @@ class Elorest
             ], 200))
                 ->header('Content-Type', 'application/json');
         });//->middleware('auth:api', 'throttle:60,1');
+    }
 
-        $put = Route::put('elorest/{model}/{id}', function(Request $request, $model, $id) {
-            $modelNameSpace = 'App\\'.$model;
-            $data = new $modelNameSpace();
+    protected static function put() {
+        return Route::put('elorest/{namespaceOrModel}/{idOrModel}/{id?}', function(Request $request, $namespaceOrModel, $idOrModel, $id = null) {
+            $modelNameSpace = 'App\\'.$namespaceOrModel;
+
+            if(is_numeric($idOrModel)) {
+                $data = new $modelNameSpace();
+            } else {
+                $modelNameSpace .= '\\'.$idOrModel;
+                $data = new $modelNameSpace();
+            }
 
             if($request->all()) {
                 if($id) {
                     $data = $data->find($id);
                 } else {
-                    $service = new ElorestService();
-                    $data = $service->getDataQuery($request->all(), $data)->first();
+                    $elorestQuery = new ElorestService($request->all(), $data);
+                    $data = $elorestQuery->invoke()->first();
                 }
 
                 if($data) {
@@ -144,17 +212,25 @@ class Elorest
             ], 200))
                 ->header('Content-Type', 'application/json');
         });//->middleware('auth:api', 'throttle:60,1');
+    }
 
-        $patch = Route::patch('elorest/{model}/{id}', function(Request $request, $model, $id) {
-            $modelNameSpace = 'App\\'.$model;
-            $data = new $modelNameSpace();
+    protected static function patch() {
+        return Route::patch('elorest/{namespaceOrModel}/{idOrModel}/{id?}', function(Request $request, $namespaceOrModel, $idOrModel, $id = null) {
+            $modelNameSpace = 'App\\'.$namespaceOrModel;
+
+            if(is_numeric($idOrModel)) {
+                $data = new $modelNameSpace();
+            } else {
+                $modelNameSpace .= '\\'.$idOrModel;
+                $data = new $modelNameSpace();
+            }
 
             if($request->all()) {
                 if($id) {
                     $data = $data->find($id);
                 } else {
-                    $service = new ElorestService();
-                    $data = $service->getDataQuery($request->all(), $data)->first();
+                    $elorestQuery = new ElorestService($request->all(), $data);
+                    $data = $elorestQuery->invoke()->first();
                 }
 
                 if($data) {
@@ -170,17 +246,25 @@ class Elorest
             ], 200))
                 ->header('Content-Type', 'application/json');
         });//->middleware('auth:api', 'throttle:60,1');
+    }
 
-        $delete = Route::delete('elorest/{model}/{id}', function(Request $request, $model, $id) {
-            $modelNameSpace = 'App\\'.$model;
-            $data = new $modelNameSpace();
+    protected static function delete() {
+        return Route::delete('elorest/{namespaceOrModel}/{idOrModel}/{id?}', function(Request $request, $namespaceOrModel, $idOrModel, $id = null) {
+            $modelNameSpace = 'App\\'.$namespaceOrModel;
+
+            if(is_numeric($idOrModel)) {
+                $data = new $modelNameSpace();
+            } else {
+                $modelNameSpace .= '\\'.$idOrModel;
+                $data = new $modelNameSpace();
+            }
 
             if($request->all()) {
                 if($id) {
                     $data = $data->find($id);
                 } else {
-                    $service = new ElorestService();
-                    $data = $service->getDataQuery($request->all(), $data)->first();
+                    $elorestQuery = new ElorestService($request->all(), $data);
+                    $data = $elorestQuery->invoke()->first();
                 }
 
                 if($data) {
@@ -194,31 +278,5 @@ class Elorest
             ], 200))
                 ->header('Content-Type', 'application/json');
         });//->middleware('auth:api', 'throttle:60,1');
-
-        if($middleware) {
-            $routes = ['get', 'post', 'put', 'patch', 'delete'];
-
-            if(isset($middleware['only']))
-            {
-                foreach($middleware['only'] as $route) {
-                    if(in_array($route, $routes)) {
-                        ${$route}->middleware($middleware['middleware']);
-                    }
-                }
-            } 
-            else if(isset($middleware['except'])) 
-            {
-                $routes = array_diff($routes, $middleware['except']);
-                foreach($routes as $route) {
-                    ${$route}->middleware($middleware['middleware']);
-                }
-            }
-            else
-            {
-                foreach($routes as $route) {
-                    ${$route}->middleware($middleware['middleware']);
-                }
-            }
-        }
     }
 }
