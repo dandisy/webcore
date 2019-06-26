@@ -1,6 +1,6 @@
 {
-    "name": "dandisy/webcore-microsite",
-    "description": "Microsite package for webcore platform",
+    "name": "dandisy/webcore-elorest",
+    "description": "Elorest package for webcore platform",
     "authors": [
         {
             "name": "dandi",
@@ -11,13 +11,13 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Webcore\\Microsite\\": "src/"
+            "Webcore\\Elorest\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Webcore\\Microsite\\MicrositeServiceProvider"
+                "Webcore\\Elorest\\ElorestServiceProvider"
             ]
         }
     }

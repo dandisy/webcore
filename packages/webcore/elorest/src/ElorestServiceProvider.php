@@ -1,10 +1,10 @@
 <?php
 
-namespace Webcore\Microsite;
+namespace Webcore\Elorest;
 
 use Illuminate\Support\ServiceProvider;
 
-class MicrositeServiceProvider extends ServiceProvider
+class ElorestServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -13,13 +13,7 @@ class MicrositeServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        require __DIR__.'/routes.php';
-
-        //$this->loadViewsFrom(__DIR__.'/views', 'microsite');
-
-        $this->publishes([
-            __DIR__.'/views' => storage_path('app/public/microsite'),
-        ], 'views');
+        //
     }
 
     /**

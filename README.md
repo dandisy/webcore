@@ -216,7 +216,7 @@ see sample model schema files in resources/model_schemas
 
     - Using Laravel Package
 
-        webcore include webcore-microsite package as sample code for basic package
+        webcore include dandisy/elorest package at package/webcore folder which can be used as an example
 
 8. Pre Configured Oauth using Laravel Passport
 
@@ -239,23 +239,23 @@ see sample model schema files in resources/model_schemas
             
 9. EloREST
 
-    REST API using Laravel Eloquest Syntax
+    REST API using the Laravel's Eloquest Syntax (methods & params)
     
-    Example API query :
+    Example API queries :
     
-        https://your-domain-name/JSON/Post?leftJoin=comments,posts.id,comments.post_id&whereIn=category_id,[2,4,5]&select=*&get=
-        https://your-domain-name/JSON/Post?join[]=authors,posts.id,authors.author_id&join[]=comments,posts.id,comments.post_id&whereIn=category_id,[2,4,5]&select=posts.*,authors.name as author_name,comments.title as comment_title&get=
-        https://your-domain-name/JSON/Post?&with=author,comment&get=*
-        https://your-domain-name/JSON/Post?&with=author(where=name,like,%dandisy%),comment&get=*
+        https://your-domain-name/api/elorest/Models/Post?leftJoin=comments,posts.id,comments.post_id&whereIn=category_id,[2,4,5]&select=*&get=
+        https://your-domain-name/api/elorest/Models/Post?join[]=authors,posts.id,authors.author_id&join[]=comments,posts.id,comments.post_id&whereIn=category_id,[2,4,5]&select=posts.*,authors.name as author_name,comments.title as comment_title&get=
+        https://your-domain-name/api/elorest/Models/Post?&with=author,comment&get=*
+        https://your-domain-name/api/elorest/Models/Post?&with=author(where=name,like,%dandisy%),comment&get=*
         
         multi first nested closure deep
-        https://your-domain-name/JSON/Post?&with=author(where=name,like,%dandisy%)(where=nick,like,%dandisy%),comment&get=*
+        https://your-domain-name/api/elorest/Models/Post?&with=author(where=name,like,%dandisy%)(where=nick,like,%dandisy%),comment&get=*
         
         second nested closure deep
-        https://your-domain-name/JSON/Post?&with=author(with=city(where=name,like,%jakarta%)),comment&get=*
+        https://your-domain-name/api/elorest/Models/Post?&with=author(with=city(where=name,like,%jakarta%)),comment&get=*
         
-        https://your-domain-name/JSON/Post?&with[]=author(where=name,like,%dandisy%)&with[]=comment(where=title,like,%test%)&get=*
-        https://your-domain-name/JSON/Post?paginate=10&page=1
+        https://your-domain-name/api/elorest/Models/Post?&with[]=author(where=name,like,%dandisy%)&with[]=comment(where=title,like,%test%)&get=*
+        https://your-domain-name/api/elorest/Models/Post?paginate=10&page=1
 
 ### Dependency
 
