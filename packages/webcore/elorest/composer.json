@@ -1,6 +1,6 @@
 {
     "name": "dandisy/elorest",
-    "description": "REST API using the laravel eloquest (methods and params)",
+    "description": "Query to REST API server using the laravel eloquent (methods and params)",
     "keywords": ["laravel", "api", "restapi", "query"],
     "homepage": "https://github.com/dandisy/elorest",
     "license": "MIT",

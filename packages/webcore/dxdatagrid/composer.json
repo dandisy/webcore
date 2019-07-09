@@ -1,0 +1,29 @@
+{
+    "name": "dandisy/dxdatagrid",
+    "description": "dxDataGrid server processing for Webcore",
+    "keywords": ["laravel", "webcore", "dxdatagrid", "datagrid", "datatable", "data grid", "data table"],
+    "homepage": "https://github.com/dandisy/dxdatagrid",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "dandi",
+            "email": "dandi@redbuzz.co.id"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Webcore\\DXDataGrid\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Webcore\\DXDataGrid\\DXDataGridServiceProvider"
+            ]
+        }
+    }
+}
