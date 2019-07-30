@@ -18,7 +18,8 @@ class LaravelService extends AService
     }
 
     public function getQuery($input, $data) {
-        $model = new \App\User();
+        // $model = new \App\User();
+        $model = $data;
 
         $resFormat = false;
         foreach($input as $key => $val) {
