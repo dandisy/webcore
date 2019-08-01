@@ -123,7 +123,7 @@ class LaravelRoute extends ARoute
                 return $this->repositoryObj->getTableColumns($data);
             }
             if(is_numeric($id)) {
-                return $this->repositoryObj->findById($idOrModel, $data);
+                return $this->repositoryObj->findById($id, $data);
             }
         } else {
             // if(class_exists($modelNameSpace)) {
