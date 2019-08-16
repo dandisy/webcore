@@ -182,28 +182,29 @@ class LaravelService extends AService
 
     protected function runInvokeQuery($data, $key, $val, $gValue = null) {
         if($key !== 'page') {
-            $vals = explode(',', $val);
+            // $vals = explode(',', $val);
 
-            if($gValue) {
-                $vals = array_map(function($valsVal) use ($gValue) {
-                    if(substr($valsVal, 0, 6) === '$this.') {
-                        $v = substr($valsVal, 6);
+            // if($gValue) {
+            //     $vals = array_map(function($valsVal) use ($gValue) {
+            //         if(substr($valsVal, 0, 6) === '$this.') {
+            //             $v = substr($valsVal, 6);
 
-                        return $gValue->$v;
-                    } else {
-                        return $valsVal;
-                    }
-                }, $vals);
-            }
+            //             return $gValue->$v;
+            //         } else {
+            //             return $valsVal;
+            //         }
+            //     }, $vals);
+            // }
 
-            if($key == 'get' || $key == 'count') {
-                $vals = [$vals];
-            } else {
-                $vals = $vals;
-            }
+            // if($key == 'get' || $key == 'count') {
+            //     $vals = [$vals];
+            // } else {
+            //     $vals = $vals;
+            // }
 
+            $data = $this->invokeQuery($data, $key, $val, $gValue);
             // $data = $this->invokeQuery($data, $key, $vals);
-            $data = $this->callUserFuncArray($data, $key, $vals);
+            // $data = $this->callUserFuncArray($data, $key, $vals);
         }
 
         if($key === 'paginate') {
@@ -226,7 +227,11 @@ class LaravelService extends AService
         if($key === 'paginate') {
             $data = $this->paginate($data, $key, $param);
         } else {
-            $data = $this->callUserFuncArray($data, $key, count($param) == 1 ? [$param] : $param);
+            if(is_array($param)) {
+                $data = $this->callUserFuncArray($data, $key, count($param) == 1 ? [$param] : $param);
+            } else {
+                $data = $this->callUserFuncArray($data, $key, [$param]);
+            }
         }
 
         return $data;
