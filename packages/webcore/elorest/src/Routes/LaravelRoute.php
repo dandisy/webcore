@@ -270,29 +270,12 @@ class LaravelRoute extends ARoute
         $user = $request->user();
 
         $modelNameSpace = 'App\\'.$namespaceOrModel;
-        // if(class_exists($modelNameSpace)) {
-            $data = new $modelNameSpace();
-        // } else {
-        //     return $this->responseObj->response([
-        //         "message" => "Not found",
-        //         "error" => [
-        //             "code" => 102404,
-        //             "detail" => "The resource was not found"
-        //         ],
-        //         "status" => 404,
-        //         "params" => $input,
-        //         "links" => [
-        //             "self" => URL::current()
-        //         ]
-        //     ], 404);
-        // }
-
-        $request->validate($modelNameSpace::$rules);
-
-        $input = $this->requestObj->requestAll($request);
 
         if($idOrModel) {
-            if(is_numeric($idOrModel)) {
+            if(is_numeric($idOrModel)) {    
+                $request->validate($modelNameSpace::$rules);        
+                $input = $this->requestObj->requestAll($request);
+
                 $data = $this->repositoryObj->findById($idOrModel, $data);
             } else {
                 $modelNameSpace .= '\\'.$idOrModel;
@@ -312,6 +295,9 @@ class LaravelRoute extends ARoute
                 //         ]
                 //     ], 404);
                 // }
+    
+                $request->validate($modelNameSpace::$rules);        
+                $input = $this->requestObj->requestAll($request);
 
                 if($id && is_numeric($id)) {
                     $data = $this->repositoryObj->findById($id, $data);
@@ -320,6 +306,26 @@ class LaravelRoute extends ARoute
                 }
             }
         } else {
+            // if(class_exists($modelNameSpace)) {
+                $data = new $modelNameSpace();
+            // } else {
+            //     return $this->responseObj->response([
+            //         "message" => "Not found",
+            //         "error" => [
+            //             "code" => 102404,
+            //             "detail" => "The resource was not found"
+            //         ],
+            //         "status" => 404,
+            //         "params" => $input,
+            //         "links" => [
+            //             "self" => URL::current()
+            //         ]
+            //     ], 404);
+            // }
+    
+            $request->validate($modelNameSpace::$rules);    
+            $input = $this->requestObj->requestAll($request);
+
             $data = $this->serviceObj->getQuery($this->requestObj->requestParamAll($request), $data)->first();
         }
 
@@ -377,29 +383,14 @@ class LaravelRoute extends ARoute
         $user = $request->user();
 
         $modelNameSpace = 'App\\'.$namespaceOrModel;
-        // if(class_exists($modelNameSpace)) {
-            $data = new $modelNameSpace();
-        // } else {
-        //     return $this->responseObj->response([
-        //         "message" => "Not found",
-        //         "error" => [
-        //             "code" => 102404,
-        //             "detail" => "The resource was not found"
-        //         ],
-        //         "status" => 404,
-        //         "params" => $input,
-        //         "links" => [
-        //             "self" => URL::current()
-        //         ]
-        //     ], 404);
-        // }
-
-        $request->validate($modelNameSpace::$rules);
-
-        $input = $this->requestObj->requestAll($request);
         
         if($idOrModel) {
             if(is_numeric($idOrModel)) {
+                $data = new $modelNameSpace();
+
+                $request->validate($modelNameSpace::$rules);        
+                $input = $this->requestObj->requestAll($request);
+
                 $data = $this->repositoryObj->findById($idOrModel, $data);
             } else {
                 $modelNameSpace .= '\\'.$idOrModel;
@@ -419,6 +410,9 @@ class LaravelRoute extends ARoute
                 //         ]
                 //     ], 404);
                 // }
+    
+                $request->validate($modelNameSpace::$rules);        
+                $input = $this->requestObj->requestAll($request);
 
                 if($id && is_numeric($id)) {
                     $data = $this->repositoryObj->findById($id, $data);
@@ -427,6 +421,26 @@ class LaravelRoute extends ARoute
                 }
             }
         } else {
+            // if(class_exists($modelNameSpace)) {
+                $data = new $modelNameSpace();
+            // } else {
+            //     return $this->responseObj->response([
+            //         "message" => "Not found",
+            //         "error" => [
+            //             "code" => 102404,
+            //             "detail" => "The resource was not found"
+            //         ],
+            //         "status" => 404,
+            //         "params" => $input,
+            //         "links" => [
+            //             "self" => URL::current()
+            //         ]
+            //     ], 404);
+            // }
+    
+            $request->validate($modelNameSpace::$rules);    
+            $input = $this->requestObj->requestAll($request);
+
             $data = $this->serviceObj->getQuery($this->requestObj->requestParamAll($request), $data)->first();
         }
 
@@ -488,10 +502,6 @@ class LaravelRoute extends ARoute
         $user = $request->user();
 
         $modelNameSpace = 'App\\'.$namespaceOrModel;
-
-        // $request->validate($modelNameSpace::$rules);
-
-        $input = $this->requestObj->requestAll($request);
         
         if($idOrModel) {
             if(is_numeric($idOrModel)) {
@@ -514,6 +524,9 @@ class LaravelRoute extends ARoute
                 //     ], 404);
                 // }
 
+                // $request->validate($modelNameSpace::$rules);
+                $input = $this->requestObj->requestAll($request);
+
                 $data = $this->repositoryObj->findById($idOrModel, $data);
             } else {
                 $modelNameSpace .= '\\'.$idOrModel;
@@ -534,6 +547,9 @@ class LaravelRoute extends ARoute
                 //         ]
                 //     ], 404);
                 // }
+
+                // $request->validate($modelNameSpace::$rules);
+                $input = $this->requestObj->requestAll($request);
 
                 $ns = explode('\\', $modelNameSpace);
                 $nsCount = count($ns);
@@ -595,6 +611,9 @@ class LaravelRoute extends ARoute
             //         ]
             //     ], 404);
             // }
+
+            // $request->validate($modelNameSpace::$rules);
+            $input = $this->requestObj->requestAll($request);
 
             $data = $this->serviceObj->getQuery($this->requestObj->requestParamAll($request), $data)->first();
         }
