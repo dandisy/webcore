@@ -40,7 +40,7 @@ then
 
     php artisan storage:link
 
-now get its all on your favorite browser
+now get it all on your favorite browser
 
     http://localhost/webcore/public
 
@@ -48,7 +48,7 @@ now get its all on your favorite browser
 
     http://localhost/webcore/public/admin
 
-Default users are
+The default users are
 
     - superadminstrator@app.com
     - administrator@app.com
@@ -75,7 +75,7 @@ to manage your oauth client in
 
 ### Usage
 
-* As Admin Panel (no public site in frontend)
+* As an Admin Panel (with no public site in frontend)
 
 #### run these artisan commands in your console
 
