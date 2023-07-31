@@ -289,7 +289,7 @@ refer to the sample model schema files in resources/model_schemas
 
     * khill/lavacharts or consoletvs/charts
 
-//------------------------------------------------#
+//---------------------------------------------#
 
 
 ### More Screenshots
