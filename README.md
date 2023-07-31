@@ -289,7 +289,7 @@ refer to the sample model schema files in resources/model_schemas
 
     * khill/lavacharts or consoletvs/charts
 
-//---------------------------------------------#
+//------------------------------------------#
 
 
 ### More Screenshots
@@ -314,7 +314,7 @@ Download Webcore CMS in https://github.com/dandisy/webcore-cms
 
 ![Webcore Datasource Elogui](https://github.com/dandisy/webcore-screenshots/blob/master/webcore-admin-datasource-elogui.jpg)
 
-//------------------------------------------------#
+//---------------------------------------------#
 
 
 ## 2. Laravel Generator
@@ -324,7 +324,7 @@ more generic :
 
     php artisan generate[.command]:{command} {Model_name} [option]
 
-See infyomlabs/laravel-generator documentation here http://labs.infyom.com/laravelgenerator
+Refer to the infyomlabs/laravel-generator documentation here http://labs.infyom.com/laravelgenerator
 
 ### Perspective :
 
