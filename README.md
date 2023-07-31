@@ -172,7 +172,7 @@ download it in https://github.com/dandisy/webcore-cms
 
 4. Image Manipulation
 
-    to manipulate image use 
+    to manipulate the image use 
     
         http://localhost/webcore/public/img/{path}?{param=value}
 
@@ -220,7 +220,7 @@ refer to the sample model schema files in resources/model_schemas
 
 8. Pre Configured Oauth using Laravel Passport
 
-    with Elorest as Laravel eloquent RESTAPI package see https://github.com/dandisy/elorest
+    with Elorest as a Laravel eloquent RESTAPI package, refer to https://github.com/dandisy/elorest
 
     - to login (password grant) use http://localhost/webcore/public/oauth/token
 
@@ -289,7 +289,7 @@ refer to the sample model schema files in resources/model_schemas
 
     * khill/lavacharts or consoletvs/charts
 
-//------------------------------------------#
+//--------------------------------------------#
 
 
 ### More Screenshots
@@ -405,7 +405,7 @@ Refer to the infyomlabs/laravel-generator documentation here http://labs.infyom.
     - define generator functionality with data and template parameters to be used
     - define rollback
 
-//------------------------------------------------#
+//--------------------------------------------#
 
 
 ## 3. Roadmap
