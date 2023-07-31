@@ -178,7 +178,7 @@ download it in https://github.com/dandisy/webcore-cms
 
     default {path} is configured relative to public_path, see .env for FILESYSTEM_DRIVER and config/filesystems.php
         
-    see Glide documentation in http://glide.thephpleague.com for manual guide
+    refer to the Glide documentation in http://glide.thephpleague.com for manual guide
 
 5. Laravel Generator based on http://labs.infyom.com/laravelgenerator with Additional features
 
@@ -194,7 +194,7 @@ download it in https://github.com/dandisy/webcore-cms
     - Component and theme directory reader generator (htmltype = select,component or select,theme)
     - Model directory reader generator (htmltype = select,model)
 
-see sample model schema files in resources/model_schemas
+refer to the sample model schema files in resources/model_schemas
 
 6. Front Page System (support themes, template position and view components)
 
